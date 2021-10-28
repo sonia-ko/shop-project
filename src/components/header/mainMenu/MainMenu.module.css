@@ -1,0 +1,21 @@
+.mainMenu {
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.mainMenu ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-start;
+}
+
+.mainMenu ul li {
+  padding: 2vh 0 0 3vh;
+  cursor: pointer;
+  color: #6a983c;
+  text-align: left;
+}
+
+.mainMenu ul li:hover {
+  color: black;
+}
