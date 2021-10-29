@@ -20,6 +20,7 @@ function App() {
         <Header> </Header>
         <Switch>
           <Redirect exact from="/" to="/products" />
+          <Redirect exact from="/build" to="/products" />
           <Route path="/products" render={() => <AllProductsPage />} />
           <Route exact path="/support">
             <LiveSupport />
