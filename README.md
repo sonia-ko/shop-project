@@ -1,4 +1,4 @@
-Demo: https://sonia-ko.github.io/shop-project/
+[Demo](https://sonia-ko.github.io/shop-project/build)
 
 # Getting Started with Create React App
 
