@@ -8,10 +8,8 @@ type Props = {};
 const Root: React.FC<Props> = ({ children }) => {
   return (
     <Provider store={store}>
-      {/* <Router basename="/shop-project/">
-        {children}
-      </Router> */}
-      <Router>{children}</Router>
+      <Router basename="/shop-project/">{children}</Router>
+      {/* <Router>{children}</Router> */}
     </Provider>
   );
 };
