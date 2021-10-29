@@ -36,7 +36,7 @@ export const productCategories = [
 // "Sports and outdoors",
 // "Books",
 
-export const companyPhoneNum = "+420 336 775 664";
+export const companyPhoneNum = "420 336 775 664";
 export const companyName = "Freshnesecom";
 export const companyEmail = "info@freshnesecom.com";
 export const mainMenuItems = ["Blog", "About Us", "Careers"];

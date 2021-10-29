@@ -1,5 +1,4 @@
 import "./App.css";
-import Contacts from "./components/header/contacts/ContactsComponent";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,6 +9,11 @@ import React from "react";
 import Header from "./components/header/HeaderComponent";
 import AllProductsPage from "./pages/AllProductsPage/AllProductsPage";
 import PageNotFound from "./pages/404Page/PageNotFound";
+import LiveSupport from "./pages/SupportPage/LiveSupport";
+import OurBlog from "./pages/Blog/OurBlog";
+import OurCareers from "./pages/Careers/OurCareers";
+import AboutUs from "./pages/AboutUsPage/AboutUs";
+
 function App() {
   return (
     <Router>
@@ -17,14 +21,19 @@ function App() {
         <Header> </Header>
         <Switch>
           <Redirect exact from="/" to="/products" />
-          <Route
-            path="/products"
-            render={() => (
-              <React.Fragment>
-                <AllProductsPage />
-              </React.Fragment>
-            )}
-          />
+          <Route path="/products" render={() => <AllProductsPage />} />
+          <Route exact path="/support">
+            <LiveSupport />
+          </Route>
+          <Route exact path="/blog">
+            <OurBlog />
+          </Route>
+          <Route exact path="/careers">
+            <OurCareers />
+          </Route>
+          <Route exact path="/about">
+            <AboutUs />
+          </Route>
           <Route>
             <PageNotFound> </PageNotFound>
           </Route>

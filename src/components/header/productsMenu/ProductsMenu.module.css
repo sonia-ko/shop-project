@@ -1,25 +1,24 @@
-.productsMenuContainer {
+.container {
   width: 90%;
   margin: 0 auto;
 }
 
-.productsMenu ul {
+.productsMenu {
   list-style-type: none;
   display: flex;
   width: 95%;
   justify-content: space-between;
 }
 
-.productsMenu ul li {
+.menuItem {
   font-size: 1.2em;
-
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.productsMenu ul li select {
+.selectBox {
   border: none;
   text-align: center;
   font-size: 1em;
@@ -30,12 +29,12 @@
   font-weight: 500;
 }
 
-.productsMenu ul li select option {
+.selectOption {
   text-align: center;
   font-weight: bold;
 }
 
-.productsMenu ul li select:focus {
+.selectBox:focus {
   border: none;
   outline: none;
 }

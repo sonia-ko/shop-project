@@ -19,8 +19,12 @@ const Header: React.FC = () => {
         <div className={classes.companyNameSection}>{companyName}</div>
         <Search></Search>
         <div className={classes.iconsSection}>
-          <img src={userIcon} alt="Sign-in icon" />
-          <img src={cartIcon} alt="Shopping Cart Icon" />
+          <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
+          <img
+            className={classes.icon}
+            src={cartIcon}
+            alt="Shopping Cart Icon"
+          />
         </div>
       </div>
       <ProductsMenu></ProductsMenu>

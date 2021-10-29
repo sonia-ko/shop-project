@@ -1,19 +1,19 @@
 import React from "react";
-import CurrentLocation from "../../components/currentLocation/CurrentLocation";
+import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import classes from "./AllProductsPage.module.css";
 import SingleFilter from "./components/filterButtons/SingleFilter";
 import MainBlock from "./main/MainBlock";
-import Sidebar from "./sidebar/SideBar";
+import Sidebar from "../../components/sidebar/SideBar";
 
 const AllProductsPage: React.FC = () => {
   return (
     <div className={classes.ProductsPageContainer}>
-      <CurrentLocation></CurrentLocation>
+      <Breadcrumbs />
       <h1>All Products</h1>
-      <SingleFilter></SingleFilter>
+      <SingleFilter />
       <div className={classes.allProductsPageBody}>
-        <Sidebar></Sidebar>
-        <MainBlock></MainBlock>
+        <Sidebar />
+        <MainBlock />
       </div>
     </div>
   );

@@ -3,18 +3,17 @@
   flex-direction: row;
 }
 
-.contacts ul {
+.contactsList {
   display: flex;
   margin: auto 0;
   padding: 0;
-  list-style-type: none;
 }
 
-.contacts ul li {
+.contactsItem {
   padding: 2vh 3vw 0 0;
   cursor: pointer;
 }
 
-.contacts ul li:hover {
+.contactsItem:hover {
   color: #6a983c;
 }

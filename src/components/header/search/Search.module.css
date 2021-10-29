@@ -14,13 +14,13 @@
   padding-right: 0.5vw;
   border-right: 1px solid #d1d1d1;
 }
-.searchBarContainer img {
+.searchIcon {
   width: 1vw;
   height: 2vh;
   margin: auto 0;
 }
 
-.selectboxContainer select {
+.selectBox {
   border: none;
   font-size: 1.5em;
   font-weight: bold;
@@ -34,7 +34,7 @@
 .imgContainer {
   width: 5%;
 }
-.inputContainer input {
+.searchInput {
   border: none;
   background-color: transparent;
   width: 100%;
@@ -42,7 +42,7 @@
   padding: 0.7vh 0.7vw;
 }
 
-.inputContainer input:focus {
+.searchInput:focus {
   border: none;
   outline: none;
 }
