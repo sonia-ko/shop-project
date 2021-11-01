@@ -1,0 +1,19 @@
+.contacts {
+  display: flex;
+  flex-direction: row;
+}
+
+.contactsList {
+  display: flex;
+  margin: auto 0;
+  padding: 0;
+}
+
+.contactsItem {
+  padding: 2vh 3vw 0 0;
+  cursor: pointer;
+}
+
+.contactsItem:hover {
+  color: #6a983c;
+}
