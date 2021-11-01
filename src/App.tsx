@@ -17,10 +17,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header> </Header>
+        <Header />
         <Switch>
           <Redirect exact from="/" to="/products" />
-          <Route path="/products" render={() => <AllProductsPage />} />
+          <Route exact path="/products">
+            <AllProductsPage />
+          </Route>
+
           <Route exact path="/support">
             <LiveSupport />
           </Route>

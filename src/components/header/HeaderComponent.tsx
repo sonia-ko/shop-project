@@ -12,12 +12,14 @@ const Header: React.FC = () => {
   return (
     <div className={classes.header}>
       <div className={classes.topNavBar}>
-        <Contacts></Contacts>
-        <MainMenu></MainMenu>
+        <Contacts />
+        <MainMenu />
       </div>
       <div className={classes.searchSection}>
-        <div className={classes.companyNameSection}>{companyName}</div>
-        <Search></Search>
+        <a href="/products" className={classes.companyNameSection}>
+          {companyName}
+        </a>
+        <Search />
         <div className={classes.iconsSection}>
           <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
           <img
@@ -27,7 +29,7 @@ const Header: React.FC = () => {
           />
         </div>
       </div>
-      <ProductsMenu></ProductsMenu>
+      <ProductsMenu />
     </div>
   );
 };

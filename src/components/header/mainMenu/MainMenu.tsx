@@ -7,17 +7,14 @@ const MainMenu: React.FC = () => {
   return (
     <nav className={classes.mainMenuContainer}>
       <ul className={classes.menuItems}>
-        <li className={classes.menuItem} onClick={() => history.push("/blog")}>
-          Blog
+        <li className={classes.menuItem}>
+          <a href="/blog">Blog</a>
         </li>
-        <li className={classes.menuItem} onClick={() => history.push("/about")}>
-          About Us
+        <li className={classes.menuItem}>
+          <a href="/about">About Us</a>
         </li>
-        <li
-          className={classes.menuItem}
-          onClick={() => history.push("/careers")}
-        >
-          Careers
+        <li className={classes.menuItem}>
+          <a href="/careers">Careers</a>
         </li>
       </ul>
     </nav>
