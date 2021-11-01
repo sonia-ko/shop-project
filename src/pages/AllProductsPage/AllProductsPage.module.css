@@ -1,0 +1,17 @@
+.ProductsPageContainer {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 4vh;
+}
+
+.allProductsPageBody {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: black;
+  font-weight: bold;
+  font-size: 2.5em;
+}

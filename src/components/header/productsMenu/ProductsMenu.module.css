@@ -1,0 +1,40 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.productsMenu {
+  list-style-type: none;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.menuItem {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.selectBox {
+  border: none;
+  text-align: center;
+  font-size: 1em;
+  padding: 0 1vw;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-family: "Prompt", sans-serif;
+  font-weight: 500;
+}
+
+.selectOption {
+  text-align: center;
+  font-weight: bold;
+}
+
+.selectBox:focus {
+  border: none;
+  outline: none;
+}
