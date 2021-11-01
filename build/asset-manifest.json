@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/shop-project/build/static/css/main.8f340791.chunk.css",
-    "main.js": "/shop-project/build/static/js/main.9e3d36e2.chunk.js",
-    "main.js.map": "/shop-project/build/static/js/main.9e3d36e2.chunk.js.map",
+    "main.js": "/shop-project/build/static/js/main.251abf63.chunk.js",
+    "main.js.map": "/shop-project/build/static/js/main.251abf63.chunk.js.map",
     "runtime-main.js": "/shop-project/build/static/js/runtime-main.4d381f17.js",
     "runtime-main.js.map": "/shop-project/build/static/js/runtime-main.4d381f17.js.map",
-    "static/js/2.104aed1a.chunk.js": "/shop-project/build/static/js/2.104aed1a.chunk.js",
-    "static/js/2.104aed1a.chunk.js.map": "/shop-project/build/static/js/2.104aed1a.chunk.js.map",
+    "static/js/2.c21c35f9.chunk.js": "/shop-project/build/static/js/2.c21c35f9.chunk.js",
+    "static/js/2.c21c35f9.chunk.js.map": "/shop-project/build/static/js/2.c21c35f9.chunk.js.map",
     "index.html": "/shop-project/build/index.html",
     "static/css/main.8f340791.chunk.css.map": "/shop-project/build/static/css/main.8f340791.chunk.css.map",
-    "static/js/2.104aed1a.chunk.js.LICENSE.txt": "/shop-project/build/static/js/2.104aed1a.chunk.js.LICENSE.txt",
+    "static/js/2.c21c35f9.chunk.js.LICENSE.txt": "/shop-project/build/static/js/2.c21c35f9.chunk.js.LICENSE.txt",
     "static/media/searching.c7c3e6e6.png": "/shop-project/build/static/media/searching.c7c3e6e6.png",
     "static/media/shopping-cart.65bf430a.png": "/shop-project/build/static/media/shopping-cart.65bf430a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4d381f17.js",
-    "static/js/2.104aed1a.chunk.js",
+    "static/js/2.c21c35f9.chunk.js",
     "static/css/main.8f340791.chunk.css",
-    "static/js/main.9e3d36e2.chunk.js"
+    "static/js/main.251abf63.chunk.js"
   ]
 }
