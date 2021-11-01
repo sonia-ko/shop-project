@@ -2,6 +2,7 @@ import React from "react";
 import { companyPhoneNum } from "../../../Config";
 import { companyEmail } from "../../../Config";
 import classes from "./Contacts.module.css";
+import { Link } from "react-router-dom";
 
 const Contacts: React.FC = () => {
   const emailLink: string = `mailto:${companyEmail}`;
@@ -11,7 +12,7 @@ const Contacts: React.FC = () => {
     <div className={classes.contacts}>
       <ul className={classes.contactsList}>
         <li className={classes.contactsItem}>
-          <a href="/support">Chat with us</a>
+          <Link to="/support">Chat with us</Link>
         </li>
 
         <li className={classes.contactsItem}>
