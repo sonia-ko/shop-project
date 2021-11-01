@@ -7,6 +7,7 @@ import Search from "./search/Search";
 import cartIcon from "./shopping-cart.png";
 import userIcon from "./user.png";
 import ProductsMenu from "./productsMenu/ProductsMenu";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
@@ -16,9 +17,9 @@ const Header: React.FC = () => {
         <MainMenu />
       </div>
       <div className={classes.searchSection}>
-        <a href="/products" className={classes.companyNameSection}>
+        <Link className={classes.companyNameSection} to="/products">
           {companyName}
-        </a>
+        </Link>
         <Search />
         <div className={classes.iconsSection}>
           <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
