@@ -1,12 +1,16 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
 import RowOfStars from "../../../../components/filters/RatingElements/RowOfStars";
-import classNames from "classnames";
 import GreenButton from "../../../../components/buttons/GreenButton";
+import GrayButton from "../../../../components/buttons/GrayButton";
 
 const ProductOverview: React.FC = () => {
   const openProduct = () => {
     console.log("Product opened");
+  };
+
+  const addToWishList = () => {
+    console.log("Product added to wishlist");
   };
 
   return (
@@ -18,10 +22,9 @@ const ProductOverview: React.FC = () => {
       />
 
       <div className={classes.productDescriptionBlock}>
-        <h4>Pizza Caesare</h4>
+        <h5>Pizza Caesare</h5>
         <p className={classes.productDescription}>
-          Tender chicken, Caesar dressing with tasty toppings baked to a golden
-          brown delight. You won’t be sorry!
+          Tender chicken, Caesar dressing with tasty toppings.
         </p>
         <RowOfStars
           itemName={"super-pizza"}
@@ -59,7 +62,7 @@ const ProductOverview: React.FC = () => {
         <div className={classes.shipping}> Free Shipping</div>
         <div className={classes.delivery}>Delivery in 1 day</div>
         <GreenButton onClick={openProduct} btnText={"Product detail"} />
-        <button> ♥ Add to wish list</button>
+        <GrayButton btnText={"♥ Add to wish list"} onClick={addToWishList} />
       </div>
     </div>
   );

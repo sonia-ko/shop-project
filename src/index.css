@@ -30,7 +30,28 @@ h3 {
     font-weight: 600;
 }
 
+h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
 button {
     display: block;
     font-family: "Open Sans", sans-serif;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+button {
+    font-family: Poppins;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    background-color: transparent;
+    padding: 2vh 2vw;
+    border-radius: 12px;
 }
