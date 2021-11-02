@@ -3,9 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { store } from "./store/store";
 
-type Props = {};
-
-const Root: React.FC<Props> = ({ children }) => {
+const Root: React.FC = ({ children }) => {
   return (
     <Provider store={store}>
       {/* <Router basename="/shop-project/build">{children}</Router> */}

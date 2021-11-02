@@ -1,0 +1,29 @@
+.rangeControls {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    width: 75%;
+}
+
+.numberInput {
+    margin: 1vh 0;
+    width: 30%;
+    padding: 1.5vh 0.5vw;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+}
+
+.rangeInput {
+    -webkit-appearance: none;
+    background-color: rgb(190, 32, 32);
+    width: 200px;
+    height: 20px;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: rgb(47, 223, 47);
+    opacity: 0.5;
+    width: 10px;
+    height: 26px;
+}

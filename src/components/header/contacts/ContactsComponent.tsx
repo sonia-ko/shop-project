@@ -2,21 +2,17 @@ import React from "react";
 import { companyPhoneNum } from "../../../Config";
 import { companyEmail } from "../../../Config";
 import classes from "./Contacts.module.css";
-import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const Contacts: React.FC = () => {
   const emailLink: string = `mailto:${companyEmail}`;
   const phoneLink: string = `tel:${companyPhoneNum}`;
-  const history = useHistory();
 
   return (
     <div className={classes.contacts}>
       <ul className={classes.contactsList}>
-        <li
-          className={classes.contactsItem}
-          onClick={() => history.push("/support")}
-        >
-          Chat with us
+        <li className={classes.contactsItem}>
+          <Link to="/support">Chat with us</Link>
         </li>
 
         <li className={classes.contactsItem}>

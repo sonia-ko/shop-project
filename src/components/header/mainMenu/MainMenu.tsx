@@ -1,23 +1,19 @@
 import React from "react";
 import classes from "./MainMenu.module.css";
-import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const MainMenu: React.FC = () => {
-  const history = useHistory();
   return (
     <nav className={classes.mainMenuContainer}>
       <ul className={classes.menuItems}>
-        <li className={classes.menuItem} onClick={() => history.push("/blog")}>
-          Blog
+        <li className={classes.menuItem}>
+          <Link to="/blog">Blog</Link>
         </li>
-        <li className={classes.menuItem} onClick={() => history.push("/about")}>
-          About Us
+        <li className={classes.menuItem}>
+          <Link to="/about">About Us</Link>
         </li>
-        <li
-          className={classes.menuItem}
-          onClick={() => history.push("/careers")}
-        >
-          Careers
+        <li className={classes.menuItem}>
+          <Link to="/careers">Careers</Link>
         </li>
       </ul>
     </nav>

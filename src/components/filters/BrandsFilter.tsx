@@ -1,6 +1,6 @@
 import React from "react";
 import { brands } from "../../Config";
-import classes from "./BrandsFilter.module.css";
+import CheckBox from "../Checkbox/Checkbox";
 
 const BrandsFilter: React.FC = () => {
   return (
@@ -10,19 +10,9 @@ const BrandsFilter: React.FC = () => {
       <div>
         {brands.map((item, i) => {
           return (
-            <label
-              key={"input" + item}
-              htmlFor={"input" + item}
-              className={classes.checkbox}
-            >
-              <input
-                className={classes.input}
-                key={"input" + item}
-                type="checkbox"
-                id={"input" + item}
-              />
-              <span className={classes.checkboxOption}>{item}</span>
-            </label>
+            <CheckBox key={"input" + item} item={item}>
+              {item}
+            </CheckBox>
           );
         })}
       </div>

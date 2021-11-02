@@ -10,7 +10,7 @@
 
 .checkboxOption {
     color: inherit;
-    padding: 0.25rem 0.25rem;
+    padding: 0.15rem 0.15rem;
     width: 90%;
     display: flex;
     align-content: center;
@@ -43,7 +43,7 @@
     color: #ffffff;
     position: absolute;
     left: 0.5rem;
-    top: 0.25rem;
+    top: 0.18rem;
 }
 
 .input:active {
