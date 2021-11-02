@@ -1,0 +1,15 @@
+.buttonGreen {
+    margin: 2vh 0;
+    padding: 2vh 2vw;
+    color: #ffffff;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    background-color: green;
+}
+
+.buttonGreen:hover {
+    color: #b2e6bf;
+}

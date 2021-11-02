@@ -1,4 +1,5 @@
 .sidebar {
-  width: 20%;
-  background-color: tomato;
+    width: 25%;
+    padding: 5vh 0;
+    margin: 0;
 }

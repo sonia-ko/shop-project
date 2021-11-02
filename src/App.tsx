@@ -12,6 +12,7 @@ import LiveSupport from "./pages/SupportPage/LiveSupport";
 import OurBlog from "./pages/Blog/OurBlog";
 import OurCareers from "./pages/Careers/OurCareers";
 import AboutUs from "./pages/AboutUsPage/AboutUs";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <AllProductsPage />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

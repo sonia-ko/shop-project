@@ -27,16 +27,43 @@ export const productCategories = [
   },
 ];
 
-// "Electronics",
-// "Food",
-// "Clothes",
-// "Skin and care",
-// "Toys",
-// "Special nutrition",
-// "Sports and outdoors",
-// "Books",
-
 export const companyPhoneNum = "420 336 775 664";
 export const companyName = "Freshnesecom";
 export const companyEmail = "info@freshnesecom.com";
 export const mainMenuItems = ["Blog", "About Us", "Careers"];
+
+export const secondaryCategories = [
+  "Most popular",
+  "New products",
+  "Top in USA",
+  "Total sale",
+];
+
+export const brands = [
+  "Super Brand",
+  "Shop Products Inc",
+  "Perfect Products CO",
+  "China Products",
+  "USA Brand New",
+];
+
+export const pageOwner = "petrbilek.com";
+export const copyrightYear = 2020;
+export const popularTags = [
+  "Beans",
+  "Carrots",
+  "Apples",
+  "Garlic",
+  "Mushrooms",
+  "Tomatoes",
+  "Chilli peppers",
+  "Broccoli",
+  "Watermelons",
+  "Cherries",
+  "Meat",
+  "Toys",
+  "Fish",
+  "Skirts",
+  "Fresh food",
+  "Lemons",
+];

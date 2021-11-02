@@ -1,17 +1,19 @@
 .ProductsPageContainer {
-  width: 95%;
-  margin: 0 auto;
-  padding-top: 4vh;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 4vh;
+    /* background-color: aqua; */
 }
 
 .allProductsPageBody {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
 }
 
 h1 {
-  color: black;
-  font-weight: bold;
-  font-size: 2.5em;
+    color: black;
+    font-weight: bold;
+    font-size: 2.5em;
 }

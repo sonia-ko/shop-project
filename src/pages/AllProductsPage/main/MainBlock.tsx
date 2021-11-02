@@ -1,10 +1,16 @@
 import React from "react";
 import classes from "./MainBlock.module.css";
+import ProductOverview from "../components/productOverview/ProductOverView";
 
 const MainBlock: React.FC = () => {
   return (
     <div className={classes.mainBlock}>
-      <div>Main Block</div>
+      <ProductOverview />
+      <ProductOverview />
+      <ProductOverview />
+      <ProductOverview />
+      <ProductOverview />
+      <ProductOverview />
     </div>
   );
 };
