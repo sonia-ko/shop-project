@@ -1,0 +1,10 @@
+.container {
+    width: 95%;
+    margin: 0 auto;
+    background-color: salmon;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}

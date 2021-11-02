@@ -3,7 +3,6 @@ import classes from "./Stars.module.css";
 import starFull from "./starFull.png";
 import starEmpty from "./starEmpty.png";
 import checkboxClasses from "../BrandsFilter.module.css";
-import { isTemplateExpression } from "typescript";
 
 const RowOfStars: React.FC<{
   starsEmpty: Boolean[];

@@ -1,0 +1,15 @@
+.buttonLight {
+    margin: 0 auto;
+    padding: 2vh 2vw;
+    color: #a9a9a9;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    background-color: transparent;
+}
+
+.buttonLight:hover {
+    color: #5c5858;
+}

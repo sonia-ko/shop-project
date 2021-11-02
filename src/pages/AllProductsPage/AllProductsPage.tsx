@@ -4,6 +4,7 @@ import classes from "./AllProductsPage.module.css";
 import SingleFilter from "./components/filterButtons/SingleFilter";
 import MainBlock from "./main/MainBlock";
 import Sidebar from "../../components/sidebar/SideBar";
+import PaginationContainer from "./components/PaginationBlock/PaginationContainer";
 
 const AllProductsPage: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const AllProductsPage: React.FC = () => {
         <Sidebar />
         <MainBlock />
       </div>
+      <PaginationContainer />
     </div>
   );
 };

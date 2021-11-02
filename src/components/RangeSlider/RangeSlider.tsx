@@ -4,6 +4,7 @@ import classes from "./RangeSlider.module.css";
 import rangeSliderModel from "../../models/rangeSliderModel";
 import classnames from "classnames";
 
+// the functionality of this component will be improved sooner, once I have the products
 const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
@@ -11,17 +12,15 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
   const maxValRef = useRef<HTMLInputElement>(null);
   const range = useRef<HTMLDivElement>(null);
 
-  // Convert to percentage
   const getPercent = useCallback(
     (value: number) => Math.round(((value - min) / (max - min)) * 100),
     [min, max]
   );
 
-  // Set width of the range to decrease from the left side
   useEffect(() => {
     if (maxValRef.current) {
       const minPercent = getPercent(minVal);
-      const maxPercent = getPercent(+maxValRef.current.value); // Precede with '+' to convert the value from type string to type number
+      const maxPercent = getPercent(+maxValRef.current.value);
 
       if (range.current) {
         range.current.style.left = `${minPercent}%`;
@@ -30,7 +29,6 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
     }
   }, [minVal, getPercent]);
 
-  // Set width of the range to decrease from the right side
   useEffect(() => {
     if (minValRef.current) {
       const minPercent = getPercent(+minValRef.current.value);
@@ -42,7 +40,6 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
     }
   }, [maxVal, getPercent]);
 
-  // Get min and max values when their state changes
   useEffect(() => {
     onChange({ min: minVal, max: maxVal });
   }, [minVal, maxVal, onChange]);
@@ -92,6 +89,11 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
                 className={classes.sliderLeftValue}
                 value={minVal}
                 type="number"
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const value = Math.min(+event.target.value, maxVal - 1);
+                  setMinVal(value);
+                  event.target.value = value.toString();
+                }}
               />
             </div>
             <div className={classes.inputsContainer}>
@@ -103,8 +105,13 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
                 className={classes.sliderRightValue}
                 value={maxVal}
                 type="number"
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const value = Math.max(+event.target.value, minVal + 1);
+                  setMaxVal(value);
+                  event.target.value = value.toString();
+                }}
               />
-            </div>{" "}
+            </div>
           </div>
         </div>
       </div>

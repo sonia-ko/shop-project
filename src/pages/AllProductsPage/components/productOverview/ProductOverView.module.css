@@ -1,0 +1,34 @@
+.container {
+    width: 93%;
+    margin: 1vh auto;
+    background-color: turquoise;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.productDescriptionBlock {
+    width: 30%;
+}
+
+.productImage {
+    width: 30%;
+}
+
+.actionsBlock {
+    width: 30%;
+}
+
+.additionalInfoListItem {
+    margin: 0;
+    padding: 0;
+    color: gray;
+}
+
+.additionalInfoList {
+    margin: 0;
+    padding: 0;
+}
