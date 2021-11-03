@@ -6,5 +6,6 @@
 .tags {
     display: flex;
     flex-wrap: wrap;
-    color: #151515;
+    margin: 0;
+    padding: 0;
 }

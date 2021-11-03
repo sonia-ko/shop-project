@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./SingleFilter.module.css";
+import classes from "./SortingButton.module.css";
 
-const SingleFilter: React.FC = () => {
+const SortingButton: React.FC = () => {
   return (
     <div className={classes.filterContainer}>
       <label className={classes.filterLabel} htmlFor="sortBy">
@@ -9,12 +9,11 @@ const SingleFilter: React.FC = () => {
       </label>
       <select className={classes.selectBox} name="sort By" id="sortBy">
         <option value="No-filter">Select</option>
-        <option value="Country">Country</option>
         <option value="Price">Price</option>
-        <option value="Quality">Quality</option>
+        <option value="Quality">Rating</option>
       </select>
     </div>
   );
 };
 
-export default SingleFilter;
+export default SortingButton;

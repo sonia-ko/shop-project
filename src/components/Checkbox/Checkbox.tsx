@@ -1,18 +1,20 @@
 import React from "react";
 import classes from "./Checkbox.module.css";
 
-const CheckBox: React.FC<{
+interface CheckBoxProps {
   item: string;
-}> = (props) => {
+}
+
+const CheckBox: React.FC<CheckBoxProps> = ({ item, children }) => {
   return (
-    <label htmlFor={"input" + props.item} className={classes.checkbox}>
+    <label htmlFor={"input" + item} className={classes.checkbox}>
       <input
         className={classes.input}
-        key={"input" + props.item}
+        key={"input" + item}
         type="checkbox"
-        id={"input" + props.item}
+        id={"input" + item}
       />
-      <span className={classes.checkboxOption}>{props.children}</span>
+      <span className={classes.checkboxOption}>{children}</span>
     </label>
   );
 };

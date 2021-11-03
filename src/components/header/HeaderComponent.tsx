@@ -2,7 +2,7 @@ import React from "react";
 import MainMenu from "./mainMenu/MainMenu";
 import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
-import { companyName } from "../../Config";
+import { companyName } from "../../static/CompanyData";
 import Search from "./search/Search";
 import cartIcon from "./shopping-cart.png";
 import userIcon from "./user.png";

@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./Tag.module.css";
 
-const Tag: React.FC<{
+interface TagsProps {
   tagText: string;
-}> = (props) => {
-  return <div className={classes.tag}>{props.tagText}</div>;
+}
+const Tag: React.FC<TagsProps> = ({ tagText }) => {
+  return <li className={classes.tag}>{tagText}</li>;
 };
 
 export default Tag;

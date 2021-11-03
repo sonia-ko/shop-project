@@ -1,7 +1,12 @@
 import React from "react";
 import LinksList from "./LinksList";
 import classes from "./SocialLinksBlock.module.css";
-import { Connections, Earnings, Account, GetInTouch } from "../../../Config";
+import {
+  Connections,
+  Earnings,
+  Account,
+  GetInTouch,
+} from "../../../static/CompanyData";
 
 const SocialLinksBlock: React.FC = () => {
   return (

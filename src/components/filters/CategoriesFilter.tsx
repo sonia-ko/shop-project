@@ -1,5 +1,5 @@
 import React from "react";
-import { secondaryCategories } from "../../Config";
+import { secondaryCategories } from "../../static/WebsiteData";
 import classes from "./CategoriesFilter.module.css";
 
 const CategoriesFilter: React.FC = () => {

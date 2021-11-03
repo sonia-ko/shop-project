@@ -2,20 +2,21 @@ import React from "react";
 import classes from "./LinksList.module.css";
 import { Link } from "react-router-dom";
 
-const LinksList: React.FC<{
+interface LinksListProps {
   links: Array<Array<string>>;
   sectionName: string;
-}> = (props) => {
+}
+
+const LinksList: React.FC<LinksListProps> = ({ links, sectionName }) => {
   return (
     <div className={classes.container}>
-      <h4>{props.sectionName}</h4>
+      <h4>{sectionName}</h4>
       <ul className={classes.list}>
-        {props.links.map((item) => {
+        {links.map((item) => {
           return (
             <li>
               {item[1].startsWith("http") ? (
                 <a className={classes.item} href={item[1]}>
-                  {" "}
                   {item[0]}
                 </a>
               ) : (

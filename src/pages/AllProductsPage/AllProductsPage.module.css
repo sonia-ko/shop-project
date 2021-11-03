@@ -1,11 +1,11 @@
-.ProductsPageContainer {
+.container {
     width: 95%;
     margin: 0 auto;
     padding-top: 4vh;
     /* background-color: aqua; */
 }
 
-.allProductsPageBody {
+.body {
     display: flex;
     justify-content: space-between;
     width: 100%;

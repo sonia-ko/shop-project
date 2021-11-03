@@ -1,8 +1,8 @@
 import React from "react";
-import GreenButton from "../../../../components/buttons/GreenButton";
 import Pagination from "./Pagination";
 import TotalProducts from "./TotalProducts";
 import classes from "./PaginationContainer.module.css";
+import Button from "../../../../components/buttons/Button";
 
 const PaginationContainer: React.FC = () => {
   const showMoreProducts = () => {
@@ -12,7 +12,11 @@ const PaginationContainer: React.FC = () => {
   return (
     <div className={classes.container}>
       <Pagination />
-      <GreenButton btnText={"Show more products"} onClick={showMoreProducts} />
+      <Button
+        btnText={"Show more products"}
+        onClick={showMoreProducts}
+        btnStyle={"green"}
+      />
       <TotalProducts />
     </div>
   );

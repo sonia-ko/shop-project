@@ -1,0 +1,25 @@
+.filterContainer {
+    display: flex;
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    align-items: center;
+    padding: 2vh 2vw;
+    width: 15%;
+    margin: 2vh 0;
+}
+
+.filterLabel {
+    border-right: 1px solid #d1d1d1;
+    padding-right: 1vw;
+    font-size: 1.1em;
+    width: 50%;
+}
+
+.selectBox {
+    margin-left: 1vw;
+    color: black;
+    width: 50%;
+    border: none;
+    font-weight: 600;
+}

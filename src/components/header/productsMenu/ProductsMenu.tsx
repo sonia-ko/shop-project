@@ -1,5 +1,5 @@
 import React from "react";
-import { productCategories } from "../../../Config";
+import { productCategories } from "../../../static/WebsiteData";
 import classes from "./ProductsMenu.module.css";
 
 const ProductsMenu: React.FC = () => {

@@ -1,20 +1,20 @@
 import React from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import classes from "./AllProductsPage.module.css";
-import SingleFilter from "./components/filterButtons/SingleFilter";
-import MainBlock from "./main/MainBlock";
+import SortingButton from "./components/sorting/SortingButton";
+import ProductListSection from "./productList/ProductListSection";
 import Sidebar from "../../components/sidebar/SideBar";
 import PaginationContainer from "./components/PaginationBlock/PaginationContainer";
 
 const AllProductsPage: React.FC = () => {
   return (
-    <div className={classes.ProductsPageContainer}>
+    <div className={classes.container}>
       <Breadcrumbs />
       <h1>All Products</h1>
-      <SingleFilter />
-      <div className={classes.allProductsPageBody}>
+      <SortingButton />
+      <div className={classes.body}>
         <Sidebar />
-        <MainBlock />
+        <ProductListSection />
       </div>
       <PaginationContainer />
     </div>

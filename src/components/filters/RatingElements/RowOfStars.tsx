@@ -4,19 +4,20 @@ import starFull from "./starFull.png";
 import starEmpty from "./starEmpty.png";
 import checkboxClasses from "../BrandsFilter.module.css";
 
-const RowOfStars: React.FC<{
+interface RowOfStarsProps {
   starsEmpty: Boolean[];
   itemName: string;
-}> = (props) => {
+}
+const RowOfStars: React.FC<RowOfStarsProps> = ({ starsEmpty, itemName }) => {
   return (
     <div className={checkboxClasses.checkboxOption}>
-      {props.starsEmpty.map((item, i) => {
+      {starsEmpty.map((item, i) => {
         return (
           <img
             className={classes.starIcon}
             src={item ? starEmpty : starFull}
             alt="star icon"
-            key={props.itemName + i}
+            key={itemName + i}
           />
         );
       })}

@@ -1,8 +1,7 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
 import RowOfStars from "../../../../components/filters/RatingElements/RowOfStars";
-import GreenButton from "../../../../components/buttons/GreenButton";
-import GrayButton from "../../../../components/buttons/GrayButton";
+import Button from "../../../../components/buttons/Button";
 
 const ProductOverview: React.FC = () => {
   const openProduct = () => {
@@ -61,8 +60,16 @@ const ProductOverview: React.FC = () => {
         <div className={classes.oldPrice}>48.56</div>
         <div className={classes.shipping}> Free Shipping</div>
         <div className={classes.delivery}>Delivery in 1 day</div>
-        <GreenButton onClick={openProduct} btnText={"Product detail"} />
-        <GrayButton btnText={"♥ Add to wish list"} onClick={addToWishList} />
+        <Button
+          btnStyle={"green"}
+          onClick={openProduct}
+          btnText={"Product detail"}
+        />
+        <Button
+          btnText={"♥ Add to wish list"}
+          onClick={addToWishList}
+          btnStyle={"gray"}
+        />
       </div>
     </div>
   );

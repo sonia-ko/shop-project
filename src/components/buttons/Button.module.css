@@ -1,0 +1,29 @@
+.light {
+    margin: 0 auto;
+    color: #a9a9a9;
+    font-weight: bold;
+}
+
+.light:hover {
+    color: #5c5858;
+}
+
+.gray {
+    margin: 0;
+    color: black;
+    background: #f5f5f5;
+    font-size: 1.1em;
+    padding: 2vh 1.5vw;
+}
+
+.green {
+    margin: 2vh 0;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: green;
+    font-size: 1.1em;
+}
+
+.green:hover {
+    color: #b2e6bf;
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "./MainBlock.module.css";
+import classes from "./ProductListSection.module.css";
 import ProductOverview from "../components/productOverview/ProductOverView";
 
-const MainBlock: React.FC = () => {
+const ProductListSection: React.FC = () => {
   return (
     <div className={classes.mainBlock}>
       <ProductOverview />
@@ -15,4 +15,4 @@ const MainBlock: React.FC = () => {
   );
 };
 
-export default MainBlock;
+export default ProductListSection;

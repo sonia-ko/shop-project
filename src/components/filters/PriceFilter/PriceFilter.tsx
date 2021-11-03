@@ -1,17 +1,20 @@
 import React from "react";
-
 import RangeSlider from "../../RangeSlider/RangeSlider";
 
-const PriceRange: React.FC<{
+interface PriceFilterProps {
   defaultMin: number;
   defaultMax: number;
-}> = (props) => {
+}
+const PriceFilter: React.FC<PriceFilterProps> = ({
+  defaultMin,
+  defaultMax,
+}) => {
   return (
     <form>
       <h3>Price</h3>
       <RangeSlider
-        min={props.defaultMin}
-        max={props.defaultMax}
+        min={defaultMin}
+        max={defaultMax}
         onChange={({ min, max }: { min: number; max: number }) =>
           console.log(`min = ${min}, max = ${max}`)
         }
@@ -20,4 +23,4 @@ const PriceRange: React.FC<{
   );
 };
 
-export default PriceRange;
+export default PriceFilter;
