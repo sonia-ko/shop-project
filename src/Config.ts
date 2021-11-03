@@ -2,7 +2,7 @@
 
 export const productCategories = [
   { name: "Eletronics", categories: ["phones", "watches"], categId: 1 },
-  { name: "Food", categories: ["fruits", "vegetables"], categId: 2 },
+  { name: "Food", categories: ["fruits", "vegetables", "pizza"], categId: 2 },
   { name: "Clothes", categories: ["suits", "skirts"], categId: 3 },
   {
     name: "Skin and care",
