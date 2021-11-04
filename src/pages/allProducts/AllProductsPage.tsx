@@ -4,7 +4,7 @@ import classes from "./AllProductsPage.module.css";
 import SortingButton from "./components/sorting/SortingButton";
 import ProductListSection from "./productList/ProductListSection";
 import Sidebar from "../../components/sidebar/SideBar";
-import PaginationContainer from "./components/PaginationBlock/PaginationContainer";
+import PaginationContainer from "./components/paginationBlock/PaginationContainer";
 import { useState, useEffect } from "react";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
