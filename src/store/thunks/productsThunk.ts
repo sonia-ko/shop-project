@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
-import Product from "../../models/product";
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   try {

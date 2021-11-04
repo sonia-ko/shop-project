@@ -22,12 +22,16 @@ const Header: React.FC = () => {
         </Link>
         <Search />
         <div className={classes.iconsSection}>
-          <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
-          <img
-            className={classes.icon}
-            src={cartIcon}
-            alt="Shopping Cart Icon"
-          />
+          <Link to="/login">
+            <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
+          </Link>
+          <Link to="/cart">
+            <img
+              className={classes.icon}
+              src={cartIcon}
+              alt="Shopping Cart Icon"
+            />
+          </Link>
         </div>
       </div>
       <ProductsMenu />

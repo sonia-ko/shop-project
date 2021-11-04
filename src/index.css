@@ -21,7 +21,8 @@ ul {
 h1 {
     color: black;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2.3em;
+    font-family: "Poppins", sans-serif;
 }
 
 h2 {
@@ -47,6 +48,11 @@ h5 {
     font-weight: bold;
 }
 
+h6 {
+    text-align: center;
+    font-size: 1.4em;
+}
+
 button {
     display: block;
     font-family: "Poppins", sans-serif;
@@ -64,4 +70,30 @@ select,
 option {
     padding: 0;
     margin: 0;
+}
+
+option {
+    font-family: inherit;
+    background: #f9f9f9;
+}
+
+select:focus {
+    border: none;
+    outline: none;
+    background: #f9f9f9;
+}
+
+input {
+    font-size: 1.1em;
+}
+
+input:focus {
+    outline: none;
+}
+
+section {
+    width: 95%;
+    margin: auto auto;
+    padding: 15vh 0;
+    background-color: rgb(212, 198, 198);
 }

@@ -1,48 +1,53 @@
 .searchBarContainer {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  background-color: #f9f9f9;
-  color: #a9a9a9;
-  border: 1px solid #d1d1d1;
-  border-radius: 12px;
-  padding: 1.5vh 1vw 1.5vh 2vw;
-  width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    background-color: #f9f9f9;
+    color: #a9a9a9;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    padding: 1.5vh 1vw 1.5vh 2vw;
+    width: 38%;
 }
 
 .selectboxContainer {
-  padding-right: 0.5vw;
-  border-right: 1px solid #d1d1d1;
+    padding-right: 0.5vw;
+    border-right: 1px solid #d1d1d1;
 }
+
+.selectOption {
+    font-size: 1em;
+    font-weight: 200;
+    font-family: "Poppins", sans-serif;
+}
+
 .searchIcon {
-  width: 1vw;
-  height: 2vh;
-  margin: auto 0;
+    width: 1vw;
+    height: 2vh;
+    margin: auto 0;
 }
 
 .selectBox {
-  border: none;
-  font-size: 1.5em;
-  font-weight: bold;
-  background-color: transparent;
+    border: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
 }
 
 .inputContainer {
-  width: 52%;
+    width: 62%;
 }
 
 .imgContainer {
-  width: 5%;
-}
-.searchInput {
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  font-size: 1.2em;
-  padding: 0.7vh 0.7vw;
+    width: 3%;
 }
 
-.searchInput:focus {
-  border: none;
-  outline: none;
+.searchInput {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.3em;
+    padding: 0.7vh 0.7vw;
 }

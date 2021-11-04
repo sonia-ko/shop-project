@@ -11,7 +11,7 @@ export const productCategories = [
     categories: ["moisturizers", "shampoo"],
     categId: 4,
   },
-  { name: "Toys", categories: ["for newborns", "for toddlers"], categId: 5 },
+  { name: "Toys", categories: ["0 year", "1 year", "3+ years"], categId: 5 },
   {
     name: "Special nutrition",
     categories: ["for kids", "for adults"],

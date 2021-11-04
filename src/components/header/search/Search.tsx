@@ -7,10 +7,21 @@ const Search: React.FC = () => {
     <div className={classes.searchBarContainer}>
       <div className={classes.selectboxContainer}>
         <select className={classes.selectBox} name="category" id="category">
-          <option defaultValue="All categories">All categories&nbsp;</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Food">Food</option>
-          <option value="Clothes">Clothes</option>
+          <option
+            className={classes.selectOption}
+            defaultValue="All categories"
+          >
+            All categories&nbsp;
+          </option>
+          <option className={classes.selectOption} value="Electronics">
+            Electronics
+          </option>
+          <option className={classes.selectOption} value="Food">
+            Food
+          </option>
+          <option className={classes.selectOption} value="Clothes">
+            Clothes
+          </option>
         </select>
       </div>
       <div className={classes.inputContainer}>

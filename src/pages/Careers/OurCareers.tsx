@@ -1,7 +1,11 @@
 import React from "react";
 
 const OurCareers: React.FC = () => {
-  return <h2>Our Carrers page - will be soon</h2>;
+  return (
+    <section>
+      <h2>Our Careers page - will be soon</h2>
+    </section>
+  );
 };
 
 export default OurCareers;
