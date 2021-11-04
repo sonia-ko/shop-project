@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap");
 body {
     margin: 0;
     font-family: "Open Sans", sans-serif;
@@ -16,6 +16,12 @@ a {
 
 ul {
     list-style-type: none;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 2.5em;
 }
 
 h2 {
@@ -35,17 +41,15 @@ h4 {
     font-weight: 600;
 }
 
+h5 {
+    font-size: 1.4em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
 button {
     display: block;
-    font-family: "Open Sans", sans-serif;
-}
-
-h5 {
-    font-size: 1.2em;
-}
-
-button {
-    font-family: Poppins;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
     box-sizing: border-box;
     border: none;

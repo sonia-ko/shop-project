@@ -14,7 +14,7 @@ const LinksList: React.FC<LinksListProps> = ({ links, sectionName }) => {
       <ul className={classes.list}>
         {links.map((item) => {
           return (
-            <li>
+            <li key={"footerLink" + item}>
               {item[1].startsWith("http") ? (
                 <a className={classes.item} href={item[1]}>
                   {item[0]}

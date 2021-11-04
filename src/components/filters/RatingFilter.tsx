@@ -1,5 +1,5 @@
 import React from "react";
-import RowOfStars from "./RatingElements/RowOfStars";
+import RowOfStars from "../RatingElements/RowOfStars";
 import CheckBox from "../Checkbox/Checkbox";
 
 const RatingFilter: React.FC = () => {
@@ -9,6 +9,7 @@ const RatingFilter: React.FC = () => {
 
       <CheckBox item={"5-star"}>
         <RowOfStars
+          starColor={"golden"}
           itemName={"5-star"}
           starsEmpty={[false, false, false, false, false]}
         />
@@ -16,6 +17,7 @@ const RatingFilter: React.FC = () => {
 
       <CheckBox item={"4-star"}>
         <RowOfStars
+          starColor={"golden"}
           itemName={"4-star"}
           starsEmpty={[false, false, false, false, true]}
         />
@@ -23,6 +25,7 @@ const RatingFilter: React.FC = () => {
 
       <CheckBox item={"3-star"}>
         <RowOfStars
+          starColor={"golden"}
           itemName={"3-star"}
           starsEmpty={[false, false, false, true, true]}
         />
@@ -30,6 +33,7 @@ const RatingFilter: React.FC = () => {
 
       <CheckBox item={"2-star"}>
         <RowOfStars
+          starColor={"golden"}
           itemName={"2-star"}
           starsEmpty={[false, false, true, true, true]}
         />
@@ -37,6 +41,7 @@ const RatingFilter: React.FC = () => {
 
       <CheckBox item={"1-star"}>
         <RowOfStars
+          starColor={"golden"}
           itemName={"1-star"}
           starsEmpty={[false, true, true, true, true]}
         />

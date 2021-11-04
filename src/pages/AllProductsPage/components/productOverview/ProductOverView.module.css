@@ -1,10 +1,9 @@
 .container {
-    width: 93%;
+    width: 98%;
     margin: 1vh auto;
-    background-color: turquoise;
     display: flex;
     justify-content: space-between;
-    padding: 2vh 2vw;
+    padding: 0;
     border: 1px solid #d1d1d1;
     border-radius: 12px;
     background: #ffffff;
@@ -15,7 +14,10 @@
 }
 
 .productImage {
-    width: 30%;
+    width: 23vw;
+    height: 35vh;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 .actionsBlock {

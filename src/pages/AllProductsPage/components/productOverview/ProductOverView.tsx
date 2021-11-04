@@ -1,9 +1,17 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
-import RowOfStars from "../../../../components/filters/RatingElements/RowOfStars";
+import RowOfStars from "../../../../components/RatingElements/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 
-const ProductOverview: React.FC = () => {
+interface ProductOverviewProps {
+  picture: string;
+  title: string;
+}
+
+const ProductOverview: React.FC<ProductOverviewProps> = ({
+  picture,
+  title,
+}) => {
   const openProduct = () => {
     console.log("Product opened");
   };
@@ -14,18 +22,15 @@ const ProductOverview: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      <img
-        className={classes.productImage}
-        src="https://static.tildacdn.com/tild3364-3031-4362-b131-363939386537/noroot.png"
-        alt="Pizza"
-      />
+      <img className={classes.productImage} src={picture} alt="Pizza" />
 
       <div className={classes.productDescriptionBlock}>
-        <h5>Pizza Caesare</h5>
+        <h5>{title}</h5>
         <p className={classes.productDescription}>
           Tender chicken, Caesar dressing with tasty toppings.
         </p>
         <RowOfStars
+          starColor={"black"}
           itemName={"super-pizza"}
           starsEmpty={[false, false, false, false, false]}
         />

@@ -1,21 +1,27 @@
 import React from "react";
 import classes from "./Stars.module.css";
-import starFull from "./starFull.png";
+import goldenStar from "./goldStarIcon.png";
+import blackStar from "./blackStarIcon.png";
 import starEmpty from "./starEmpty.png";
-import checkboxClasses from "../BrandsFilter.module.css";
 
 interface RowOfStarsProps {
   starsEmpty: Boolean[];
   itemName: string;
+  starColor: "golden" | "black";
 }
-const RowOfStars: React.FC<RowOfStarsProps> = ({ starsEmpty, itemName }) => {
+const RowOfStars: React.FC<RowOfStarsProps> = ({
+  starsEmpty,
+  itemName,
+  starColor,
+}) => {
+  const starFilled = starColor === "golden" ? goldenStar : blackStar;
   return (
-    <div className={checkboxClasses.checkboxOption}>
+    <div className={classes.starsContainer}>
       {starsEmpty.map((item, i) => {
         return (
           <img
             className={classes.starIcon}
-            src={item ? starEmpty : starFull}
+            src={item ? starEmpty : starFilled}
             alt="star icon"
             key={itemName + i}
           />
