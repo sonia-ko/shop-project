@@ -1,6 +1,6 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
-import RowOfStars from "../../../../components/RatingElements/RowOfStars";
+import RowOfStars from "../../../../components/ratingElements/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 
 interface ProductOverviewProps {
@@ -30,8 +30,8 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
           Tender chicken, Caesar dressing with tasty toppings.
         </p>
         <RowOfStars
-          starColor={"black"}
-          itemName={"super-pizza"}
+          starColor="black"
+          itemName="super-pizza"
           starsEmpty={[false, false, false, false, false]}
         />
         <div className={classes.additionalInfo}>
@@ -66,14 +66,14 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
         <div className={classes.shipping}> Free Shipping</div>
         <div className={classes.delivery}>Delivery in 1 day</div>
         <Button
-          btnStyle={"green"}
+          btnStyle="green"
           onClick={openProduct}
-          btnText={"Product detail"}
+          btnText="Product detail"
         />
         <Button
-          btnText={"♥ Add to wish list"}
+          btnText="♥ Add to wish list"
           onClick={addToWishList}
-          btnStyle={"gray"}
+          btnStyle="gray"
         />
       </div>
     </div>

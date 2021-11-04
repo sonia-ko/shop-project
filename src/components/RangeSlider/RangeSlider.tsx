@@ -58,7 +58,7 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
           event.target.value = value.toString();
         }}
         className={classnames(`${classes.thumb} ${classes.thumbZindex3}`, {
-          "thumb--zindex-5": minVal > max - 100,
+          thumbZindex5: minVal > max - 100,
         })}
       />
       <input

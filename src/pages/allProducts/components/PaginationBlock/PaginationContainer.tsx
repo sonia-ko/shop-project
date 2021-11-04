@@ -13,9 +13,9 @@ const PaginationContainer: React.FC = () => {
     <div className={classes.container}>
       <Pagination />
       <Button
-        btnText={"Show more products"}
+        btnText="Show more products"
         onClick={showMoreProducts}
-        btnStyle={"green"}
+        btnStyle="green"
       />
       <TotalProducts />
     </div>

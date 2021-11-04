@@ -11,10 +11,10 @@ import {
 const SocialLinksBlock: React.FC = () => {
   return (
     <div className={classes.container}>
-      <LinksList sectionName={"Get in touch"} links={GetInTouch} />
-      <LinksList sectionName={"Connections"} links={Connections} />
-      <LinksList sectionName={"Earnings"} links={Earnings} />
-      <LinksList sectionName={"Account"} links={Account} />
+      <LinksList sectionName="Get in touch" links={GetInTouch} />
+      <LinksList sectionName="Connections" links={Connections} />
+      <LinksList sectionName="Earnings" links={Earnings} />
+      <LinksList sectionName="Account" links={Account} />
     </div>
   );
 };
