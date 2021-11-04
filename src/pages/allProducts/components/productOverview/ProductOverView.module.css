@@ -1,0 +1,38 @@
+.container {
+    width: 98%;
+    margin: 4vh auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.productDescriptionBlock {
+    width: 30%;
+    padding: 1vh 0 1vh 0;
+}
+
+.productImage {
+    width: 23vw;
+    height: 45vh;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.actionsBlock {
+    width: 30%;
+    padding: 5vh 0 3vh 0;
+}
+
+.additionalInfoListItem {
+    margin: 0;
+    padding: 0;
+    color: gray;
+}
+
+.additionalInfoList {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,15 @@
+.tag {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 1.1em;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 1vh 0.7vw;
+    margin: 1vh 0.3vw;
+    cursor: pointer;
+    color: #151515;
+}
+
+.tag:hover {
+    background: #d1cdcd;
+}

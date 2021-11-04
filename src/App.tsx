@@ -6,12 +6,13 @@ import {
   Redirect,
 } from "react-router-dom";
 import Header from "./components/header/HeaderComponent";
-import AllProductsPage from "./pages/AllProductsPage/AllProductsPage";
+import AllProductsPage from "./pages/allProducts/AllProductsPage";
 import PageNotFound from "./pages/404Page/PageNotFound";
-import LiveSupport from "./pages/SupportPage/LiveSupport";
-import OurBlog from "./pages/Blog/OurBlog";
-import OurCareers from "./pages/Careers/OurCareers";
-import AboutUs from "./pages/AboutUsPage/AboutUs";
+import LiveSupport from "./pages/supportPage/LiveSupport";
+import OurBlog from "./pages/blog/OurBlog";
+import OurCareers from "./pages/careers/OurCareers";
+import AboutUs from "./pages/aboutUsPage/AboutUs";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <AllProductsPage />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
