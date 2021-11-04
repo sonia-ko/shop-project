@@ -1,6 +1,6 @@
 .container {
     width: 98%;
-    margin: 1vh auto;
+    margin: 4vh auto;
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -11,18 +11,19 @@
 
 .productDescriptionBlock {
     width: 30%;
+    padding: 1vh 0 1vh 0;
 }
 
 .productImage {
     width: 23vw;
-    height: 35vh;
+    height: 45vh;
     border-radius: 12px;
     object-fit: cover;
 }
 
 .actionsBlock {
     width: 30%;
-    padding-top: 5vh;
+    padding: 5vh 0 3vh 0;
 }
 
 .additionalInfoListItem {

@@ -24,9 +24,13 @@ const ProductListSection: React.FC = () => {
       {products.map((product) => {
         return (
           <ProductOverview
+            rating={product.rating}
             title={product.title}
             picture={product.mainPicture}
             key={product.id}
+            price={product.price}
+            farm={product.farm}
+            shortOverview={product.shortDescription}
           />
         );
       })}

@@ -25,7 +25,7 @@
     border: none;
     text-align: center;
     font-size: 1em;
-    padding: 0 1vw;
+    padding: 0;
     -moz-appearance: none;
     -webkit-appearance: none;
     font-family: "Prompt", sans-serif;
@@ -36,7 +36,9 @@
 .selectOption {
     text-align: center;
     font-weight: 400;
+    font-size: 0.9em;
     background: #f9f9f9;
+    border: none;
 }
 
 .selectBox:focus {

@@ -6,11 +6,19 @@ import Button from "../../../../components/buttons/Button";
 interface ProductOverviewProps {
   picture: string;
   title: string;
+  price: number;
+  rating: boolean[];
+  farm: string;
+  shortOverview: string;
 }
 
 const ProductOverview: React.FC<ProductOverviewProps> = ({
   picture,
   title,
+  rating,
+  farm,
+  price,
+  shortOverview,
 }) => {
   const openProduct = () => {
     console.log("Product opened");
@@ -26,13 +34,11 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
 
       <div className={classes.productDescriptionBlock}>
         <h5>{title}</h5>
-        <p className={classes.productDescription}>
-          Tender chicken, Caesar dressing with tasty toppings.
-        </p>
+        <p className={classes.productDescription}>{shortOverview}</p>
         <RowOfStars
           starColor="black"
           itemName="super-pizza"
-          starsEmpty={[false, false, false, false, false]}
+          starsEmpty={rating}
         />
         <div className={classes.additionalInfo}>
           <ul className={classes.additionalInfoList}>
@@ -44,9 +50,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
             </li>
             <li className={classes.additionalInfoListItem}>
               <span className={classes.category}>Farm: </span>
-              <span className={classes.categoryDescription}>
-                Grocery Tarn Fields
-              </span>
+              <span className={classes.categoryDescription}>{farm}</span>
             </li>
             <li className={classes.additionalInfoListItem}>
               <span className={classes.category}>Delivery: </span>
@@ -61,7 +65,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
       </div>
 
       <div className={classes.actionsBlock}>
-        <div className={classes.newPrice}>36.99 USD </div>
+        <div className={classes.newPrice}>${price} </div>
         <div className={classes.oldPrice}>48.56</div>
         <div className={classes.shipping}> Free Shipping</div>
         <div className={classes.delivery}>Delivery in 1 day</div>
