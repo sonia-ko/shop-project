@@ -31,6 +31,12 @@ const ProductListSection: React.FC = () => {
             price={product.price}
             farm={product.farm}
             shortOverview={product.shortDescription}
+            oldPrice={product.oldPrice}
+            freshness={product.freshness}
+            deliveryArea={product.deliveryArea}
+            stockNumber={product.stockNumber}
+            specialProduct={product.specialProduct}
+            deliveryTime={product.deliveryTime}
           />
         );
       })}
