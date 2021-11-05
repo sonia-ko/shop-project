@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&family=Prompt:wght@100;200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&family=Prompt:wght@100;200;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap");
 body {
     margin: 0;
     font-family: "Open Sans", sans-serif;
     width: 100%;
     font-size: 0.8rem;
-    color: #151515;
     background-color: #fdfdfd;
 }
 
@@ -17,11 +16,10 @@ a {
 
 ul {
     list-style-type: none;
+    padding: 0;
 }
 
 h1 {
-    color: black;
-    font-weight: bold;
     font-size: 2.3em;
     font-family: "Poppins", sans-serif;
 }
@@ -73,21 +71,27 @@ select,
 option {
     padding: 0;
     margin: 0;
+    border: none;
 }
 
 option {
     font-family: inherit;
-    background: #f9f9f9;
+    background-color: transparent;
+}
+
+select {
+    background-color: transparent;
 }
 
 select:focus {
     border: none;
     outline: none;
-    background: #f9f9f9;
+    background-color: transparent;
 }
 
 input {
     font-size: 1.1em;
+    background-color: transparent;
 }
 
 input:focus {
@@ -104,4 +108,18 @@ section {
 p {
     margin: 0;
     padding: 1vh 0;
+}
+
+.flex {
+    display: flex;
+}
+
+hr {
+    width: 90%;
+    padding: 0 1.5vw;
+    border-bottom: 0.1vh solid rgba(245, 234, 234, 0.678);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto;
 }

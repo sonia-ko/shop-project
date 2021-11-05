@@ -2,16 +2,16 @@ export const productCategories = [
   { name: "Eletronics", categories: ["phones", "watches"], categId: 1 },
   {
     name: "Food",
-    categories: ["fruits", "vegetables", "pizza", "berries"],
+    categories: ["fruits", "other", "pizza", "berries"],
     categId: 2,
   },
   { name: "Clothes", categories: ["suits", "skirts"], categId: 3 },
   {
     name: "Skin and care",
-    categories: ["moisturizers", "shampoo"],
+    categories: ["lotion", "shampoo"],
     categId: 4,
   },
-  { name: "Toys", categories: ["0 year", "1 year", "3+ years"], categId: 5 },
+  { name: "Toys", categories: ["small", "big"], categId: 5 },
   {
     name: "Special nutrition",
     categories: ["for kids", "for adults"],
@@ -24,7 +24,7 @@ export const productCategories = [
   },
   {
     name: "Books",
-    categories: ["educational", "fiction"],
+    categories: [],
     categId: 8,
   },
 ];

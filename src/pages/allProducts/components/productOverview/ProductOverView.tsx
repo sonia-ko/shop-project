@@ -2,13 +2,10 @@ import classes from "./ProductOverView.module.css";
 import React from "react";
 import RowOfStars from "../../../../components/ratingElements/RowOfStars";
 import Button from "../../../../components/buttons/Button";
-import heartIcon from "./heartIcon.gif";
+import heartIcon from "../../../../assets/heartIcon.gif";
 import classnames from "classnames";
-import arrowRight from "./arrowRight.png";
 
-// className={classnames(`${classes.thumb} ${classes.thumbZindex3}`, {
-//           thumbZindex5: minVal > max - 100,
-//         })}
+import arrowRight from "../../../../assets/arrowRight.png";
 
 interface ProductOverviewProps {
   picture: string;

@@ -4,18 +4,19 @@ import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
 import { companyName } from "../../static/CompanyData";
 import Search from "./search/Search";
-import cartIcon from "./shopping-cart.png";
-import userIcon from "./user.png";
+import cartIcon from "../../assets/ic-ecommerce-basket.png";
+import userIcon from "../../assets/ic-actions-user.png";
 import ProductsMenu from "./productsMenu/ProductsMenu";
 import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <div className={classes.header}>
+    <header className={classes.header}>
       <div className={classes.topNavBar}>
         <Contacts />
         <MainMenu />
       </div>
+      <hr />
       <div className={classes.searchSection}>
         <Link className={classes.companyNameSection} to="/products">
           {companyName}
@@ -23,11 +24,11 @@ const Header: React.FC = () => {
         <Search />
         <div className={classes.iconsSection}>
           <Link to="/login">
-            <img className={classes.icon} src={userIcon} alt="Sign-in icon" />
+            <img className={classes.loginIcon} src={userIcon} alt="" />
           </Link>
           <Link to="/cart">
             <img
-              className={classes.icon}
+              className={classes.cartIcon}
               src={cartIcon}
               alt="Shopping Cart Icon"
             />
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <ProductsMenu />
-    </div>
+    </header>
   );
 };
 

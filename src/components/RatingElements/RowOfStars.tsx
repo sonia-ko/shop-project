@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Stars.module.css";
-import goldenStar from "./goldStarIcon.png";
-import blackStar from "./blackStarIcon.png";
-import starEmpty from "./starEmpty.png";
+import goldenStar from "../../assets/goldStarIcon.png";
+import blackStar from "../../assets/blackStarIcon.png";
+import starEmpty from "../../assets/starEmpty.png";
 
 interface RowOfStarsProps {
   starsEmpty: Boolean[];

@@ -5,13 +5,13 @@
     border-radius: 12px;
     align-items: center;
     padding: 1.5vh 1vw;
-    width: 10%;
+    width: 10.5%;
     margin: 0;
 }
 
 .filterLabel {
     border-right: 1px solid #d1d1d1;
-    padding-right: 0.5vw;
+    padding-right: 0.6vw;
     font-size: 1em;
     width: 50%;
 }

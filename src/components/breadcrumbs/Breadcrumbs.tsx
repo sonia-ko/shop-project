@@ -2,12 +2,12 @@ import React from "react";
 import classes from "./Breadcrumbs.module.css";
 import { Link } from "react-router-dom";
 
-const CurrentLocation: React.FC = () => {
+const Breadcrumbs: React.FC = () => {
   return (
     <div className={classes.breadcrumbs}>
       <Link className={classes.oldLocation} to="/products">
         Homepage
-      </Link>{" "}
+      </Link>
       /
       <Link className={classes.currentLocation} to="/products">
         All Products
@@ -16,4 +16,4 @@ const CurrentLocation: React.FC = () => {
   );
 };
 
-export default CurrentLocation;
+export default Breadcrumbs;

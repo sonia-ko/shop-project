@@ -1,43 +1,35 @@
 import React from "react";
 import classes from "./Search.module.css";
-import searchIcon from "./searching.png";
+import searchIcon from "../../../assets/searching.png";
 
 const Search: React.FC = () => {
   return (
-    <div className={classes.searchBarContainer}>
+    // i need this container for the border-right to be displayed properly
+    <div className={classes.container}>
       <div className={classes.selectboxContainer}>
         <select className={classes.selectBox} name="category" id="category">
-          <option
-            className={classes.selectOption}
-            defaultValue="All categories"
-          >
+          <option className={classes.option} defaultValue="All categories">
             All categories&nbsp;
           </option>
-          <option className={classes.selectOption} value="Electronics">
+          <option className={classes.option} value="Electronics">
             Electronics
           </option>
-          <option className={classes.selectOption} value="Food">
+          <option className={classes.option} value="Food">
             Food
           </option>
-          <option className={classes.selectOption} value="Clothes">
+          <option className={classes.option} value="Clothes">
             Clothes
           </option>
         </select>
       </div>
-      <div className={classes.inputContainer}>
-        <input
-          className={classes.searchInput}
-          placeholder="Search Products, categories..."
-          type="text"
-        />
-      </div>
-      <div className={classes.imgContainer}>
-        <img
-          className={classes.searchIcon}
-          src={searchIcon}
-          alt="Search icon"
-        />
-      </div>
+
+      <input
+        className={classes.input}
+        placeholder="Search Products, categories..."
+        type="text"
+      />
+
+      <img className={classes.icon} src={searchIcon} alt="Search icon" />
     </div>
   );
 };

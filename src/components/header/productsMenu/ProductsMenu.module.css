@@ -2,39 +2,26 @@
     width: 90%;
     margin: 0 auto;
     background: #f9f9f9;
-    padding: 1vh 0;
 }
 
 .productsMenu {
-    list-style-type: none;
     display: flex;
-    width: 95%;
     justify-content: space-between;
+    margin: 0 auto;
+    padding: 2vh 1vw;
 }
 
 .menuItem {
-    font-size: 1.3em;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background: #f9f9f9;
+    font-size: 1.1vw;
 }
 
 .selectBox {
-    border: none;
     text-align: center;
     font-size: 1em;
-    padding: 0.2vh 0.25vw;
-    -moz-appearance: none;
-    -webkit-appearance: none;
     font-family: "Prompt", sans-serif;
     font-weight: 500;
-    background: #f9f9f9;
 }
 
 .selectOption {
-    text-align: center;
     font-weight: 200;
-    font-size: 0.95em;
-    background: #f9f9f9;
 }
