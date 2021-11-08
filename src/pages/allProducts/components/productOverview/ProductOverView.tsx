@@ -1,6 +1,6 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
-import RowOfStars from "../../../../components/ratingElements/RowOfStars";
+import RowOfStars from "../../../../components/rating/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
 import classnames from "classnames";
