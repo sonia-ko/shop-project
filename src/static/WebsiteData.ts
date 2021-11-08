@@ -2,7 +2,7 @@ export const productCategories = [
   { name: "Eletronics", categories: ["phones", "watches"], categId: 1 },
   {
     name: "Food",
-    categories: ["fruits", "other", "pizza", "berries"],
+    categories: ["fruits", "pizza", "berry", "other"],
     categId: 2,
   },
   { name: "Clothes", categories: ["suits", "skirts"], categId: 3 },
@@ -11,7 +11,7 @@ export const productCategories = [
     categories: ["lotion", "shampoo"],
     categId: 4,
   },
-  { name: "Toys", categories: ["small", "big"], categId: 5 },
+  { name: "Toys", categories: [], categId: 5 },
   {
     name: "Special nutrition",
     categories: ["for kids", "for adults"],
@@ -58,4 +58,9 @@ export const popularTags = [
   "Skirts",
   "Fresh food",
   "Lemons",
+  "Bananas",
+  "Pizza",
+  "Phones",
+  "Bread",
+  "Chicken",
 ];

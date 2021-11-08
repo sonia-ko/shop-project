@@ -16,7 +16,12 @@ const LinksList: React.FC<LinksListProps> = ({ links, sectionName }) => {
           return (
             <li key={"footerLink" + item}>
               {item[1].startsWith("http") ? (
-                <a className={classes.item} href={item[1]}>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className={classes.item}
+                  href={item[1]}
+                >
                   {item[0]}
                 </a>
               ) : (

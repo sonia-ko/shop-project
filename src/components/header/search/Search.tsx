@@ -4,12 +4,12 @@ import searchIcon from "../../../assets/searching.png";
 
 const Search: React.FC = () => {
   return (
-    // i need this container for the border-right to be displayed properly
     <div className={classes.container}>
+      {/* i need this container for the border-right to be displayed properly */}
       <div className={classes.selectboxContainer}>
         <select className={classes.selectBox} name="category" id="category">
           <option className={classes.option} defaultValue="All categories">
-            All categories&nbsp;
+            All categories
           </option>
           <option className={classes.option} value="Electronics">
             Electronics
@@ -22,13 +22,11 @@ const Search: React.FC = () => {
           </option>
         </select>
       </div>
-
       <input
         className={classes.input}
         placeholder="Search Products, categories..."
         type="text"
       />
-
       <img className={classes.icon} src={searchIcon} alt="Search icon" />
     </div>
   );

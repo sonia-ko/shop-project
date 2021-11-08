@@ -1,5 +1,6 @@
-.copyRight {
+.container {
     width: 95%;
     margin: 0 auto;
-    padding: 4vh 0;
+    padding: 4vh 0 6vh 0;
+    letter-spacing: 0.1em;
 }

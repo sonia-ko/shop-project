@@ -12,16 +12,36 @@
 }
 
 .menuItem {
-    font-size: 1.1vw;
+    font-size: 1.15vw;
 }
 
 .selectBox {
     text-align: center;
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: "Prompt", sans-serif;
     font-weight: 500;
+    padding: 0 0.7em 0 0;
 }
 
 .selectOption {
     font-weight: 200;
+    font-size: 0.85em;
+}
+
+@media (max-width: 1500px) {
+    .menuItem {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 1100px) {
+    .menuItem {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 800px) {
+    .menuItem {
+        font-size: 1.2em;
+    }
 }
