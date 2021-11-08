@@ -9,7 +9,7 @@ const SocialLinksBlock: React.FC = () => {
       {footerLinks.map((item) => {
         return (
           <LinksList
-            key={"linksLins" + item.name}
+            key={"footerLink" + item.name}
             sectionName={item.name}
             links={item.links}
           />

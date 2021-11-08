@@ -11,12 +11,12 @@ import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <header className={classes.header}>
+    <header>
       <div className={classes.topNavBar}>
         <Contacts />
         <MainMenu />
       </div>
-      <hr />
+
       <div className={classes.searchSection}>
         <Link className={classes.companyNameSection} to="/products">
           {companyName}

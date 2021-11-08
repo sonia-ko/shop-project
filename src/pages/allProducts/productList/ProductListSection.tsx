@@ -4,7 +4,7 @@ import ProductOverview from "../components/productOverview/ProductOverView";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { RootState } from "../../../store/store";
-import { fetchProducts } from "../../../store/thunks/productsThunk";
+import { fetchProducts } from "../../../store/actions/productsThunk";
 
 const ProductListSection: React.FC = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import Product from "../../models/product";
-import { fetchProducts, getProduct } from "../thunks/productsThunk";
+import { fetchProducts, getProduct } from "../actions/productsThunk";
 
 // Define a type for the slice state
 interface ProductsState {

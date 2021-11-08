@@ -1,12 +1,20 @@
-.header {
-    padding: 0.25vh 0 0 0;
-}
-
 .topNavBar {
     display: flex;
     width: 95%;
     margin: 0 auto;
     justify-content: space-between;
+    position: relative;
+}
+
+.topNavBar::after {
+    content: "";
+    position: absolute;
+    left: 1vw;
+    bottom: 0;
+    height: 1px;
+    width: 98%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(245, 234, 234, 0.678);
 }
 
 .searchSection {
@@ -30,16 +38,14 @@
 
 .iconsSection {
     display: flex;
-    width: 5%;
-    padding-right: 1vw;
 }
 
 .cartIcon {
     height: 23px;
-    padding: 0 1vw;
+    padding: 0 0.5vw;
 }
 
 .loginIcon {
-    padding: 0 1vw;
     height: 20px;
+    padding: 0 0.5vw;
 }

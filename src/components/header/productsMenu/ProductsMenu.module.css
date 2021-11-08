@@ -1,6 +1,6 @@
 .container {
     width: 90%;
-    margin: 0 auto;
+    margin: 0.5vh auto;
     background: #f9f9f9;
 }
 
@@ -21,6 +21,7 @@
     font-family: "Prompt", sans-serif;
     font-weight: 500;
     padding: 0 0.7em 0 0;
+    cursor: pointer;
 }
 
 .selectOption {

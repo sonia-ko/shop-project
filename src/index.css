@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&family=Prompt:wght@100;200;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap");
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family: "Open Sans", sans-serif;
-    width: 100%;
+    width: 97%;
     font-size: 0.8rem;
     background-color: #fdfdfd;
 }
@@ -17,6 +17,7 @@ a {
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -117,16 +118,6 @@ p {
 
 .flex {
     display: flex;
-}
-
-hr {
-    width: 90%;
-    padding: 0 1.5vw;
-    border-bottom: 0.1vh solid rgba(245, 234, 234, 0.678);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin: 0 auto;
 }
 
 footer {

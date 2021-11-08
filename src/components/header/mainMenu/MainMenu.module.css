@@ -3,6 +3,7 @@
 }
 
 .menuItem {
-    padding: 0 1vw;
+    display: block;
+    padding: 1.5vh 1vw;
     color: #6a983c;
 }

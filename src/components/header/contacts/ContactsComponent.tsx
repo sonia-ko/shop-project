@@ -1,6 +1,5 @@
 import React from "react";
 import { companyEmail, companyPhoneNum } from "../../../static/CompanyData";
-
 import classes from "./Contacts.module.css";
 import { Link } from "react-router-dom";
 

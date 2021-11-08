@@ -1,5 +1,6 @@
 .contactsItem {
-    padding: 0 1vw;
+    display: block;
+    padding: 1.5vh 1vw;
 }
 
 .contactsItem:hover {

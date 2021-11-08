@@ -64,3 +64,5 @@ export const popularTags = [
   "Bread",
   "Chicken",
 ];
+
+export const productsPerPage = 5;
