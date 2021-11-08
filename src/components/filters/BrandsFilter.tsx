@@ -1,6 +1,6 @@
 import React from "react";
 import { brands } from "../../static/Partners";
-import CheckBox from "../checkbox/Checkbox";
+import CheckBox from "../checkBoxElement/Checkbox";
 
 const BrandsFilter: React.FC = () => {
   return (
