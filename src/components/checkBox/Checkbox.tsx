@@ -1,8 +1,6 @@
 import React from "react";
 import classes from "./Checkbox.module.css";
 
-//checkbox input component
-
 interface CheckBoxProps {
   item: string;
 }

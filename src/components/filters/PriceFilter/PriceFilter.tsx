@@ -1,5 +1,5 @@
 import React from "react";
-import RangeSlider from "../../rangeSlider/RangeSlider";
+import RangeSlider from "../../rangeSliderElement/RangeSlider";
 
 interface PriceFilterProps {
   defaultMin: number;

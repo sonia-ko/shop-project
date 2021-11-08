@@ -1,6 +1,6 @@
 import React from "react";
 import RowOfStars from "../ratingElements/RowOfStars";
-import CheckBox from "../checkBoxElement/Checkbox";
+import CheckBox from "../checkBox/Checkbox";
 
 const RatingFilter: React.FC = () => {
   return (
