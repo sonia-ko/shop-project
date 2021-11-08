@@ -24,8 +24,6 @@ export const getProduct = createAsyncThunk(
       const querySnapshot = await getDocs(q);
       let payload: any;
       await querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, " => ", doc.data());
         payload = doc.data();
       });
       return payload;

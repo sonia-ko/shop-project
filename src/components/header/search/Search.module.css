@@ -6,8 +6,8 @@
     color: #a9a9a9;
     border: 1px solid #d1d1d1;
     border-radius: 12px;
-    padding: 1.25vh 1.25vw;
-    width: 30%;
+    padding: 1vh 1vw;
+    width: 35%;
 }
 
 .selectboxContainer {
@@ -35,5 +35,5 @@
     border: none;
     width: 70%;
     font-size: 1.2em;
-    padding: 0.75vh 0.75vw;
+    padding: 0.5vh 0.5vw;
 }

@@ -8,6 +8,9 @@ interface ProductsState {
   items: Product[];
   productsFetched: boolean;
   currentProduct: any;
+  numberOfProducts: number;
+  numberOfPages: number;
+  productsPerPage: 5;
 }
 
 // Define the initial state using that type
@@ -15,6 +18,9 @@ const initialState: ProductsState = {
   items: [],
   productsFetched: false,
   currentProduct: undefined,
+  numberOfProducts: 0,
+  numberOfPages: 0,
+  productsPerPage: 5,
 };
 
 export const productsSlice = createSlice({
@@ -30,6 +36,8 @@ export const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.productsFetched = true;
         state.items = [...action.payload];
+        state.numberOfProducts = state.items.length;
+        state.numberOfPages = state.items.length / state.productsPerPage;
       })
       .addCase(getProduct.fulfilled, (state, action) => {
         state.currentProduct = action.payload;

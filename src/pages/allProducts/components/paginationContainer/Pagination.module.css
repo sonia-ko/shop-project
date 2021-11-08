@@ -1,8 +1,21 @@
 .page {
     color: #a9a9a9;
     display: inline-block;
+    padding-right: 1vw;
+    font-size: 0.9em;
 }
 
 .currentPage {
     color: #6a983c;
+}
+
+.pageNumber {
+    display: inline-block;
+    letter-spacing: 1em;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.pageNumber:hover {
+    color: green;
 }
