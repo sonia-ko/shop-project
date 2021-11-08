@@ -8,10 +8,10 @@ import {
 import Header from "./components/header/HeaderComponent";
 import AllProductsPage from "./pages/allProducts/AllProductsPage";
 import PageNotFound from "./pages/404Page/PageNotFound";
-import LiveSupport from "./pages/supportPage/LiveSupport";
-import OurBlog from "./pages/blog/OurBlog";
-import OurCareers from "./pages/careers/OurCareers";
-import AboutUs from "./pages/aboutUsPage/AboutUs";
+import LiveSupport from "./pages/support/LiveSupport";
+import OurBlog from "./pages/blogPage/OurBlog";
+import OurCareers from "./pages/careersPage/OurCareers";
+import AboutUs from "./pages/aboutUs/AboutUs";
 import Footer from "./components/footer/Footer";
 import AccountDashboard from "./pages/account/AccountDashboard";
 import ShoppingCartPage from "./pages/shoppingCart/shoppingCartPage";
