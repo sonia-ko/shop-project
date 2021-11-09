@@ -17,7 +17,7 @@ export const Earnings = [
 ];
 
 export const Account = [
-  ["Your account", "/account"],
+  ["Your account", "/login"],
   ["Returns center", "/support"],
   ["100% purchase protection", "/support"],
   ["Chat with us", "/support"],
@@ -29,4 +29,44 @@ export const GetInTouch = [
   ["Careers", "/careers"],
   ["Press Releases", "/about"],
   ["Blog", "/blog"],
+];
+
+export const footerLinks = [
+  {
+    name: "Get in touch",
+    links: [
+      ["About Us", "/about"],
+      ["Careers", "/careers"],
+      ["Press Releases", "/about"],
+      ["Blog", "/blog"],
+    ],
+  },
+  {
+    name: "Connections",
+    links: [
+      ["Facebook", "https://uk-ua.facebook.com/"],
+      ["Twitter", "https://twitter.com/?lang=uk"],
+      ["Instagram", "https://www.instagram.com/"],
+      ["Youtube", "https://www.youtube.com/"],
+      ["LinkedIn", "https://www.linkedin.com/"],
+    ],
+  },
+  {
+    name: "Earnings",
+    links: [
+      ["Become an affiliate", "https://www.shareasale.com/info/"],
+      ["Advertise your product", "https://ads.google.com/"],
+      ["Sell on market", "https://www.shareasale.com/info/"],
+    ],
+  },
+  {
+    name: "Account",
+    links: [
+      ["Your account", "/login"],
+      ["Returns center", "/support"],
+      ["100% purchase protection", "/support"],
+      ["Chat with us", "/support"],
+      ["Help center", "/support"],
+    ],
+  },
 ];

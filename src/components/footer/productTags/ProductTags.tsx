@@ -5,14 +5,14 @@ import Tag from "./Tag";
 
 const ProductsTag: React.FC = () => {
   return (
-    <div className={classes.container}>
-      <h3>Product tags </h3>
+    <>
+      <h4>Product tags </h4>
       <ul className={classes.tags}>
         {popularTags.map((item) => {
           return <Tag key={"tag" + item} tagText={item} />;
         })}
       </ul>
-    </div>
+    </>
   );
 };
 

@@ -1,27 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&family=Prompt:wght@100;200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&family=Prompt:wght@100;200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap");
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family: "Open Sans", sans-serif;
     width: 100%;
     font-size: 0.8rem;
-    color: #151515;
     background-color: #fdfdfd;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
-ul {
-    list-style-type: none;
-}
+/* =====  Headers ===== */
 
 h1 {
-    color: black;
-    font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2.3em;
+    font-family: "Poppins", sans-serif;
 }
 
 h2 {
@@ -37,14 +30,81 @@ h3 {
 }
 
 h4 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 600;
+    font-family: "Poppins", sans-serif;
 }
 
 h5 {
     font-size: 1.4em;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+h6 {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+
+/* ===== Forms ===== */
+
+select,
+option {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+option {
+    font-family: inherit;
+}
+
+select:hover {
+    color: #6a983c;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: left 100% top 50%;
+    background-size: 0.4em auto, 100%;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+}
+
+input {
+    font-size: 1.1em;
+    background-color: transparent;
+}
+
+section {
+    width: 95%;
+    margin: auto auto;
+    padding: 15vh 0;
+    background-color: rgb(212, 198, 198);
+}
+
+
+/* ===== Other elements ===== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 button {
@@ -60,8 +120,32 @@ button {
     border-radius: 12px;
 }
 
-select,
-option {
-    padding: 0;
+p {
     margin: 0;
+    padding: 1vh 0;
+}
+
+header {
+    padding: 0;
+}
+
+footer {
+    padding: 3vh 0;
+}
+
+hr {
+    width: 90%;
+    padding: 0 1.5vw;
+    border-bottom: 0.1vh solid rgba(245, 234, 234, 0.678);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto;
+}
+
+
+/* ===== Classes ===== */
+
+.flex {
+    display: flex;
 }

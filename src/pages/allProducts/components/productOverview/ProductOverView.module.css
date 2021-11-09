@@ -7,11 +7,14 @@
     border: 1px solid #d1d1d1;
     border-radius: 12px;
     background: #ffffff;
+    height: 45vh;
 }
 
 .productDescriptionBlock {
     width: 30%;
-    padding: 1vh 0 1vh 0;
+    padding: 4vh 0 1vh 0;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.9;
 }
 
 .productImage {
@@ -29,10 +32,64 @@
 .additionalInfoListItem {
     margin: 0;
     padding: 0;
-    color: gray;
+    color: #a9a9a9;
+    font-size: 1.1em;
 }
 
 .additionalInfoList {
     margin: 0;
     padding: 0;
+}
+
+.additionalInfo {
+    padding: 4vh 0 0 0;
+}
+
+.additionalInfoListItem {
+    display: flex;
+}
+
+.category {
+    width: 35%;
+}
+
+.green {
+    color: #6a983c;
+}
+
+.newPrice {
+    font-size: 1.4em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.oldPrice {
+    font-family: "Poppins", sans-serif;
+    color: #a9a9a9;
+    text-decoration-line: line-through;
+    font-weight: 600;
+}
+
+.shippingArea {
+    color: #a9a9a9;
+    padding: 2.5vh 0 0 0;
+    line-height: 1.7;
+}
+
+.shipping {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1500px) {
+    .container {
+        height: 40vh;
+    }
+    .productImage {
+        width: 23vw;
+        height: 40vh;
+        border-radius: 12px;
+        object-fit: cover;
+    }
 }

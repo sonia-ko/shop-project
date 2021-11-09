@@ -1,0 +1,15 @@
+.breadcrumbs {
+    display: flex;
+    padding: 0.4vh 0 0 0;
+}
+
+.oldLocation {
+    display: flex;
+    padding: 0 0.5vw 0 0;
+    color: #a9a9a9;
+}
+
+.currentLocation {
+    display: flex;
+    padding: 0 0 0 0.5vw;
+}

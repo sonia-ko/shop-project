@@ -8,6 +8,7 @@ interface Product {
   rating: boolean[];
   specialMarks?: string[]; // like 'Free delivery' or '30%- off'
   price: number;
+  oldPrice?: number;
   country: number;
   category: string; // like 'pizza'
   stock: boolean; // in stock / not in stock

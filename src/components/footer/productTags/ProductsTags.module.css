@@ -1,11 +1,5 @@
-.container {
-    width: 95%;
-    margin: 0 auto;
-}
-
 .tags {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0;
 }

@@ -1,21 +1,9 @@
-.mainMenuContainer {
-  margin: 0;
-  justify-content: flex-end;
-}
-
-.menuItems {
-  display: flex;
-
-  justify-content: flex-start;
+.menuItem:hover {
+    color: black;
 }
 
 .menuItem {
-  padding: 2vh 0 0 3vh;
-  cursor: pointer;
-  color: #6a983c;
-  text-align: left;
-}
-
-.menuItem:hover {
-  color: black;
+    display: block;
+    padding: 1.5vh 1vw;
+    color: #6a983c;
 }

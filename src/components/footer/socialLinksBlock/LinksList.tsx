@@ -9,14 +9,20 @@ interface LinksListProps {
 
 const LinksList: React.FC<LinksListProps> = ({ links, sectionName }) => {
   return (
-    <div className={classes.container}>
+    // this should be DIV for the flex items to be styled properly
+    <div>
       <h4>{sectionName}</h4>
-      <ul className={classes.list}>
+      <ul>
         {links.map((item) => {
           return (
             <li key={"footerLink" + item}>
               {item[1].startsWith("http") ? (
-                <a className={classes.item} href={item[1]}>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className={classes.item}
+                  href={item[1]}
+                >
                   {item[0]}
                 </a>
               ) : (

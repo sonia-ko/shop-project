@@ -1,6 +1,6 @@
 import BrandsFilter from "../filters/BrandsFilter";
 import CategoriesFilter from "../filters/CategoriesFilter";
-import PriceFilter from "../filters/priceFilter/PriceFilter";
+import PriceFilter from "../filters/PriceFilter";
 import RatingFilter from "../filters/RatingFilter";
 import classes from "./SideBar.module.css";
 import Button from "../buttons/Button";

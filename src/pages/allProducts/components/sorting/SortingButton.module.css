@@ -4,15 +4,15 @@
     background-color: #f9f9f9;
     border-radius: 12px;
     align-items: center;
-    padding: 2vh 2vw;
-    width: 15%;
-    margin: 2vh 0;
+    padding: 1.5vh 1vw;
+    width: 10.5%;
+    margin: 0;
 }
 
 .filterLabel {
     border-right: 1px solid #d1d1d1;
-    padding-right: 1vw;
-    font-size: 1.1em;
+    padding-right: 0.6vw;
+    font-size: 1em;
     width: 50%;
 }
 
@@ -22,4 +22,5 @@
     width: 50%;
     border: none;
     font-weight: 600;
+    font-size: 1em;
 }

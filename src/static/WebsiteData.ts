@@ -2,16 +2,16 @@ export const productCategories = [
   { name: "Eletronics", categories: ["phones", "watches"], categId: 1 },
   {
     name: "Food",
-    categories: ["fruits", "vegetables", "pizza", "berries"],
+    categories: ["fruits", "pizza", "berry", "other"],
     categId: 2,
   },
   { name: "Clothes", categories: ["suits", "skirts"], categId: 3 },
   {
     name: "Skin and care",
-    categories: ["moisturizers", "shampoo"],
+    categories: ["lotion", "shampoo"],
     categId: 4,
   },
-  { name: "Toys", categories: ["for newborns", "for toddlers"], categId: 5 },
+  { name: "Toys", categories: [], categId: 5 },
   {
     name: "Special nutrition",
     categories: ["for kids", "for adults"],
@@ -24,7 +24,7 @@ export const productCategories = [
   },
   {
     name: "Books",
-    categories: ["educational", "fiction"],
+    categories: [],
     categId: 8,
   },
 ];
@@ -58,4 +58,11 @@ export const popularTags = [
   "Skirts",
   "Fresh food",
   "Lemons",
+  "Bananas",
+  "Pizza",
+  "Phones",
+  "Bread",
+  "Chicken",
 ];
+
+export const productsPerPage = 5;

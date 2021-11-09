@@ -4,7 +4,7 @@ import ProductOverview from "../components/productOverview/ProductOverView";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { RootState } from "../../../store/store";
-import { fetchProducts } from "../../../store/thunks/productsThunk";
+import { fetchProducts } from "../../../store/actions/productsThunk";
 
 const ProductListSection: React.FC = () => {
   const dispatch = useDispatch();
@@ -31,6 +31,12 @@ const ProductListSection: React.FC = () => {
             price={product.price}
             farm={product.farm}
             shortOverview={product.shortDescription}
+            oldPrice={product.oldPrice}
+            freshness={product.freshness}
+            deliveryArea={product.deliveryArea}
+            stockNumber={product.stockNumber}
+            specialProduct={product.specialProduct}
+            deliveryTime={product.deliveryTime}
           />
         );
       })}
