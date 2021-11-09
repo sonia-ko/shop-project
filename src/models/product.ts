@@ -1,5 +1,5 @@
 interface Product {
-  id: string;
+  id: number;
   title: string; // Pizza Caesare
   exendedDescription: string;
   shortDescription: string;
@@ -22,7 +22,7 @@ interface Product {
   origins: string;
   howToCook: string; // The product does not require cooking
   reviews: string[];
-  questions: string[];
+  questions: string[]; // How do I order?
   farm: string;
   freshness: string; // New
 }
