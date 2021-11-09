@@ -9,15 +9,18 @@ import { fetchProducts } from "../../../store/actions/productsThunk";
 const ProductListSection: React.FC = () => {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.items);
+  const pageNumber = useSelector(
+    (state: RootState) => state.products.currentPage
+  );
   const status = useSelector(
     (state: RootState) => state.products.productsFetched
   );
 
   useEffect(() => {
     if (!status) {
-      dispatch(fetchProducts());
+      dispatch(fetchProducts(pageNumber));
     }
-  }, [status, dispatch]);
+  }, [status, dispatch, pageNumber]);
 
   return (
     <div className={classes.mainBlock}>
