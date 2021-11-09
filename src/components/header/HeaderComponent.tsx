@@ -15,8 +15,7 @@ const Header: React.FC = () => {
       <div className={classes.topNavBar}>
         <Contacts />
         <MainMenu />
-      </div>
-
+      </div> <hr/>
       <div className={classes.searchSection}>
         <Link className={classes.companyNameSection} to="/products">
           {companyName}

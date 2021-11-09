@@ -8,13 +8,6 @@ const TotalProducts: React.FC = () => {
     (state: RootState) => state.products.numberOfProducts
   );
 
-  let pages = [];
-  for (let i = 0; i < numberOfProducts; i++) {
-    pages.push(i);
-  }
-
-  console.log(pages);
-
   return (
     <div>
       <span className={classes.quantity}>{numberOfProducts}</span>

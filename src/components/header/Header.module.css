@@ -3,18 +3,6 @@
     width: 95%;
     margin: 0 auto;
     justify-content: space-between;
-    position: relative;
-}
-
-.topNavBar::after {
-    content: "";
-    position: absolute;
-    left: 1vw;
-    bottom: 0;
-    height: 1px;
-    width: 98%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgba(245, 234, 234, 0.678);
 }
 
 .searchSection {

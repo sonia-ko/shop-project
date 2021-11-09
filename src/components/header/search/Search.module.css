@@ -11,7 +11,7 @@
 }
 
 .selectboxContainer {
-    padding-right: 0.6vw;
+    padding-right: 1vw;
     border-right: 1px solid #d1d1d1;
 }
 
@@ -35,5 +35,6 @@
     border: none;
     width: 70%;
     font-size: 1.2em;
-    padding: 0.5vh 0.5vw;
+    padding: 0.5vh 1vw;
+    font-family: "Open Sans", sans-serif;
 }

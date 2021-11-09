@@ -4,21 +4,13 @@
 body {
     margin: 0 auto;
     font-family: "Open Sans", sans-serif;
-    width: 97%;
+    width: 100%;
     font-size: 0.8rem;
     background-color: #fdfdfd;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+/* =====  Headers ===== */
 
 h1 {
     font-size: 2.3em;
@@ -56,18 +48,8 @@ h6 {
     font-size: 1.4em;
 }
 
-button {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    box-sizing: border-box;
-    border: none;
-    font-size: 1.3em;
-    line-height: 1.2em;
-    background-color: transparent;
-    padding: 2vh 2vw;
-    border-radius: 12px;
-}
+
+/* ===== Forms ===== */
 
 select,
 option {
@@ -111,15 +93,59 @@ section {
     background-color: rgb(212, 198, 198);
 }
 
+
+/* ===== Other elements ===== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    background-color: transparent;
+    padding: 2vh 2vw;
+    border-radius: 12px;
+}
+
 p {
     margin: 0;
     padding: 1vh 0;
 }
 
-.flex {
-    display: flex;
+header {
+    padding: 0;
 }
 
 footer {
     padding: 3vh 0;
+}
+
+hr {
+    width: 90%;
+    padding: 0 1.5vw;
+    border-bottom: 0.1vh solid rgba(245, 234, 234, 0.678);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto;
+}
+
+
+/* ===== Classes ===== */
+
+.flex {
+    display: flex;
 }
