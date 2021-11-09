@@ -32,6 +32,7 @@ export const productsSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
+    increment: (state, action: PayloadAction<number>) => state + action.payload,
     // updatePage(state: RootState, action: PayloadAction<number>) {
     //   state.currentPage = action.payload;
     // },
