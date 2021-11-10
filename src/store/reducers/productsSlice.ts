@@ -1,37 +1,54 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import Product from "../../models/product";
-import { fetchProducts, getProduct, nextPage } from "../actions/productsThunk";
+import {
+  fetchProducts,
+  getProduct,
+  getProductsNumber,
+} from "../actions/productsThunk";
 
 // Define a type for the slice state
 interface ProductsState {
   items: Product[];
   productsFetched: boolean;
   currentProduct: any;
-  numberOfProducts: number;
+  numberOfProducts: number | undefined;
   numberOfPages: number;
   productsPerPage: 5;
+  lasVisibleProduct: number;
   firstVisibleProduct: number;
   currentPage: number;
 }
 
 // Define the initial state using that type
-const initialState: ProductsState = {
+const initialState = {
   items: [],
   productsFetched: false,
   currentProduct: undefined,
-  numberOfProducts: 19,
-  numberOfPages: 5,
+  numberOfProducts: 0,
+  numberOfPages: 4,
   productsPerPage: 5,
-  firstVisibleProduct: 1,
+  lasVisibleProduct: 5,
+  firstVisibleProduct: 0,
   currentPage: 1,
-};
+} as ProductsState;
 
 export const productsSlice = createSlice({
   name: "products",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
-  reducers: {},
+  reducers: {
+    setPage(state, action: PayloadAction<number>) {
+      console.log("function called");
+
+      state.currentPage = action.payload;
+      state.lasVisibleProduct = state.currentPage * state.productsPerPage;
+      state.firstVisibleProduct =
+        state.lasVisibleProduct - state.productsPerPage;
+      state.productsFetched = false;
+    },
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state, action) => {
@@ -41,21 +58,20 @@ export const productsSlice = createSlice({
         state.productsFetched = true;
         state.items = [...action.payload];
       })
+      .addCase(getProductsNumber.fulfilled, (state, action) => {
+        state.numberOfProducts = action.payload;
+        state.numberOfPages = state.numberOfProducts
+          ? Math.ceil(state.numberOfProducts / state.productsPerPage)
+          : 1;
+      })
       .addCase(getProduct.fulfilled, (state, action) => {
         state.currentProduct = action.payload;
-      })
-      .addCase(nextPage.fulfilled, (state, action) => {
-        // state.items = [...action.payload];
-        state.currentPage = state.currentPage++;
-        state.firstVisibleProduct = state.firstVisibleProduct - 1;
-        state.productsFetched = false;
       });
   },
 });
 
 // export const { updatePage } = productsSlice.actions;
-
-// // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.products.items;
+export const { setPage } = productsSlice.actions;
+export const selectCount = (state: RootState) => state.products.currentPage;
 
 export default productsSlice.reducer;

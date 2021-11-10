@@ -16,6 +16,10 @@
     justify-content: space-between;
 }
 
+.listItem:hover {
+    color: #6a983c;
+}
+
 .item {
     display: flex;
 }

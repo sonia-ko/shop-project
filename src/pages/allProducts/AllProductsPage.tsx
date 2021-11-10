@@ -12,10 +12,10 @@ const AllProductsPage: React.FC = () => {
       <Breadcrumbs />
       <h1>All Products</h1>
       <SortingButton />
-      <div className={classes.body}>
+      <main className={classes.body}>
         <Sidebar />
         <ProductListSection />
-      </div>
+      </main>
       <PaginationContainer />
     </div>
   );
