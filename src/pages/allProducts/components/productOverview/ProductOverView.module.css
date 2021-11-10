@@ -1,72 +1,54 @@
-/* changes! */
-
 .container {
-    width: 98%;
-    margin: 4vh auto;
+    width: 97%;
+    height: 43vh;
+    margin: 2vh auto;
     display: flex;
     justify-content: space-between;
-    padding: 0;
     border: 1px solid #d1d1d1;
     border-radius: 12px;
-    background: #ffffff;
-    height: 44vh;
+}
+
+.descriptionContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.descriptionBlockRight {
+    width: 50%;
+    margin-left: 3vw;
+    line-height: 1.9;
+    padding-top: 5vh;
 }
 
 .productTitle {
-    margin: 0;
+    font-size: 1.5em;
 }
 
-.description {
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    align-content: center;
-    width: 65%;
-    margin: auto auto;
-}
-
-.productDescriptionBlock {
-    width: 50%;
-    /* padding: 4vh 0 1vh 2vw; */
-    padding-left: 3vw;
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.9;
-}
-
-.productImage {
+.img {
     width: 24vw;
-    height: 44vh;
+    height: 43vh;
     border-radius: 12px;
     object-fit: cover;
 }
 
-.actionsBlock {
+.descriptionBlockLeft {
     width: 35%;
-    padding-top: 1vh;
+    padding-top: 6vh;
 }
 
-.additionalInfoListItem {
-    margin: 0;
-    padding: 0;
-    color: #a9a9a9;
-    font-size: 1.1em;
-}
-
-.additionalInfo {
-    padding: 2.5vh 0 0 0;
+.additionalInfoContainer {
+    padding-top: 3vh;
 }
 
 .additionalInfoListItem {
     display: flex;
+    color: #a9a9a9;
+    font-size: 1.1em;
 }
 
 .category {
     width: 35%;
-}
-
-.shortOverview {
-    padding: 0;
-    margin: 0.5vh 0;
 }
 
 .green {
@@ -77,8 +59,6 @@
     font-size: 1.4em;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
-    padding: 0;
-    margin: 0;
 }
 
 .oldPrice {
@@ -94,36 +74,20 @@
     line-height: 1.7;
 }
 
-.shipping {
-    font-weight: bold;
-}
-
-@media screen and (max-width: 1500px) {
+@media (max-width: 1500px) {
     .container {
-        height: 40vh;
+        height: 32vh;
     }
-    .productImage {
+    .img {
         width: 23vw;
-        height: 40vh;
+        height: 32vh;
         border-radius: 12px;
         object-fit: cover;
     }
-}
-
-@media (max-width: 1500px) {
-    .menuItem {
-        font-size: 1.5em;
+    .descriptionBlockRight {
+        padding-top: 2vh;
     }
-}
-
-@media (max-width: 1100px) {
-    .menuItem {
-        font-size: 1.4em;
-    }
-}
-
-@media (max-width: 800px) {
-    .menuItem {
-        font-size: 1.2em;
+    .descriptionBlockLeft {
+        padding-top: 3vh;
     }
 }

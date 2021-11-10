@@ -49,3 +49,13 @@
     height: 0.8em;
     padding: 0 0.3vw;
 }
+
+@media (max-width: 1500px) {
+    .green {
+        padding: 1.2vh 1vw;
+        margin: 1.5vh 0;
+    }
+    .gray {
+        padding: 1.4vh 0.8vw;
+    }
+}

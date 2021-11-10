@@ -4,23 +4,8 @@ import RowOfStars from "../../../../components/rating/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
 import classnames from "classnames";
-
+import { ProductOverviewProps } from "../../../../models/productsOverview";
 import arrowRight from "../../../../assets/arrowRight.png";
-
-interface ProductOverviewProps {
-  picture: string;
-  title: string;
-  price: number;
-  rating: boolean[];
-  farm: string;
-  shortOverview: string;
-  oldPrice: number | undefined;
-  freshness: string;
-  deliveryArea: string;
-  stockNumber: string;
-  specialProduct: string;
-  deliveryTime: number;
-}
 
 const ProductOverview: React.FC<ProductOverviewProps> = ({
   picture,
@@ -48,65 +33,49 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
     // Container for the whole block
     <div className={classes.container}>
       {/* Photo of the product */}
-      <img className={classes.productImage} src={picture} alt="Pizza" />
+      <img className={classes.img} src={picture} alt={title} />
 
-      <div className={classes.description}>
+      <div className={classes.descriptionContainer}>
         {/* Product description block */}
-        <div className={classes.productDescriptionBlock}>
+        <div className={classes.descriptionBlockRight}>
           <h5 className={classes.productTitle}>{title}</h5>
-          <p className={classes.shortOverview}>{shortOverview}</p>
+          <p>{shortOverview}</p>
           <RowOfStars
             starColor="black"
             itemName="super-pizza"
             starsEmpty={rating}
           />
 
-          <div className={classes.additionalInfo}>
-            <ul className={classes.additionalInfoList}>
+          <div className={classes.additionalInfoContainer}>
+            <ul>
               <li className={classes.additionalInfoListItem}>
                 <span className={classes.category}>Freshness: </span>
-                <span
-                  className={classnames(
-                    `${classes.categoryDescription} ${classes.green}`
-                  )}
-                >
-                  {freshness}
-                </span>
+                <span className="green">{freshness}</span>
               </li>
               <li className={classes.additionalInfoListItem}>
                 <span className={classes.category}>Farm: </span>
-                <span className={classes.categoryDescription}>{farm}</span>
+                <span className="green">{farm}</span>
               </li>
               <li className={classes.additionalInfoListItem}>
                 <span className={classes.category}>Delivery: </span>
-                <span className={classes.categoryDescription}>
-                  {deliveryArea}
-                </span>
+                <span>{deliveryArea}</span>
               </li>
               <li className={classes.additionalInfoListItem}>
                 <span className={classes.category}>Stock: </span>
-                <span
-                  className={classnames(
-                    `${classes.categoryDescription} ${classes.green}`
-                  )}
-                >
-                  {stockNumber}
-                </span>
+                <span className="green">{stockNumber}</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Actions block */}
-        <div className={classes.actionsBlock}>
+        <div className={classes.descriptionBlockLeft}>
           <div className={classes.newPrice}>{price} USD </div>
           <div className={classes.oldPrice}>{oldPrice}</div>
 
           <div className={classes.shippingArea}>
-            <div className={classes.shipping}> {specialProduct}</div>
-            <div className={classes.delivery}>
-              Delivery in {deliveryTime} day
-            </div>
+            <div className="bold"> {specialProduct}</div>
+            <div>Delivery in {deliveryTime} day</div>
           </div>
           <Button
             btnStyle="green"
