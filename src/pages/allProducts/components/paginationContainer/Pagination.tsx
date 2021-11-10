@@ -2,26 +2,40 @@ import React from "react";
 import classes from "./Pagination.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/store";
+import { setPage } from "../../../../store/reducers/productsSlice";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getProductsNumber } from "../../../../store/actions/productsThunk";
 
 const Pagination: React.FC = () => {
+  const dispatch = useDispatch();
+
   const numOfPages = useSelector(
     (state: RootState) => state.products.numberOfPages
   );
 
+  useEffect(() => {
+    dispatch(getProductsNumber());
+  }, [dispatch]);
+
   let pages = [];
   for (let i = 0; i < numOfPages; i++) {
-    pages.push(i);
+    pages.push(i + 1);
   }
-
-  console.log(pages);
 
   return (
     <div>
       <span className={classes.page}> Page: </span>
       {pages.map((item) => {
         return (
-          <span className={classes.pageNumber} key={"pageNumber" + item}>
-            {item + 1}
+          <span
+            onClick={(e: React.MouseEvent<Element, MouseEvent>): void => {
+              dispatch(setPage(item));
+            }}
+            className={classes.pageNumber}
+            key={"pageNumber" + item}
+          >
+            {item}
           </span>
         );
       })}

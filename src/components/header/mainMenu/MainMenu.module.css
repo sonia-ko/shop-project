@@ -1,9 +1,9 @@
-.menuItem:hover {
-    color: black;
-}
-
 .menuItem {
     display: block;
     padding: 1.5vh 1vw;
     color: #6a983c;
+}
+
+.menuItem:hover {
+    color: black;
 }

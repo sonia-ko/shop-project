@@ -1,5 +1,4 @@
-.mainBlock {
-    /* background-color: rgb(46, 18, 46); */
+.container {
     width: 100%;
-    padding: 8vh 0;
+    margin-top: 5vh;
 }

@@ -1,13 +1,9 @@
 .container {
     width: 95%;
-    margin: 0 auto;
-    padding-top: 4vh;
-    /* background-color: aqua; */
+    margin: 4vh auto 0 auto;
 }
 
 .body {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
 }
