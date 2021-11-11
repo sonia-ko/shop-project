@@ -1,6 +1,7 @@
+/* ==================== containers ==================== */
+
 .container {
     width: 97%;
-    height: 43vh;
     margin: 2vh auto;
     display: flex;
     justify-content: space-between;
@@ -18,12 +19,16 @@
     width: 50%;
     margin-left: 3vw;
     line-height: 1.9;
-    padding-top: 5vh;
+    margin-top: 5vh;
 }
 
-.productTitle {
-    font-size: 1.5em;
+.descriptionBlockLeft {
+    width: 35%;
+    margin-top: 6vh;
 }
+
+
+/* ==================== image ==================== */
 
 .img {
     width: 24vw;
@@ -32,16 +37,14 @@
     object-fit: cover;
 }
 
-.descriptionBlockLeft {
-    width: 35%;
-    padding-top: 6vh;
+
+/* ==================== description block - right ==================== */
+
+.list {
+    margin-top: 3vh;
 }
 
-.additionalInfoContainer {
-    padding-top: 3vh;
-}
-
-.additionalInfoListItem {
+.listItem {
     display: flex;
     color: #a9a9a9;
     font-size: 1.1em;
@@ -51,9 +54,8 @@
     width: 35%;
 }
 
-.green {
-    color: #6a983c;
-}
+
+/* ==================== description block - left ==================== */
 
 .newPrice {
     font-size: 1.4em;
@@ -70,24 +72,37 @@
 
 .shippingArea {
     color: #a9a9a9;
-    padding: 2.5vh 0 0 0;
+    padding-top: 2.5vh;
     line-height: 1.7;
 }
 
-@media (max-width: 1500px) {
-    .container {
-        height: 32vh;
+
+/* ==================== media queries ==================== */
+
+@media (max-width: 1400px) {
+    .img {
+        width: 23vw;
+        height: 36vh;
     }
+    .descriptionBlockRight {
+        margin-top: 3vh;
+        line-height: 1.6;
+    }
+    .descriptionBlockLeft {
+        margin-top: 3vh;
+    }
+}
+
+@media (max-width: 1200px) {
     .img {
         width: 23vw;
         height: 32vh;
-        border-radius: 12px;
-        object-fit: cover;
     }
     .descriptionBlockRight {
-        padding-top: 2vh;
+        margin-top: 2vh;
+        line-height: 1.6;
     }
     .descriptionBlockLeft {
-        padding-top: 3vh;
+        margin-top: 3vh;
     }
 }

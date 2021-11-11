@@ -5,12 +5,12 @@ interface ButtonProps {
   btnText: string;
   onClick: () => void;
   btnStyle: "light" | "green" | "gray";
-  btnIcon?: string;
+  btnIconBefore?: string;
   btnIconAfter?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  btnIcon,
+  btnIconBefore,
   btnText,
   onClick,
   btnStyle,
@@ -18,8 +18,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button onClick={onClick} className={classes[btnStyle]}>
-      {btnIcon ? (
-        <img className={classes.btnIcon} src={btnIcon} alt="button icon" />
+      {btnIconBefore ? (
+        <img
+          className={classes.btnIconBefore}
+          src={btnIconBefore}
+          alt="button icon"
+        />
       ) : (
         ""
       )}

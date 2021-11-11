@@ -3,7 +3,7 @@ import React from "react";
 import RowOfStars from "../../../../components/rating/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
-import classnames from "classnames";
+// import classnames from "classnames";
 import { ProductOverviewProps } from "../../../../models/productsOverview";
 import arrowRight from "../../../../assets/arrowRight.png";
 
@@ -34,11 +34,11 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
     <div className={classes.container}>
       {/* Photo of the product */}
       <img className={classes.img} src={picture} alt={title} />
-
+      {/* Product description block */}
       <div className={classes.descriptionContainer}>
-        {/* Product description block */}
+        {/* Block - right */}
         <div className={classes.descriptionBlockRight}>
-          <h5 className={classes.productTitle}>{title}</h5>
+          <h5>{title}</h5>
           <p>{shortOverview}</p>
           <RowOfStars
             starColor="black"
@@ -46,29 +46,27 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
             starsEmpty={rating}
           />
 
-          <div className={classes.additionalInfoContainer}>
-            <ul>
-              <li className={classes.additionalInfoListItem}>
-                <span className={classes.category}>Freshness: </span>
-                <span className="green">{freshness}</span>
-              </li>
-              <li className={classes.additionalInfoListItem}>
-                <span className={classes.category}>Farm: </span>
-                <span className="green">{farm}</span>
-              </li>
-              <li className={classes.additionalInfoListItem}>
-                <span className={classes.category}>Delivery: </span>
-                <span>{deliveryArea}</span>
-              </li>
-              <li className={classes.additionalInfoListItem}>
-                <span className={classes.category}>Stock: </span>
-                <span className="green">{stockNumber}</span>
-              </li>
-            </ul>
-          </div>
+          <ul className={classes.list}>
+            <li className={classes.listItem}>
+              <span className={classes.category}>Freshness: </span>
+              <span className="green">{freshness}</span>
+            </li>
+            <li className={classes.listItem}>
+              <span className={classes.category}>Farm: </span>
+              <span>{farm}</span>
+            </li>
+            <li className={classes.listItem}>
+              <span className={classes.category}>Delivery: </span>
+              <span>{deliveryArea}</span>
+            </li>
+            <li className={classes.listItem}>
+              <span className={classes.category}>Stock: </span>
+              <span className="green">{stockNumber}</span>
+            </li>
+          </ul>
         </div>
 
-        {/* Actions block */}
+        {/* Block - left */}
         <div className={classes.descriptionBlockLeft}>
           <div className={classes.newPrice}>{price} USD </div>
           <div className={classes.oldPrice}>{oldPrice}</div>
@@ -84,7 +82,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
             btnIconAfter={arrowRight}
           />
           <Button
-            btnIcon={heartIcon}
+            btnIconBefore={heartIcon}
             btnText=" Add to wish list"
             onClick={addToWishList}
             btnStyle="gray"
