@@ -10,7 +10,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
   defaultMax,
 }) => {
   return (
-    <form>
+    <div className="sidebarSection">
       <h3>Price</h3>
       <RangeSlider
         min={defaultMin}
@@ -19,7 +19,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
           console.log(`min = ${min}, max = ${max}`)
         }
       />
-    </form>
+    </div>
   );
 };
 

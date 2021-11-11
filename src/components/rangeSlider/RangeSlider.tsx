@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useEffect, useState, useRef } from "react";
 import React from "react";
 import classes from "./RangeSlider.module.css";
-import rangeSliderModel from "../../models/rangeSliderModel";
+import rangeSliderModel from "../../interfaces/rangeSliderModel";
 import classnames from "classnames";
 
 // the functionality of this component will be improved sooner, once I have the products
@@ -45,7 +45,7 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className={classes.container}>
+    <div>
       <input
         type="range"
         min={min}

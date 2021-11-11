@@ -2,7 +2,6 @@ import BrandsFilter from "../filters/BrandsFilter";
 import CategoriesFilter from "../filters/CategoriesFilter";
 import PriceFilter from "../filters/PriceFilter";
 import RatingFilter from "../filters/RatingFilter";
-import classes from "./SideBar.module.css";
 import Button from "../buttons/Button";
 
 const Sidebar = () => {
@@ -11,13 +10,13 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={classes.sidebar}>
+    <aside>
       <CategoriesFilter />
       <BrandsFilter />
       <RatingFilter />
-      <PriceFilter defaultMin={0} defaultMax={1000} />
+      <PriceFilter defaultMin={1} defaultMax={1000} />
       <Button btnStyle="light" btnText="Reset" onClick={resetFilters} />
-    </div>
+    </aside>
   );
 };
 

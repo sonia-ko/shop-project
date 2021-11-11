@@ -3,24 +3,14 @@ import React from "react";
 import RowOfStars from "../../../../components/rating/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
-// import classnames from "classnames";
-import { ProductOverviewProps } from "../../../../models/productsOverview";
+// import { ProductOverviewProps } from "../../../../interfaces/productsOverview";
 import arrowRight from "../../../../assets/arrowRight.png";
+import Product from "../../../../interfaces/product";
 
-const ProductOverview: React.FC<ProductOverviewProps> = ({
-  picture,
-  title,
-  rating,
-  farm,
-  price,
-  shortOverview,
-  oldPrice,
-  freshness,
-  deliveryArea,
-  stockNumber,
-  specialProduct,
-  deliveryTime,
-}) => {
+interface ProductOverviewProps {
+  product: Product;
+}
+const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
   const openProduct = () => {
     console.log("Product opened");
   };
@@ -30,50 +20,53 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
   };
 
   return (
-    // Container for the whole block
-    <div className={classes.container}>
-      {/* Photo of the product */}
-      <img className={classes.img} src={picture} alt={title} />
-      {/* Product description block */}
+    <li className={classes.container}>
+      <img
+        className={classes.img}
+        src={product.mainPicture}
+        alt={product.title}
+      />
+
       <div className={classes.descriptionContainer}>
-        {/* Block - right */}
         <div className={classes.descriptionBlockRight}>
-          <h5>{title}</h5>
-          <p>{shortOverview}</p>
+          <h5>{product.title}</h5>
+          <p>{product.shortDescription}</p>
           <RowOfStars
             starColor="black"
             itemName="super-pizza"
-            starsEmpty={rating}
+            starsEmpty={product.rating}
+            // starsEmpty={[false, false, false, false, false]}
           />
 
           <ul className={classes.list}>
             <li className={classes.listItem}>
-              <span className={classes.category}>Freshness: </span>
-              <span className="green">{freshness}</span>
+              <span className={classes.category}>Freshness</span>
+              <span className="green">{product.freshness}</span>
             </li>
             <li className={classes.listItem}>
               <span className={classes.category}>Farm: </span>
-              <span>{farm}</span>
+              <span>{product.farm}</span>
             </li>
             <li className={classes.listItem}>
               <span className={classes.category}>Delivery: </span>
-              <span>{deliveryArea}</span>
+              <span>{product.deliveryArea}</span>
             </li>
             <li className={classes.listItem}>
               <span className={classes.category}>Stock: </span>
-              <span className="green">{stockNumber}</span>
+              <span className="green">{product.stockNumber}</span>
             </li>
           </ul>
         </div>
 
-        {/* Block - left */}
         <div className={classes.descriptionBlockLeft}>
-          <div className={classes.newPrice}>{price} USD </div>
-          <div className={classes.oldPrice}>{oldPrice}</div>
+          <div>
+            <span className={classes.newPrice}>{product.price} USD </span>
+            <span className={classes.oldPrice}>{product.oldPrice}</span>
+          </div>
 
           <div className={classes.shippingArea}>
-            <div className="bold"> {specialProduct}</div>
-            <div>Delivery in {deliveryTime} day</div>
+            <div className="bold"> {product.specialProduct}</div>
+            <div>Delivery in {product.deliveryTime} day</div>
           </div>
           <Button
             btnStyle="green"
@@ -89,7 +82,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
           />
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

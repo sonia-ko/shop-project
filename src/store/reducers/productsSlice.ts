@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import Product from "../../models/product";
+import Product from "../../interfaces/product";
 import {
   fetchProducts,
   getProduct,

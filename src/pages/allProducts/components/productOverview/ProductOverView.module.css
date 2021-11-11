@@ -9,22 +9,25 @@
     border-radius: 12px;
 }
 
+.container:hover {
+    color: black;
+}
+
 .descriptionContainer {
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 60%;
+    padding-top: 4vh;
 }
 
 .descriptionBlockRight {
-    width: 50%;
-    margin-left: 3vw;
+    width: 55%;
     line-height: 1.9;
-    margin-top: 5vh;
 }
 
 .descriptionBlockLeft {
-    width: 35%;
-    margin-top: 6vh;
+    width: 38%;
+    padding-top: 1vh;
 }
 
 
@@ -52,6 +55,9 @@
 
 .category {
     width: 35%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
@@ -64,6 +70,7 @@
 }
 
 .oldPrice {
+    display: block;
     font-family: "Poppins", sans-serif;
     color: #a9a9a9;
     text-decoration-line: line-through;
@@ -72,7 +79,7 @@
 
 .shippingArea {
     color: #a9a9a9;
-    padding-top: 2.5vh;
+    margin-top: 2.5vh;
     line-height: 1.7;
 }
 
@@ -84,13 +91,6 @@
         width: 23vw;
         height: 36vh;
     }
-    .descriptionBlockRight {
-        margin-top: 3vh;
-        line-height: 1.6;
-    }
-    .descriptionBlockLeft {
-        margin-top: 3vh;
-    }
 }
 
 @media (max-width: 1200px) {
@@ -98,11 +98,7 @@
         width: 23vw;
         height: 32vh;
     }
-    .descriptionBlockRight {
-        margin-top: 2vh;
-        line-height: 1.6;
-    }
-    .descriptionBlockLeft {
-        margin-top: 3vh;
+    .descriptionContainer {
+        padding-top: 2vh;
     }
 }

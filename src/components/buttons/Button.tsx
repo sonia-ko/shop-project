@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
           alt="button icon"
         />
       ) : (
-        ""
+        <> </>
       )}
       {btnText}
       {btnIconAfter ? (
@@ -35,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
           alt="button icon"
         />
       ) : (
-        ""
+        <> </>
       )}
     </button>
   );

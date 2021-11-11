@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./ProductsTags.module.css";
-import { popularTags } from "../../../static/WebsiteData";
+import { popularTags } from "../../../static/dataWebsite";
 import Tag from "./Tag";
 
 const ProductsTag: React.FC = () => {

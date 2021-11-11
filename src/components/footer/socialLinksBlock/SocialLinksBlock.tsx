@@ -1,7 +1,7 @@
 import React from "react";
 import LinksList from "./LinksList";
 import classes from "./SocialLinksBlock.module.css";
-import { footerLinks } from "../../../static/CompanyData";
+import { footerLinks } from "../../../static/dataCompany";
 
 const SocialLinksBlock: React.FC = () => {
   return (

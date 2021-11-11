@@ -7,14 +7,14 @@ interface CheckBoxProps {
 
 const CheckBox: React.FC<CheckBoxProps> = ({ item, children }) => {
   return (
-    <label htmlFor={"input" + item} className={classes.checkbox}>
+    <label htmlFor={"input" + item} className={classes.container}>
       <input
         className={classes.input}
         key={"input" + item}
         type="checkbox"
         id={"input" + item}
       />
-      <span className={classes.checkboxOption}>{children}</span>
+      <span className={classes.option}>{children}</span>
     </label>
   );
 };
