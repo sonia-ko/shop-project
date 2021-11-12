@@ -1,5 +1,4 @@
 import React from "react";
-import RangeSlider from "../rangeSlider/RangeSlider";
 import Slider from "../rangeSlider/Slider";
 import { useState } from "react";
 

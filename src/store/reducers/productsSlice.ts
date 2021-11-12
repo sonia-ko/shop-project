@@ -1,27 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import Product from "../../interfaces/product";
 import {
   fetchProducts,
   getProduct,
   getProductsNumber,
 } from "../actions/productsThunk";
-
-// Define a type for the slice state
-interface ProductsState {
-  items: Product[];
-  productsFetched: boolean;
-  currentProduct: any;
-  numberOfProducts: number | undefined;
-  numberOfPages: number;
-  productsPerPage: 5;
-  lasVisibleProduct: number;
-  firstVisibleProduct: number;
-  currentPage: number;
-}
+import { ProductsState } from "../types/productsState";
 
 // Define the initial state using that type
-const initialState = {
+const initialState: ProductsState = {
   items: [],
   productsFetched: false,
   currentProduct: undefined,
@@ -31,11 +18,11 @@ const initialState = {
   lasVisibleProduct: 5,
   firstVisibleProduct: 0,
   currentPage: 1,
-} as ProductsState;
+};
 
 export const productsSlice = createSlice({
   name: "products",
-  // `createSlice` will infer the state type from the `initialState` argument
+
   initialState,
   reducers: {
     setPage(state, action: PayloadAction<number>) {
@@ -70,7 +57,6 @@ export const productsSlice = createSlice({
   },
 });
 
-// export const { updatePage } = productsSlice.actions;
 export const { setPage } = productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 

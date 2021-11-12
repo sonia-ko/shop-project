@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shop-project/build/static/css/main.835358bb.chunk.css",
-    "main.js": "/shop-project/build/static/js/main.8b10c95b.chunk.js",
-    "main.js.map": "/shop-project/build/static/js/main.8b10c95b.chunk.js.map",
+    "main.css": "/shop-project/build/static/css/main.d759b1e3.chunk.css",
+    "main.js": "/shop-project/build/static/js/main.d84d7528.chunk.js",
+    "main.js.map": "/shop-project/build/static/js/main.d84d7528.chunk.js.map",
     "runtime-main.js": "/shop-project/build/static/js/runtime-main.4d381f17.js",
     "runtime-main.js.map": "/shop-project/build/static/js/runtime-main.4d381f17.js.map",
     "static/js/2.457a5eea.chunk.js": "/shop-project/build/static/js/2.457a5eea.chunk.js",
     "static/js/2.457a5eea.chunk.js.map": "/shop-project/build/static/js/2.457a5eea.chunk.js.map",
     "index.html": "/shop-project/build/index.html",
-    "static/css/main.835358bb.chunk.css.map": "/shop-project/build/static/css/main.835358bb.chunk.css.map",
+    "static/css/main.d759b1e3.chunk.css.map": "/shop-project/build/static/css/main.d759b1e3.chunk.css.map",
     "static/js/2.457a5eea.chunk.js.LICENSE.txt": "/shop-project/build/static/js/2.457a5eea.chunk.js.LICENSE.txt",
     "static/media/blackStarIcon.c5f087fe.png": "/shop-project/build/static/media/blackStarIcon.c5f087fe.png",
     "static/media/heartIcon.ea10b3e5.gif": "/shop-project/build/static/media/heartIcon.ea10b3e5.gif",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.4d381f17.js",
     "static/js/2.457a5eea.chunk.js",
-    "static/css/main.835358bb.chunk.css",
-    "static/js/main.8b10c95b.chunk.js"
+    "static/css/main.d759b1e3.chunk.css",
+    "static/js/main.d84d7528.chunk.js"
   ]
 }

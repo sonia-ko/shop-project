@@ -1,4 +1,4 @@
-.container {
+/* .container {
     height: 4vh;
     display: flex;
     align-items: center;
@@ -39,27 +39,36 @@
 .slider__left-value,
 .slider__right-value {
     /* color: #dee2e6; */
-    font-size: 12px;
-    margin-top: 20px;
-    width: 50%;
-    display: block;
-}
 
-.slider__left-value {
+
+/* font-size: 12px;
+    margin-top: 20px; */
+
+
+/* width: 50%;
+    display: block;
+}  */
+
+
+/* .slider__left-value {
     left: 0;
     /* display: flex; */
-}
 
-.slider__right-value {
+
+/* } */
+
+
+/* .slider__right-value {
     left: 65%;
     display: flex;
     flex-direction: column;
-}
+} */
 
 
 /* Removing the default appearance */
 
-.thumb,
+
+/* .thumb,
 .thumb::-webkit-slider-thumb {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
@@ -71,12 +80,13 @@
     height: 0;
     width: 200px;
     outline: none;
-}
+} */
 
 
 /* For Chrome browsers */
 
-.thumb::-webkit-slider-thumb {
+
+/* .thumb::-webkit-slider-thumb {
     background-color: #f1f5f7;
     border: none;
     border-radius: 50%;
@@ -87,12 +97,13 @@
     margin-top: 4px;
     pointer-events: all;
     position: relative;
-}
+} */
 
 
 /* For Firefox browsers */
 
-.thumb::-moz-range-thumb {
+
+/* .thumb::-moz-range-thumb {
     background-color: #f1f5f7;
     border: none;
     border-radius: 50%;
@@ -103,11 +114,13 @@
     margin-top: 4px;
     pointer-events: all;
     position: relative;
-}
+} */
 
 
 /* Number inputs */
 
+
+/* 
 .numberInput {
     width: 50%;
     padding: 0.75vh 0.6vw;
@@ -128,3 +141,5 @@
     display: block;
     margin-bottom: 0.25em;
 }
+
+*/
