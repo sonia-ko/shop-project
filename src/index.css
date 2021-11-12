@@ -184,3 +184,21 @@ hr {
 .sidebarSection {
     margin-bottom: 3vh;
 }
+
+.zindex3 {
+    z-index: 3;
+}
+
+.zindex4 {
+    z-index: 4;
+}
+
+.zindex5 {
+    z-index: 5;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

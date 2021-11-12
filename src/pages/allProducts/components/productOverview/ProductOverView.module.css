@@ -91,6 +91,9 @@
         width: 23vw;
         height: 36vh;
     }
+    .descriptionContainer {
+        padding-top: 2vh;
+    }
 }
 
 @media (max-width: 1200px) {

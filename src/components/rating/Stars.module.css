@@ -1,9 +1,10 @@
 .starIcon {
-    width: 1.1vw;
-    padding-right: 0.4em;
+    width: 15px;
+    padding-right: 0.5em;
+    padding-top: 2px;
 }
 
 .starsContainer {
-    padding: 0.15em 0;
     display: flex;
+    align-content: center;
 }

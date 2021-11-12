@@ -1,8 +1,14 @@
-.rangeControls {
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numberInputsContainer {
     padding: 3vh 0;
 }
 
-.sliderLabel {
+.label {
     font-weight: 600;
 }
 
@@ -14,12 +20,8 @@
 .sliderTrack,
 .sliderRange {
     position: absolute;
-}
-
-.sliderTrack,
-.sliderRange {
-    border-radius: 3px;
-    height: 4px;
+    border-radius: 2px;
+    height: 5px;
 }
 
 .inputsContainer {
@@ -73,10 +75,12 @@
 
 .thumbZindex4 {
     z-index: 4;
+    background-color: cadetblue;
 }
 
 .thumbZindex5 {
     z-index: 5;
+    background-color: cadetblue;
 }
 
 
@@ -90,7 +94,7 @@
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 5px 0;
+    margin: -5px 0;
     pointer-events: all;
     position: relative;
 }
@@ -110,8 +114,8 @@
     position: relative;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: -1px;
+.thumb::-webkit-slider-runnable-track {
+    background: rgb(209, 53, 53);
+    height: 5px;
+    z-index: 3;
 }

@@ -1,11 +1,22 @@
-import { ChangeEvent, useCallback, useEffect, useState, useRef } from "react";
-import React from "react";
-import classes from "./RangeSlider.module.css";
-import rangeSliderModel from "../../interfaces/rangeSliderModel";
+import {
+  ChangeEvent,
+  FC,
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
 import classnames from "classnames";
+import "./Slider.css";
+import classes from "./Slider.module.css";
 
-// the functionality of this component will be improved sooner, once I have the products
-const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
+interface SliderProps {
+  min: number;
+  max: number;
+  onChange: Function;
+}
+
+const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef<HTMLInputElement>(null);
@@ -45,8 +56,7 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div>
-      <div className={classes.container}></div>
+    <div className={classes.container}>
       <input
         type="range"
         min={min}
@@ -58,8 +68,8 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
           setMinVal(value);
           event.target.value = value.toString();
         }}
-        className={classnames("thumb thumb--zindex-3", {
-          "thumb--zindex-5": minVal > max - 100,
+        className={classnames(`${classes.thumb} ${classes.zindex3}`, {
+          zindex5: minVal > max - 100,
         })}
       />
       <input
@@ -73,20 +83,20 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
           setMaxVal(value);
           event.target.value = value.toString();
         }}
-        className={classnames(`${classes.thumb} ${classes.thumbZindex4}`)}
+        className={classnames(`${classes.thumb} ${classes.zindex4}`)}
       />
 
       <div className={classes.slider}>
-        <div className={classes.sliderTrack}></div>
-        <div ref={range} className={classes.sliderRange}></div>
-        <div className={classes.numberInputsContainer}>
-          <div className={classes.input}>
-            <label className={classes.label} htmlFor="range-input-min">
-              Min:
+        <div className={classes["slider__track"]}></div>
+        <div ref={range} className={classes["slider__range"]}></div>
+        <div className={classes.numberInputs}>
+          <div className={classes["slider__left-value"]}>
+            <label className={classes.label} htmlFor="rangeMin">
+              Min
             </label>
             <input
-              id="range-input-min"
-              className={classes.sliderLeftValue}
+              id="rangeMin"
+              className={classes.numberInput}
               value={minVal}
               type="number"
               onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -96,16 +106,28 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
               }}
             />
           </div>
-          <div className={classes.input}>
-            <label className={classes.label} htmlFor="range-input-max">
-              Max:
+          <div className={classes["slider__right-value"]}>
+            <label className={classes.label} htmlFor="rangeMax">
+              Max
             </label>
             <input
-              id="range-input-max"
-              className={classes.sliderRightValue}
+              id="rangeMax"
+              max={max}
+              className={classes.numberInput}
+              placeholder={maxVal.toString()}
               value={maxVal}
               type="number"
               onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                if (Number(event.target.value) > max) {
+                  event.target.value = maxVal.toString();
+                  return;
+                }
+                if (!event.target.value || event.target.value === "0") {
+                  setMaxVal(0);
+                  event.target.value = "0";
+                  return;
+                }
+
                 const value = Math.max(+event.target.value, minVal + 1);
                 setMaxVal(value);
                 event.target.value = value.toString();
@@ -118,4 +140,4 @@ const RangeSlider: React.FC<rangeSliderModel> = ({ min, max, onChange }) => {
   );
 };
 
-export default RangeSlider;
+export default Slider;
