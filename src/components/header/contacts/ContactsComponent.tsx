@@ -1,5 +1,5 @@
 import React from "react";
-import { companyEmail, companyPhoneNum } from "../../../static/CompanyData";
+import { companyPhoneNum, companyEmail } from "../../../static/dataCompany";
 import classes from "./Contacts.module.css";
 import { Link } from "react-router-dom";
 

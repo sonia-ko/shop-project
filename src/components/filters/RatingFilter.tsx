@@ -4,7 +4,7 @@ import CheckBox from "../checkBox/Checkbox";
 
 const RatingFilter: React.FC = () => {
   return (
-    <>
+    <div className="sidebarSection">
       <h3>Rating</h3>
 
       <CheckBox item="5-star">
@@ -46,7 +46,7 @@ const RatingFilter: React.FC = () => {
           starsEmpty={[false, true, true, true, true]}
         />
       </CheckBox>
-    </>
+    </div>
   );
 };
 
