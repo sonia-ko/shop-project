@@ -6,13 +6,15 @@ const BrandsFilter: React.FC = () => {
   return (
     <div className="sidebarSection">
       <h3>Brands</h3>
-      {brands.map((item, i) => {
-        return (
-          <CheckBox key={"input" + item} item={item}>
-            {item}
-          </CheckBox>
-        );
-      })}
+      <ul>
+        {brands.map((item, i) => {
+          return (
+            <li key={"input" + item}>
+              <CheckBox item={item}>{item}</CheckBox>{" "}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

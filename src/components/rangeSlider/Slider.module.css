@@ -1,10 +1,8 @@
 .container {
-    height: 4vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 75%;
-    margin-bottom: 6vw;
+    justify-content: flex-start;
+    margin: 3vh 0 14vh 0;
 }
 
 .slider {
@@ -32,13 +30,12 @@
 }
 
 .slider__range {
-    background-color: #309230;
+    background-color: #6a983c;
     z-index: 2;
 }
 
 .slider__left-value,
 .slider__right-value {
-    /* color: #dee2e6; */
     font-size: 12px;
     margin-top: 20px;
     width: 50%;
@@ -118,17 +115,15 @@
     border-radius: 12px;
 }
 
-.numberInputs {
-    display: flex;
-    justify-content: space-between;
-}
-
 .label {
     font-weight: 600;
     display: block;
-    margin: 0.25em 0;
     font-size: 1.1em;
+    margin-top: 0.25em;
 }
+
+
+/* z indexes */
 
 .zindex3 {
     z-index: 3;
