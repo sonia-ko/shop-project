@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/store";
 import { setPage } from "../../../../store/reducers/productsSlice";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getProductsNumber } from "../../../../store/actions/productsThunk";
 
 const Pagination: React.FC = () => {
   const dispatch = useDispatch();
@@ -13,10 +11,6 @@ const Pagination: React.FC = () => {
   const numOfPages = useSelector(
     (state: RootState) => state.products.numberOfPages
   );
-
-  useEffect(() => {
-    dispatch(getProductsNumber());
-  }, [dispatch]);
 
   let pages = [];
   for (let i = 0; i < numOfPages; i++) {

@@ -6,7 +6,8 @@ export default interface Product {
   mainPicture: string;
   pictures: string[];
   rating: boolean[];
-  specialMarks?: string[]; // like 'Free delivery' or '30%- off'
+  rate: number;
+  specialMarks: string[]; // like 'Free delivery' or '30%- off'
   price: number;
   oldPrice?: number;
   country: number;

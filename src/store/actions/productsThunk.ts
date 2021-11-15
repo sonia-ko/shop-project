@@ -4,36 +4,27 @@ import {
   getDocs,
   query,
   where,
-  orderBy,
-  startAfter,
-  limit,
+  // orderBy,
+  // startAfter,
+  // limit,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 // const productsRef = collection(db, "products");
 
-export const fetchProducts = createAsyncThunk(
-  "products/fetch",
-  async (lasVisibleProduct: number) => {
-    try {
-      const q = query(
-        collection(db, "products"),
-        orderBy("id"),
-        startAfter(lasVisibleProduct),
-        limit(5)
-      );
-      const payload: any = [];
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        payload.push(doc.data());
-      });
+export const fetchProducts = createAsyncThunk("products/fetch", async () => {
+  try {
+    const payload: any = [];
+    const querySnapshot = await getDocs(collection(db, "products"));
+    querySnapshot.forEach((doc) => {
+      payload.push(doc.data());
+    });
 
-      return payload;
-    } catch {
-      window.alert("Failed to fetch products");
-    }
+    return payload;
+  } catch {
+    window.alert("Failed to fetch products");
   }
-);
+});
 
 export const getProduct = createAsyncThunk(
   "products/get",

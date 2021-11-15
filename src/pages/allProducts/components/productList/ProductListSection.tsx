@@ -4,25 +4,18 @@ import ProductOverview from "../productOverview/ProductOverView";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { RootState } from "../../../../store/store";
-import { fetchProducts } from "../../../../store/actions/productsThunk";
+import { setPage } from "../../../../store/reducers/productsSlice";
 
 const ProductListSection: React.FC = () => {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.items);
-
-  const firstVisibleProduct = useSelector(
-    (state: RootState) => state.products.firstVisibleProduct
-  );
-
-  const status = useSelector(
-    (state: RootState) => state.products.productsFetched
+  const visibleProducts = useSelector(
+    (state: RootState) => state.products.visibleProducts
   );
 
   useEffect(() => {
-    if (!status) {
-      dispatch(fetchProducts(firstVisibleProduct));
-    }
-  }, [status, dispatch, firstVisibleProduct]);
+    dispatch(setPage(1));
+  }, [visibleProducts, dispatch]);
 
   return (
     <ul className={classes.container}>

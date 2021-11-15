@@ -3,11 +3,11 @@ import CategoriesFilter from "../filters/CategoriesFilter";
 import PriceFilter from "../filters/PriceFilter";
 import RatingFilter from "../filters/RatingFilter";
 import Button from "../buttons/Button";
+import { useDispatch } from "react-redux";
+import { resetFilters } from "../../store/reducers/productsSlice";
 
 const Sidebar = () => {
-  const resetFilters = () => {
-    console.log("filters reset :) ");
-  };
+  const dispatch = useDispatch();
 
   return (
     <aside>
@@ -15,7 +15,11 @@ const Sidebar = () => {
       <BrandsFilter />
       <RatingFilter />
       <PriceFilter defaultMin={1} defaultMax={1000} />
-      <Button btnStyle="light" btnText="Reset" onClick={resetFilters} />
+      <Button
+        btnStyle="light"
+        btnText="Reset"
+        onClick={() => dispatch(resetFilters())}
+      />
     </aside>
   );
 };

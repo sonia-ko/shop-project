@@ -1,26 +1,28 @@
-.filterContainer {
+.container {
     display: flex;
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
     border-radius: 12px;
-    align-items: center;
-    padding: 1.5vh 1vw;
-    width: 10.5%;
-    margin: 0;
+    padding: 1vh 0.5vw;
+    width: 10%;
+    justify-content: space-around;
 }
 
-.filterLabel {
+.label {
     border-right: 1px solid #d1d1d1;
-    padding-right: 0.6vw;
-    font-size: 1em;
-    width: 50%;
+    width: 40%;
 }
 
 .selectBox {
-    margin-left: 1vw;
-    color: black;
-    width: 50%;
-    border: none;
+    width: 32%;
     font-weight: 600;
     font-size: 1em;
+    font-family: Poppins;
+}
+
+@media (max-width: 1700px) {
+    .container {
+        width: 12%;
+        padding: 1.5vh 0.5vw;
+    }
 }
