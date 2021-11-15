@@ -1,6 +1,6 @@
 .listItem {
     font-size: 1.1em;
-    padding: 0.5vh 0;
+    padding: 0.75vh 0.25vw;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -14,4 +14,9 @@
     width: 15%;
     font-weight: bold;
     justify-content: center;
+}
+
+.filterEnabled {
+    background-color: rgb(143, 233, 147);
+    border-radius: 6px;
 }

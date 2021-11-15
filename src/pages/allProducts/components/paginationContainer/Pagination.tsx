@@ -15,8 +15,8 @@ const Pagination: React.FC = () => {
   );
 
   useEffect(() => {
-    dispatch(getProductsNumber());
-  }, [dispatch]);
+    setPage(1);
+  });
 
   let pages = [];
   for (let i = 0; i < numOfPages; i++) {

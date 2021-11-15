@@ -19,3 +19,10 @@
     font-size: 1em;
     font-family: Poppins;
 }
+
+@media (max-width: 1700px) {
+    .container {
+        width: 12%;
+        padding: 1.5vh 0.5vw;
+    }
+}

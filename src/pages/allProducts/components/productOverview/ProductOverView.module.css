@@ -86,6 +86,12 @@
 
 /* ==================== media queries ==================== */
 
+@media (min-width: 1700px) {
+    .descriptionContainer {
+        padding-top: 6vh;
+    }
+}
+
 @media (max-width: 1400px) {
     .img {
         width: 23vw;
