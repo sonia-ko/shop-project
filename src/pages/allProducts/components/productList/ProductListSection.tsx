@@ -15,7 +15,7 @@ const ProductListSection: React.FC = () => {
 
   useEffect(() => {
     dispatch(setPage(1));
-  }, [visibleProducts]);
+  }, [visibleProducts, dispatch]);
 
   return (
     <ul className={classes.container}>

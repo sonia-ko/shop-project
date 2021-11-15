@@ -56,7 +56,7 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className={classes.container}>
+    <div className={classes.slider}>
       <input
         type="range"
         min={min}
@@ -68,9 +68,12 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
           setMinVal(value);
           event.target.value = value.toString();
         }}
-        className={classnames(`${classes.thumb} ${classes.zindex3}`, {
-          zindex5: minVal > max - 100,
-        })}
+        className={classnames(
+          `${classes.thumb} ${classes["thumb--left"]} ${classes.zindex3}`,
+          {
+            zindex5: minVal > max - 100,
+          }
+        )}
       />
       <input
         type="range"
@@ -85,55 +88,52 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
         }}
         className={classnames(`${classes.thumb} ${classes.zindex4}`)}
       />
+      <div className={classes["slider__track"]}></div>
+      <div ref={range} className={classes["slider__range"]}></div>
 
-      <div className={classes.slider}>
-        <div className={classes["slider__track"]}></div>
-        <div ref={range} className={classes["slider__range"]}></div>
+      <div className={classes["slider__left-value"]}>
+        <label className={classes.label} htmlFor="rangeMin">
+          Min
+        </label>
+        <input
+          id="rangeMin"
+          className={classes.numberInput}
+          value={minVal}
+          type="number"
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            const value = Math.min(+event.target.value, maxVal - 1);
+            setMinVal(value);
+            event.target.value = value.toString();
+          }}
+        />
+      </div>
+      <div className={classes["slider__right-value"]}>
+        <label className={classes.label} htmlFor="rangeMax">
+          Max
+        </label>
+        <input
+          id="rangeMax"
+          max={max}
+          className={classes.numberInput}
+          placeholder={maxVal.toString()}
+          value={maxVal}
+          type="number"
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            if (Number(event.target.value) > max) {
+              event.target.value = maxVal.toString();
+              return;
+            }
+            if (!event.target.value || event.target.value === "0") {
+              setMaxVal(0);
+              event.target.value = "0";
+              return;
+            }
 
-        <div className={classes["slider__left-value"]}>
-          <label className={classes.label} htmlFor="rangeMin">
-            Min
-          </label>
-          <input
-            id="rangeMin"
-            className={classes.numberInput}
-            value={minVal}
-            type="number"
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              const value = Math.min(+event.target.value, maxVal - 1);
-              setMinVal(value);
-              event.target.value = value.toString();
-            }}
-          />
-        </div>
-        <div className={classes["slider__right-value"]}>
-          <label className={classes.label} htmlFor="rangeMax">
-            Max
-          </label>
-          <input
-            id="rangeMax"
-            max={max}
-            className={classes.numberInput}
-            placeholder={maxVal.toString()}
-            value={maxVal}
-            type="number"
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              if (Number(event.target.value) > max) {
-                event.target.value = maxVal.toString();
-                return;
-              }
-              if (!event.target.value || event.target.value === "0") {
-                setMaxVal(0);
-                event.target.value = "0";
-                return;
-              }
-
-              const value = Math.max(+event.target.value, minVal + 1);
-              setMaxVal(value);
-              event.target.value = value.toString();
-            }}
-          />
-        </div>
+            const value = Math.max(+event.target.value, minVal + 1);
+            setMaxVal(value);
+            event.target.value = value.toString();
+          }}
+        />
       </div>
     </div>
   );

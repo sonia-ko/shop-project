@@ -7,7 +7,6 @@ import Sidebar from "../../components/sidebar/SideBar";
 import PaginationContainer from "./components/paginationContainer/PaginationContainer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { RootState } from "../../store/store";
 import { fetchProducts } from "../../store/actions/productsThunk";
 import { setPage } from "../../store/reducers/productsSlice";
 
@@ -17,7 +16,7 @@ const AllProductsPage: React.FC = () => {
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(setPage(1));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={classes.container}>

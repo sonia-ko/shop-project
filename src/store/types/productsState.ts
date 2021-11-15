@@ -13,4 +13,8 @@ export interface ProductsState {
   firstVisibleProduct: number;
   currentPage: number | undefined;
   filters: [string, string | number][];
+  farmFilters: string[];
+  categoryFilters: string;
+  ratingFilters: number[];
+  priceFilters: number[];
 }

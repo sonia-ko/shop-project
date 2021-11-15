@@ -4,9 +4,9 @@ import {
   getDocs,
   query,
   where,
-  orderBy,
-  startAfter,
-  limit,
+  // orderBy,
+  // startAfter,
+  // limit,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 

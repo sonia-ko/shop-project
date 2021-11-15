@@ -1,13 +1,7 @@
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 3vh 0 14vh 0;
-}
-
 .slider {
     position: relative;
     width: 200px;
+    height: 100px;
 }
 
 .slider__track,
@@ -45,6 +39,10 @@
 .slider__left-value {
     left: 0;
     /* display: flex; */
+}
+
+.thumb--left {
+    left: -2px;
 }
 
 .slider__right-value {

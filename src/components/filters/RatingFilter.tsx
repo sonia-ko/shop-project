@@ -1,15 +1,22 @@
 import React from "react";
 import RowOfStars from "../rating/RowOfStars";
 import CheckBox from "../checkBox/Checkbox";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../store/reducers/productsSlice";
 
 const RatingFilter: React.FC = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="sidebarSection">
       <h3>Rating</h3>
 
       <ul>
         <li>
-          <CheckBox item="5-star">
+          <CheckBox
+            handleClick={() => dispatch(setFilter(["rate", 5]))}
+            item="5-star"
+          >
             <RowOfStars
               starColor="golden"
               itemName="5-star"
@@ -18,7 +25,10 @@ const RatingFilter: React.FC = () => {
           </CheckBox>
         </li>
         <li>
-          <CheckBox item="4-star">
+          <CheckBox
+            handleClick={() => dispatch(setFilter(["rate", 4]))}
+            item="4-star"
+          >
             <RowOfStars
               starColor="golden"
               itemName="4-star"
@@ -27,7 +37,10 @@ const RatingFilter: React.FC = () => {
           </CheckBox>
         </li>
         <li>
-          <CheckBox item="3-star">
+          <CheckBox
+            handleClick={() => dispatch(setFilter(["rate", 3]))}
+            item="3-star"
+          >
             <RowOfStars
               starColor="golden"
               itemName="3-star"
@@ -36,7 +49,10 @@ const RatingFilter: React.FC = () => {
           </CheckBox>
         </li>
         <li>
-          <CheckBox item="2-star">
+          <CheckBox
+            handleClick={() => dispatch(setFilter(["rate", 2]))}
+            item="2-star"
+          >
             <RowOfStars
               starColor="golden"
               itemName="2-star"
@@ -45,7 +61,10 @@ const RatingFilter: React.FC = () => {
           </CheckBox>
         </li>
         <li>
-          <CheckBox item="1-star">
+          <CheckBox
+            handleClick={() => dispatch(setFilter(["rate", 1]))}
+            item="1-star"
+          >
             <RowOfStars
               starColor="golden"
               itemName="1-star"
