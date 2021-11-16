@@ -11,7 +11,7 @@ export interface ProductsState {
   productsPerPage: 5;
   lasVisibleProduct: number;
   firstVisibleProduct: number;
-  currentPage: number | undefined;
+  currentPage: number;
   filters: [string, string | number][];
   farmFilters: string[];
   categoryFilters: string;

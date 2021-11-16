@@ -1,0 +1,14 @@
+.currentPage {
+    color: #6a983c;
+    font-weight: bold;
+    padding: 0 0.5vw;
+}
+
+.pageNumber {
+    padding: 0 0.5vw;
+    cursor: pointer;
+}
+
+.pageNumber:hover {
+    color: rgb(63, 107, 63);
+}
