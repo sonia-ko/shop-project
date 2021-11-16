@@ -3,7 +3,8 @@ import type { RootState } from "../store";
 import { fetchProducts, getProduct } from "../actions/productsThunk";
 import { ProductsState } from "../types/productsState";
 import Product from "../../interfaces/product";
-import RatingFilter from "../../components/filters/RatingFilter";
+import { SortingModel } from "../../interfaces/sorting";
+import { compareValues } from "../../helpers/sortingFunction";
 
 // Define the initial state using that type
 const initialState: ProductsState = {
@@ -40,86 +41,11 @@ export const productsSlice = createSlice({
       );
       state.productsFetched = true;
     },
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
-    //   state.currentPage = 1;
-    //   state.productsFetched = false;
-    //   state.filters = [...state.filters, action.payload];
-    //   const tempProducts: Product[] = [];
-    //   state.filters.forEach((filter) => {
-    //     if (filter[0] === "farm") {
-    //       const products = state.allProducts.filter(
-    //         (el) => el.farm === filter[1]
-    //       );
-    //       tempProducts.push(...products);
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) => el.farm === filter[1]
-    //       // );
-    //     }
-    //     if (filter[0] === "category") {
-    //       const products = state.allProducts.filter(
-    //         (el) =>
-    //           typeof filter[1] === "string" &&
-    //           el.specialMarks.includes(filter[1])
-    //       );
-    //       tempProducts.push(...products);
-
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) =>
-    //       //     typeof filter[1] === "string" &&
-    //       //     el.specialMarks.includes(filter[1])
-    //       // );
-    //     }
-    //     if (filter[0] === "rate") {
-    //       const products = state.allProducts.filter(
-    //         (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       );
-    //       tempProducts.push(...products);
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       // );
-    //     }
-    //   });
-    //   const set = new Set(tempProducts);
-    //   state.visibleProducts = Array.from(set);
-
-    //   console.log(state.visibleProducts);
-    //   state.numberOfPages = Math.ceil(
-    //     state.visibleProducts.length / state.productsPerPage
-    //   );
-    // },
-    // Mehod 2
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
-    //   state.currentPage = 1;
-    //   state.productsFetched = false;
-    //   state.filters = [...state.filters, action.payload];
-
-    //   state.filters.forEach((filter) => {
-    //     if (filter[0] === "farm") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) => el.farm === filter[1]
-    //       );
-    //     }
-    //     if (filter[0] === "category") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) =>
-    //           typeof filter[1] === "string" &&
-    //           el.specialMarks.includes(filter[1])
-    //       );
-    //     }
-    //     if (filter[0] === "rate") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       );
-    //     }
-    //   });
-
-    //   console.log(state.visibleProducts);
-    //   state.numberOfPages = Math.ceil(
-    //     state.visibleProducts.length / state.productsPerPage
-    //   );
-    // },
-    // Method 3
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
+    sortProducts(state, action: PayloadAction<SortingModel>) {
+      state.visibleProducts = [...state.visibleProducts].sort(
+        compareValues({ key: action.payload.key, order: action.payload.order })
+      );
+    },
     setFilter(
       state,
       action: PayloadAction<["farm" | "category", string] | ["rate", number]>
@@ -164,14 +90,18 @@ export const productsSlice = createSlice({
         );
       }
 
-      // let filteredByCategory: Product[] = [];
+      let filteredByCategory: Product[] = [];
 
-      // if (!state.categoryFilters) {
-      //   filteredByCategory;
-      // }
+      if (!state.categoryFilters) {
+        filteredByCategory = filteredByRate;
+      } else {
+        filteredByCategory = filteredByRate.filter((product) =>
+          product.specialMarks.includes(state.categoryFilters)
+        );
+      }
 
-      state.visibleProducts = filteredByRate;
-
+      state.visibleProducts = filteredByCategory;
+      state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
       );
@@ -194,25 +124,21 @@ export const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.allProducts = [...action.payload];
         state.visibleProducts = state.allProducts;
-        state.numberOfProducts = state.allProducts.length;
+        state.numberOfProducts = state.visibleProducts.length;
         state.numberOfPages = Math.ceil(
           state.numberOfProducts / state.productsPerPage
         );
         state.items = state.allProducts.slice(0, state.productsPerPage);
       })
-      // .addCase(getProductsNumber.fulfilled, (state, action) => {
-      //   state.numberOfProducts = action.payload;
-      //   state.numberOfPages = state.numberOfProducts
-      //     ? Math.ceil(state.numberOfProducts / state.productsPerPage)
-      //     : 1;
-      // })
+
       .addCase(getProduct.fulfilled, (state, action) => {
         state.currentProduct = action.payload;
       });
   },
 });
 
-export const { setPage, setFilter, resetFilters } = productsSlice.actions;
+export const { setPage, setFilter, resetFilters, sortProducts } =
+  productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 
 export default productsSlice.reducer;

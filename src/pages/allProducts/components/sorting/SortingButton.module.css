@@ -3,8 +3,8 @@
     border: 1px solid #d1d1d1;
     background-color: #f9f9f9;
     border-radius: 12px;
-    padding: 1vh 0.5vw;
     width: 10%;
+    padding: 1.5vh 0.5vw;
     justify-content: space-around;
 }
 
@@ -14,13 +14,13 @@
 }
 
 .selectBox {
-    width: 32%;
+    width: 40%;
     font-weight: 600;
     font-size: 1em;
     font-family: Poppins;
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1600px) {
     .container {
         width: 12%;
         padding: 1.5vh 0.5vw;

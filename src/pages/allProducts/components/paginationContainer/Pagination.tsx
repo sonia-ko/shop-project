@@ -12,21 +12,25 @@ const Pagination: React.FC = () => {
     (state: RootState) => state.products.numberOfPages
   );
 
-  let pages = [];
-  for (let i = 0; i < numOfPages; i++) {
-    pages.push(i + 1);
-  }
+  const currentPage = useSelector(
+    (state: RootState) => state.products.currentPage
+  );
+
+  let pages = Array.from({ length: numOfPages }, (_, i) => i + 1);
 
   return (
-    <div>
+    <div className={classes.container}>
       <span className={classes.page}> Page: </span>
       {pages.map((item) => {
         return (
           <span
-            onClick={(e: React.MouseEvent<Element, MouseEvent>): void => {
+            onClick={() => {
               dispatch(setPage(item));
+              window.scrollTo(0, 0);
             }}
-            className={classes.pageNumber}
+            className={
+              currentPage === item ? classes.currentPage : classes.pageNumber
+            }
             key={"pageNumber" + item}
           >
             {item}
