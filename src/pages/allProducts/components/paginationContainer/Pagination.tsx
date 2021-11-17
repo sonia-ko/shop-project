@@ -27,20 +27,25 @@ const Pagination: React.FC = () => {
   const visiblePages = pages.slice(firstPage - 1, lastVisiblePage);
   console.log(visiblePages);
 
-  const onArrowBackClick = () => {
-    setFirstPage(firstPage - 1);
-    dispatch(setPage(currentPage - 1));
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const onArrowNextClick = () => {
-    setFirstPage(firstPage + 1);
-    dispatch(setPage(currentPage + 1));
+  const onArrowClick = (direction: "next" | "back") => {
+    const newPage = direction === "next" ? firstPage + 1 : firstPage - 1;
+    setFirstPage(newPage);
+    dispatch(setPage(newPage));
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const onPageClick = (item: number) => {
     dispatch(setPage(item));
+    switch (item) {
+      case 1:
+        setFirstPage(1);
+        break;
+      case numOfPages:
+        setFirstPage(item - 2);
+        break;
+      default:
+        setFirstPage(item - 1);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -49,11 +54,20 @@ const Pagination: React.FC = () => {
       <span className={classes.page}> Page: </span>
 
       {firstPage > 1 ? (
-        <PaginationArrow
-          key={"arrowBack" + (firstPage - 1)}
-          handleClick={onArrowBackClick}
-          item={"←"}
-        />
+        <>
+          <PaginationArrow
+            key={"arrowBack" + (firstPage - 1)}
+            handleClick={onArrowClick.bind(null, "back")}
+            item={"←"}
+          />
+          <PageNumber
+            currentPage={currentPage}
+            item={1}
+            handleClick={onPageClick.bind(null, 1)}
+            key={"pageNumber" + 1}
+          />
+          <span>...</span>
+        </>
       ) : null}
 
       {visiblePages.map((item) => {
@@ -68,11 +82,20 @@ const Pagination: React.FC = () => {
       })}
 
       {lastVisiblePage < numOfPages ? (
-        <PaginationArrow
-          key={"arrowNext" + (lastVisiblePage + 1)}
-          handleClick={onArrowNextClick}
-          item={"→"}
-        />
+        <>
+          <span>...</span>
+          <PageNumber
+            currentPage={currentPage}
+            item={numOfPages}
+            handleClick={onPageClick.bind(null, numOfPages)}
+            key={"pageNumber" + numOfPages}
+          />
+          <PaginationArrow
+            key={"arrowNext" + (lastVisiblePage + 1)}
+            handleClick={onArrowClick.bind(null, "next")}
+            item={"→"}
+          />
+        </>
       ) : null}
     </div>
   );
