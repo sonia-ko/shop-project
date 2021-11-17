@@ -33,8 +33,12 @@
 
 .input {
     border: none;
-    width: 70%;
+    width: 100%;
     font-size: 1.2em;
     padding: 0.5vh 1vw;
     font-family: "Open Sans", sans-serif;
+}
+
+.form {
+    width: 70%;
 }

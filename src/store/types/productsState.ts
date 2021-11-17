@@ -17,4 +17,6 @@ export interface ProductsState {
   categoryFilters: string;
   ratingFilters: number[];
   priceFilters: number[];
+  filtersEnabled: boolean;
+  searchEnabled: boolean;
 }

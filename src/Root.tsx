@@ -9,8 +9,8 @@ const Root: React.FC = ({ children }) => {
   return (
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <Router basename="/shop-project/build">{children}</Router>
-        {/* <Router>{children}</Router> */}
+        {/* <Router basename="/shop-project/build">{children}</Router> */}
+        <Router>{children}</Router>
       </ReactReduxFirebaseProvider>
     </Provider>
   );

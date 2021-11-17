@@ -24,6 +24,8 @@ const initialState: ProductsState = {
   categoryFilters: "",
   ratingFilters: [],
   priceFilters: [],
+  filtersEnabled: false,
+  searchEnabled: false,
 };
 
 export const productsSlice = createSlice({
@@ -46,6 +48,23 @@ export const productsSlice = createSlice({
         compareValues({ key: action.payload.key, order: action.payload.order })
       );
     },
+    searchProduct(state, action: PayloadAction<string>) {
+      const products = state.filtersEnabled
+        ? state.visibleProducts
+        : state.allProducts;
+      const searchedProduct = action.payload.toLowerCase();
+      state.visibleProducts = products.filter(
+        (el) =>
+          el.title.toLowerCase().includes(searchedProduct) ||
+          el.category.toLowerCase().includes(searchedProduct)
+      );
+      state.numberOfProducts = state.visibleProducts.length;
+      state.numberOfPages = Math.ceil(
+        state.visibleProducts.length / state.productsPerPage
+      );
+      state.searchEnabled = searchedProduct === "" ? false : true;
+      state.currentPage = 1;
+    },
     setFilter(
       state,
       action: PayloadAction<["farm" | "category", string] | ["rate", number]>
@@ -63,15 +82,19 @@ export const productsSlice = createSlice({
         state.ratingFilters.push(action.payload[1]);
       }
 
+      const products = state.searchEnabled
+        ? state.visibleProducts
+        : state.allProducts;
+
       let filteredByFarm: Product[] = [];
       if (state.farmFilters.length === 0) {
-        filteredByFarm = state.allProducts;
+        filteredByFarm = products;
       } else {
         state.farmFilters.forEach(
           (filter) =>
             (filteredByFarm = [
               ...filteredByFarm,
-              ...state.allProducts.filter((product) => product.farm === filter),
+              ...products.filter((product) => product.farm === filter),
             ])
         );
       }
@@ -105,6 +128,7 @@ export const productsSlice = createSlice({
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
       );
+      state.filtersEnabled = true;
     },
 
     resetFilters(state) {
@@ -113,6 +137,8 @@ export const productsSlice = createSlice({
       state.numberOfPages = Math.ceil(
         state.numberOfProducts / state.productsPerPage
       );
+      state.filtersEnabled = false;
+      state.searchEnabled = false;
     },
   },
 
@@ -137,7 +163,7 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { setPage, setFilter, resetFilters, sortProducts } =
+export const { setPage, searchProduct, setFilter, resetFilters, sortProducts } =
   productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 
