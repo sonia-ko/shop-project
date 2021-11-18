@@ -65,7 +65,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
           </div>
 
           <div className={classes.shippingArea}>
-            <div className="bold"> {product.specialProduct}</div>
+            <div className="bold"> {product.shipping}</div>
             <div>Delivery in {product.deliveryTime} day</div>
           </div>
           <Button

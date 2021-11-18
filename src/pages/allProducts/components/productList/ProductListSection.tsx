@@ -22,7 +22,10 @@ const ProductListSection: React.FC = () => {
     <ul className={classes.container}>
       {visibleProducts.length !== 0 ? (
         products.map((product) => (
-          <ProductOverview key={product.id + "product"} product={product} />
+          <ProductOverview
+            key={product.id + product.title + "product"}
+            product={product}
+          />
         ))
       ) : (
         <NoProductsFound />

@@ -1,41 +1,52 @@
 import React from "react";
-import { secondaryCategories } from "../../static/dataWebsite";
 import classes from "./CategoriesFilter.module.css";
 import { useDispatch } from "react-redux";
-import { setFilter } from "../../store/reducers/productsSlice";
-import { useState } from "react";
+// import { useState } from "react";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { filterProducts } from "../../store/reducers/productsSlice";
 
 const CategoriesFilter: React.FC = () => {
   const dispatch = useDispatch();
-  const [filterEnabled, setFilterEnabled] = useState("");
+  // const [filterEnabled, setFilterEnabled] = useState("");
+
   const products = useSelector(
     (state: RootState) => state.products.allProducts
   );
+  const categories = useSelector(
+    (state: RootState) => state.products.productCategories
+  );
+  const selectedCategory = useSelector(
+    (state: RootState) => state.products.selectedCategory
+  );
+
+  const handleClick = (item: string) => {
+    if (selectedCategory === item) {
+      dispatch(filterProducts({ filter: "categories", value: "" }));
+      return;
+    }
+    dispatch(filterProducts({ filter: "categories", value: item }));
+  };
 
   return (
     <div className="sidebarSection">
       <h3>Categories</h3>
       <ul>
-        {secondaryCategories.map((item, i) => {
+        {categories.map((item, i) => {
           return (
             <li
-              onClick={() => {
-                dispatch(setFilter(["category", item]));
-                setFilterEnabled(item);
-              }}
+              onClick={handleClick.bind(null, item)}
               key={item + i}
               className={
-                filterEnabled === item
+                selectedCategory === item
                   ? classNames(classes.filterEnabled, classes.listItem)
                   : classes.listItem
               }
             >
               <span>{item}</span>
               <span className={classes.quantity}>
-                {products.filter((el) => el.specialMarks.includes(item)).length}
+                {products.filter((el) => el.categories.includes(item)).length}
               </span>
             </li>
           );

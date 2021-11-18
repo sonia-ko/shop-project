@@ -3,52 +3,72 @@ import classes from "./Search.module.css";
 import searchIcon from "../../../assets/searching.png";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { searchProduct } from "../../../store/reducers/productsSlice";
+import { filterProducts } from "../../../store/reducers/productsSlice";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const Search: React.FC = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const categories = useSelector(
+    (state: RootState) => state.products.productCategories
+  );
+  const selectedCategory = useSelector(
+    (state: RootState) => state.products.selectedCategory
+  );
+
   const dispatch = useDispatch();
 
-  const submitHandler = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("form submitted");
+  const onChangeInputHandler = () => {
     const searchedText = searchInputRef.current!.value;
-    dispatch(searchProduct(searchedText));
+    dispatch(filterProducts({ filter: "productType", value: searchedText }));
+  };
+
+  const onChangeOptionHandler = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    dispatch(
+      filterProducts({ filter: "categories", value: event.target.value })
+    );
   };
 
   return (
     <div className={classes.container}>
       {/* i need this container for the border-right to be displayed properly */}
       <div className={classes.selectboxContainer}>
-        <select className={classes.selectBox} name="category" id="category">
-          <option className={classes.option} defaultValue="All categories">
+        <select
+          value={selectedCategory}
+          onChange={onChangeOptionHandler}
+          className={classes.selectBox}
+          name="category"
+          id="category"
+        >
+          <option className={classes.option} value="">
             All categories
           </option>
-          <option className={classes.option} value="pizza">
-            Pizza
-          </option>
-          <option className={classes.option} value="friuts">
-            Fruits
-          </option>
-          <option className={classes.option} value="berries">
-            Berries
-          </option>
-          <option className={classes.option} value="tea">
-            Tea
-          </option>
-          <option className={classes.option} value="other">
-            Other
-          </option>
+
+          {categories.map((item) => {
+            return (
+              <option
+                key={"selectOptionCategory" + item}
+                className={classes.option}
+                value={item}
+                // selected={selectedCategory === item}
+              >
+                {item}
+              </option>
+            );
+          })}
         </select>
       </div>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <input
-          className={classes.input}
-          ref={searchInputRef}
-          placeholder="Search Products, categories..."
-          type="search"
-        />
-      </form>
+
+      <input
+        onChange={onChangeInputHandler}
+        className={classes.input}
+        ref={searchInputRef}
+        placeholder="Search Products, categories..."
+        type="search"
+      />
 
       <img className={classes.icon} src={searchIcon} alt="Search icon" />
     </div>

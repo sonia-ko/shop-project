@@ -4,7 +4,7 @@ import TotalProducts from "./TotalProducts";
 import classes from "./PaginationContainer.module.css";
 import Button from "../../../../components/buttons/Button";
 import arrowDown from "../../../../assets/arrowDown.png";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const PaginationContainer: React.FC = () => {
   const dispatch = useDispatch();

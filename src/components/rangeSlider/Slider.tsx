@@ -7,8 +7,9 @@ import {
   useRef,
 } from "react";
 import classnames from "classnames";
-
+// import { useSelector } from "react-redux";
 import classes from "./Slider.module.css";
+// import { RootState } from "../../store/store";
 
 interface SliderProps {
   min: number;
@@ -17,6 +18,10 @@ interface SliderProps {
 }
 
 const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
+  // const minimum = useSelector((state: RootState) => state.products.minPrice);
+  // const maximum = useSelector((state: RootState) => state.products.maxPrice);
+  // console.log(typeof maximum);
+
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef<HTMLInputElement>(null);

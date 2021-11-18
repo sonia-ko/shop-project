@@ -9,6 +9,6 @@ export interface ProductOverviewProps {
   freshness: string;
   deliveryArea: string;
   stockNumber: string;
-  specialProduct: string;
+  shipping: string;
   deliveryTime: number;
 }
