@@ -14,7 +14,7 @@ const Sidebar = () => {
       <CategoriesFilter />
       <BrandsFilter />
       <RatingFilter />
-      <PriceFilter defaultMin={1} defaultMax={1000} />
+      <PriceFilter />
       <Button
         btnStyle="light"
         btnText="Reset"

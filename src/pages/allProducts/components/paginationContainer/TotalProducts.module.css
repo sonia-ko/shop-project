@@ -1,19 +1,15 @@
 .products {
-    display: inline-block;
     color: #a9a9a9;
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .quantity {
-    display: inline-block;
     color: #6a983c;
     font-family: "Poppins", sans-serif;
     background: #f4f8ec;
     border-radius: 12px;
     font-weight: bold;
-    letter-spacing: 0.1em;
     margin: 0 0.5vw;
     padding: 0.5vh 0.5vw;
-    font-size: 0.95em;
+    font-size: 1em;
 }

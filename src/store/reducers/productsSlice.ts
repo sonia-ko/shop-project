@@ -1,28 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import { fetchProducts, getProduct } from "../actions/productsThunk";
+import { fetchProducts } from "../actions/productsThunk";
 import { ProductsState } from "../types/productsState";
-import Product from "../../interfaces/product";
-import RatingFilter from "../../components/filters/RatingFilter";
+import { SortingModel } from "../../interfaces/sorting";
+import { compareValues } from "../../helpers/sortingFunction";
+import { filterValues } from "../../helpers/filteringFunction";
 
 // Define the initial state using that type
 const initialState: ProductsState = {
   items: [],
   allProducts: [],
   visibleProducts: [],
-  productsFetched: false,
-  currentProduct: undefined,
   numberOfProducts: 0,
-  numberOfPages: 4,
+  numberOfPages: 1,
   productsPerPage: 5,
   lasVisibleProduct: 5,
   firstVisibleProduct: 0,
   currentPage: 1,
-  filters: [],
-  farmFilters: [],
-  categoryFilters: "",
-  ratingFilters: [],
-  priceFilters: [],
+  minPrice: 1,
+  maxPrice: 1000,
+  selectedCategory: "",
+  productCategories: [],
+  maxRating: 5,
+  farms: [],
+  filters: { farm: [], rate: [], categories: "", price: [], productType: "" },
 };
 
 export const productsSlice = createSlice({
@@ -38,140 +39,75 @@ export const productsSlice = createSlice({
         state.firstVisibleProduct,
         state.lasVisibleProduct
       );
-      state.productsFetched = true;
     },
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
-    //   state.currentPage = 1;
-    //   state.productsFetched = false;
-    //   state.filters = [...state.filters, action.payload];
-    //   const tempProducts: Product[] = [];
-    //   state.filters.forEach((filter) => {
-    //     if (filter[0] === "farm") {
-    //       const products = state.allProducts.filter(
-    //         (el) => el.farm === filter[1]
-    //       );
-    //       tempProducts.push(...products);
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) => el.farm === filter[1]
-    //       // );
-    //     }
-    //     if (filter[0] === "category") {
-    //       const products = state.allProducts.filter(
-    //         (el) =>
-    //           typeof filter[1] === "string" &&
-    //           el.specialMarks.includes(filter[1])
-    //       );
-    //       tempProducts.push(...products);
-
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) =>
-    //       //     typeof filter[1] === "string" &&
-    //       //     el.specialMarks.includes(filter[1])
-    //       // );
-    //     }
-    //     if (filter[0] === "rate") {
-    //       const products = state.allProducts.filter(
-    //         (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       );
-    //       tempProducts.push(...products);
-    //       // state.visibleProducts = state.allProducts.filter(
-    //       //   (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       // );
-    //     }
-    //   });
-    //   const set = new Set(tempProducts);
-    //   state.visibleProducts = Array.from(set);
-
-    //   console.log(state.visibleProducts);
-    //   state.numberOfPages = Math.ceil(
-    //     state.visibleProducts.length / state.productsPerPage
-    //   );
-    // },
-    // Mehod 2
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
-    //   state.currentPage = 1;
-    //   state.productsFetched = false;
-    //   state.filters = [...state.filters, action.payload];
-
-    //   state.filters.forEach((filter) => {
-    //     if (filter[0] === "farm") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) => el.farm === filter[1]
-    //       );
-    //     }
-    //     if (filter[0] === "category") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) =>
-    //           typeof filter[1] === "string" &&
-    //           el.specialMarks.includes(filter[1])
-    //       );
-    //     }
-    //     if (filter[0] === "rate") {
-    //       state.visibleProducts = state.allProducts.filter(
-    //         (el) => typeof filter[1] === "number" && el.rate === filter[1]
-    //       );
-    //     }
-    //   });
-
-    //   console.log(state.visibleProducts);
-    //   state.numberOfPages = Math.ceil(
-    //     state.visibleProducts.length / state.productsPerPage
-    //   );
-    // },
-    // Method 3
-    // setFilter(state, action: PayloadAction<[string, string | number]>) {
-    setFilter(
+    sortProducts(state, action: PayloadAction<SortingModel>) {
+      state.visibleProducts = [...state.visibleProducts].sort(
+        compareValues({ key: action.payload.key, order: action.payload.order })
+      );
+    },
+    filterProducts(
       state,
-      action: PayloadAction<["farm" | "category", string] | ["rate", number]>
+      action: PayloadAction<
+        | { filter: "farm"; value: string }
+        | { filter: "rate"; value: number }
+        | { filter: "categories"; value: string } // Most popular, Total sale,
+        | { filter: "price"; value: number[] }
+        | { filter: "productType"; value: string } // like vegetable
+      >
     ) {
       state.currentPage = 1;
-      state.productsFetched = false;
-
-      if (action.payload[0] === "farm") {
-        state.farmFilters.push(action.payload[1]);
-      }
-      if (action.payload[0] === "category") {
-        state.categoryFilters = action.payload[1];
-      }
-      if (action.payload[0] === "rate") {
-        state.ratingFilters.push(action.payload[1]);
-      }
-
-      let filteredByFarm: Product[] = [];
-      if (state.farmFilters.length === 0) {
-        filteredByFarm = state.allProducts;
-      } else {
-        state.farmFilters.forEach(
-          (filter) =>
-            (filteredByFarm = [
-              ...filteredByFarm,
-              ...state.allProducts.filter((product) => product.farm === filter),
-            ])
-        );
-      }
-
-      let filteredByRate: Product[] = [];
-
-      if (state.ratingFilters.length === 0) {
-        filteredByRate = filteredByFarm;
-      } else {
-        state.ratingFilters.forEach(
-          (filter) =>
-            (filteredByRate = [
-              ...filteredByRate,
-              ...filteredByFarm.filter((product) => product.rate === filter),
-            ])
-        );
+      switch (action.payload.filter) {
+        case "farm":
+          const farmValue = action.payload.value;
+          state.filters.farm = state.filters.farm.includes(farmValue)
+            ? state.filters.farm.filter((filter) => filter !== farmValue)
+            : [...state.filters.farm, farmValue];
+          break;
+        case "rate":
+          const rateValue = action.payload.value;
+          state.filters.rate = state.filters.rate.includes(rateValue)
+            ? state.filters.rate.filter((filter) => filter !== rateValue)
+            : [...state.filters.rate, rateValue];
+          break;
+        case "categories":
+          state.filters.categories = action.payload.value;
+          state.selectedCategory = action.payload.value;
+          break;
+        case "price":
+          state.filters.price = action.payload.value;
+          break;
+        case "productType":
+          state.filters.productType = action.payload.value;
+          break;
       }
 
-      // let filteredByCategory: Product[] = [];
+      const filteredByCategory = filterValues({
+        products: state.allProducts,
+        parameters: { type: "categories", filters: state.filters.categories },
+      });
 
-      // if (!state.categoryFilters) {
-      //   filteredByCategory;
-      // }
+      const filteredByFarm = filterValues({
+        products: filteredByCategory,
+        parameters: { type: "farm", filters: state.filters.farm },
+      });
 
-      state.visibleProducts = filteredByRate;
+      const filteredByRate = filterValues({
+        products: filteredByFarm,
+        parameters: { type: "rate", filters: state.filters.rate },
+      });
 
+      const filteredByProductType = filterValues({
+        products: filteredByRate,
+        parameters: { type: "productType", filters: state.filters.productType },
+      });
+
+      const filteredByPrice = filterValues({
+        products: filteredByProductType,
+        parameters: { type: "price", filters: state.filters.price },
+      });
+
+      state.visibleProducts = filteredByPrice;
+      state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
       );
@@ -187,32 +123,38 @@ export const productsSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchProducts.pending, (state, action) => {
-        state.productsFetched = false;
-      })
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.allProducts = [...action.payload];
-        state.visibleProducts = state.allProducts;
-        state.numberOfProducts = state.allProducts.length;
-        state.numberOfPages = Math.ceil(
-          state.numberOfProducts / state.productsPerPage
-        );
-        state.items = state.allProducts.slice(0, state.productsPerPage);
-      })
-      // .addCase(getProductsNumber.fulfilled, (state, action) => {
-      //   state.numberOfProducts = action.payload;
-      //   state.numberOfPages = state.numberOfProducts
-      //     ? Math.ceil(state.numberOfProducts / state.productsPerPage)
-      //     : 1;
-      // })
-      .addCase(getProduct.fulfilled, (state, action) => {
-        state.currentProduct = action.payload;
+    builder.addCase(fetchProducts.fulfilled, (state, action) => {
+      state.allProducts = [...action.payload];
+      state.visibleProducts = state.allProducts;
+
+      // define the list of available categories and farms
+      const categories = new Set<string>();
+      const farms = new Set<string>();
+      const prices: number[] = [];
+
+      state.visibleProducts.forEach((product) => {
+        product.categories.forEach((category) => categories.add(category));
+        farms.add(product.farm);
+        prices.push(product.price);
       });
+      state.productCategories = Array.from(categories.values());
+      state.farms = Array.from(farms.values());
+      state.minPrice = Math.min(...prices);
+      state.maxPrice = Math.max(...prices);
+      console.log(state.minPrice, state.maxPrice);
+
+      state.numberOfProducts = state.visibleProducts.length;
+      state.numberOfPages = Math.ceil(
+        state.numberOfProducts / state.productsPerPage
+      );
+
+      state.items = state.allProducts.slice(0, state.productsPerPage);
+    });
   },
 });
 
-export const { setPage, setFilter, resetFilters } = productsSlice.actions;
+export const { setPage, resetFilters, sortProducts, filterProducts } =
+  productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 
 export default productsSlice.reducer;

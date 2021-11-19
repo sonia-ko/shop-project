@@ -7,16 +7,14 @@ export default interface Product {
   pictures: string[];
   rating: boolean[];
   rate: number;
-  specialMarks: string[]; // like 'Free delivery' or '30%- off'
   price: number;
   oldPrice?: number;
   country: number;
-  category: string; // like 'pizza'
   stock: boolean; // in stock / not in stock
   stockNumber: string; // 30 pcs
   color: string; // No specified color
   size: string; // small, big, all sizes, 50x50 cm
-  specialProduct: string; // Free delivery
+  shipping: string; // Free delivery
   buyBy: string[]; // [pcs, kgs, box, pack]
   deliveryTime: number; // in X days
   deliveryArea: string; // Europe
@@ -26,4 +24,6 @@ export default interface Product {
   questions: string[];
   farm: string;
   freshness: string; // New
+  categories: string[];
+  productType: string;
 }

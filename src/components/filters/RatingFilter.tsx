@@ -2,7 +2,9 @@ import React from "react";
 import RowOfStars from "../rating/RowOfStars";
 import CheckBox from "../checkBox/Checkbox";
 import { useDispatch } from "react-redux";
-import { setFilter } from "../../store/reducers/productsSlice";
+import { filterProducts } from "../../store/reducers/productsSlice";
+
+import StarsRating from "../rating/StarsRating";
 
 const RatingFilter: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,19 +16,29 @@ const RatingFilter: React.FC = () => {
       <ul>
         <li>
           <CheckBox
-            handleClick={() => dispatch(setFilter(["rate", 5]))}
+            handleClick={() =>
+              dispatch(filterProducts({ filter: "rate", value: 5 }))
+            }
             item="5-star"
           >
-            <RowOfStars
+            <StarsRating
+              numberOfFilledStars={5}
+              numberOfStars={5}
+              itemName="5-star"
+              starColor="golden"
+            />
+            {/* <RowOfStars
               starColor="golden"
               itemName="5-star"
               starsEmpty={[false, false, false, false, false]}
-            />
+            /> */}
           </CheckBox>
         </li>
         <li>
           <CheckBox
-            handleClick={() => dispatch(setFilter(["rate", 4]))}
+            handleClick={() =>
+              dispatch(filterProducts({ filter: "rate", value: 4 }))
+            }
             item="4-star"
           >
             <RowOfStars
@@ -38,7 +50,9 @@ const RatingFilter: React.FC = () => {
         </li>
         <li>
           <CheckBox
-            handleClick={() => dispatch(setFilter(["rate", 3]))}
+            handleClick={() =>
+              dispatch(filterProducts({ filter: "rate", value: 3 }))
+            }
             item="3-star"
           >
             <RowOfStars
@@ -50,7 +64,9 @@ const RatingFilter: React.FC = () => {
         </li>
         <li>
           <CheckBox
-            handleClick={() => dispatch(setFilter(["rate", 2]))}
+            handleClick={() =>
+              dispatch(filterProducts({ filter: "rate", value: 2 }))
+            }
             item="2-star"
           >
             <RowOfStars
@@ -62,7 +78,9 @@ const RatingFilter: React.FC = () => {
         </li>
         <li>
           <CheckBox
-            handleClick={() => dispatch(setFilter(["rate", 1]))}
+            handleClick={() =>
+              dispatch(filterProducts({ filter: "rate", value: 1 }))
+            }
             item="1-star"
           >
             <RowOfStars

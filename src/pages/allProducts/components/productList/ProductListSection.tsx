@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { RootState } from "../../../../store/store";
 import { setPage } from "../../../../store/reducers/productsSlice";
+import NoProductsFound from "../../../../components/noProductsFound/NoProductsFound";
 
 const ProductListSection: React.FC = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,16 @@ const ProductListSection: React.FC = () => {
 
   return (
     <ul className={classes.container}>
-      {products.map((product) => {
-        return (
-          <ProductOverview key={product.id + "product"} product={product} />
-        );
-      })}
+      {visibleProducts.length !== 0 ? (
+        products.map((product) => (
+          <ProductOverview
+            key={product.id + product.title + "product"}
+            product={product}
+          />
+        ))
+      ) : (
+        <NoProductsFound />
+      )}
     </ul>
   );
 };
