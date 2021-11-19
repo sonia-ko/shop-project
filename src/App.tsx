@@ -13,7 +13,7 @@ import OurBlog from "./pages/blog/OurBlog";
 import OurCareers from "./pages/careers/OurCareers";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import Footer from "./components/footer/Footer";
-import AccountDashboard from "./pages/account/AccountDashboard";
+import LoginPage from "./pages/account/LoginPage";
 import ShoppingCartPage from "./pages/shoppingCart/shoppingCartPage";
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
             <PageNotFound />
           </Route>
           <Route exact path="/login">
-            <AccountDashboard />
+            <LoginPage />
           </Route>
           <Route exact path="/cart">
             <ShoppingCartPage />

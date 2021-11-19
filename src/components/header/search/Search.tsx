@@ -34,7 +34,6 @@ const Search: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      {/* i need this container for the border-right to be displayed properly */}
       <div className={classes.selectboxContainer}>
         <select
           value={selectedCategory}
@@ -53,7 +52,6 @@ const Search: React.FC = () => {
                 key={"selectOptionCategory" + item}
                 className={classes.option}
                 value={item}
-                // selected={selectedCategory === item}
               >
                 {item}
               </option>

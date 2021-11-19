@@ -1,5 +1,4 @@
 import React from "react";
-import { brands } from "../../static/dataPartners";
 import CheckBox from "../checkBox/Checkbox";
 import { useDispatch } from "react-redux";
 import { filterProducts } from "../../store/reducers/productsSlice";

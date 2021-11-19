@@ -1,29 +1,28 @@
 export default interface Product {
   id: string;
-  title: string; // Pizza Caesare
+  title: string;
   exendedDescription: string;
   shortDescription: string;
   mainPicture: string;
   pictures: string[];
-  rating: boolean[];
   rate: number;
   price: number;
   oldPrice?: number;
   country: number;
-  stock: boolean; // in stock / not in stock
-  stockNumber: string; // 30 pcs
-  color: string; // No specified color
-  size: string; // small, big, all sizes, 50x50 cm
-  shipping: string; // Free delivery
-  buyBy: string[]; // [pcs, kgs, box, pack]
-  deliveryTime: number; // in X days
-  deliveryArea: string; // Europe
+  stock: boolean;
+  stockNumber: string;
+  color: string;
+  size: string;
+  shipping: string;
+  buyBy: string[];
+  deliveryTime: number;
+  deliveryArea: string;
   origins: string;
-  howToCook: string; // The product does not require cooking
+  howToCook: string;
   reviews: string[];
   questions: string[];
   farm: string;
-  freshness: string; // New
+  freshness: string;
   categories: string[];
   productType: string;
 }

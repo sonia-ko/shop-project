@@ -6,9 +6,9 @@ import { SortingModel } from "../../interfaces/sorting";
 import { compareValues } from "../../helpers/sortingFunction";
 import { filterValues } from "../../helpers/filteringFunction";
 
-// Define the initial state using that type
 const initialState: ProductsState = {
   items: [],
+  productsFetched: false,
   allProducts: [],
   visibleProducts: [],
   numberOfProducts: 0,
@@ -114,10 +114,18 @@ export const productsSlice = createSlice({
     },
 
     resetFilters(state) {
+      state.productsPerPage = 5;
       state.visibleProducts = state.allProducts;
       state.numberOfProducts = state.allProducts.length;
       state.numberOfPages = Math.ceil(
         state.numberOfProducts / state.productsPerPage
+      );
+    },
+    showMoreProductsPerPage(state) {
+      state.productsPerPage = state.productsPerPage + 5;
+      state.numberOfProducts = state.visibleProducts.length;
+      state.numberOfPages = Math.ceil(
+        state.visibleProducts.length / state.productsPerPage
       );
     },
   },
@@ -127,7 +135,6 @@ export const productsSlice = createSlice({
       state.allProducts = [...action.payload];
       state.visibleProducts = state.allProducts;
 
-      // define the list of available categories and farms
       const categories = new Set<string>();
       const farms = new Set<string>();
       const prices: number[] = [];
@@ -149,12 +156,18 @@ export const productsSlice = createSlice({
       );
 
       state.items = state.allProducts.slice(0, state.productsPerPage);
+      state.productsFetched = true;
     });
   },
 });
 
-export const { setPage, resetFilters, sortProducts, filterProducts } =
-  productsSlice.actions;
+export const {
+  setPage,
+  showMoreProductsPerPage,
+  resetFilters,
+  sortProducts,
+  filterProducts,
+} = productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 
 export default productsSlice.reducer;

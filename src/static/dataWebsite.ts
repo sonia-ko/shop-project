@@ -31,38 +31,29 @@ export const productCategories = [
 
 export const mainMenuItems = ["Blog", "About Us", "Careers"];
 
-export const secondaryCategories = [
-  "Most popular",
-  "New products",
-  "Top in USA",
-  "Total sale",
-];
-
 export const pageOwner = "petrbilek.com";
 export const copyrightYear = 2020;
 
 export const popularTags = [
-  "Beans",
-  "Carrots",
-  "Apples",
-  "Garlic",
-  "Mushrooms",
-  "Tomatoes",
-  "Chilli peppers",
+  "Vegan",
   "Broccoli",
-  "Watermelons",
-  "Cherries",
-  "Meat",
-  "Toys",
-  "Fish",
-  "Skirts",
-  "Fresh food",
+  "Orange",
+  "Coffee",
+  "Coconut",
+  "Juice",
+  "Pizza Caesare",
+  "Raspberry",
+  "Berry",
+  "Cherry",
+  "Blueberry",
+  "Tea",
+  "Ginger",
+  "Banana",
+  "Strawberry",
   "Lemons",
-  "Bananas",
+  "Corn",
   "Pizza",
-  "Phones",
-  "Bread",
-  "Chicken",
+  "Greek pizza",
+  "Fruit",
+  "Vegetable",
 ];
-
-export const productsPerPage = 5;

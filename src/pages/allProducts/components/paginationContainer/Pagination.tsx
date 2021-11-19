@@ -53,8 +53,6 @@ const Pagination: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  console.log(firstPage);
-  console.log(numOfPages);
   return (
     <div className={classes.container}>
       <span className={classes.page}> Page: </span>

@@ -8,7 +8,7 @@ export interface ProductsState {
   visibleProducts: Product[];
   numberOfProducts: number | undefined;
   numberOfPages: number;
-  productsPerPage: 5;
+  productsPerPage: number;
   lasVisibleProduct: number;
   firstVisibleProduct: number;
   currentPage: number;
@@ -16,6 +16,7 @@ export interface ProductsState {
   farms: string[];
   selectedCategory: string;
   maxRating: number;
+  productsFetched: boolean;
   filters: {
     farm: string[];
     rate: number[];

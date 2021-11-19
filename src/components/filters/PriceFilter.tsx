@@ -2,27 +2,18 @@ import React from "react";
 import Slider from "../rangeSlider/Slider";
 import { useDispatch, useSelector } from "react-redux";
 import { filterProducts } from "../../store/reducers/productsSlice";
-import { useEffect } from "react";
-
-import { useState } from "react";
 import { RootState } from "../../store/store";
 
 const PriceFilter: React.FC = () => {
   const dispatch = useDispatch();
 
-  const defaultMin = useSelector((state: RootState) => state.products.minPrice);
-  const defaultMax = useSelector((state: RootState) => state.products.maxPrice);
-  const products = useSelector(
-    (state: RootState) => state.products.allProducts
+  const defaultMin = useSelector((state: RootState) =>
+    Math.floor(state.products.minPrice)
   );
 
-  const [min, setMin] = useState(defaultMin);
-  const [max, setMax] = useState(defaultMax);
-
-  useEffect(() => {
-    setMin(defaultMin);
-    setMax(defaultMax);
-  }, [defaultMin, defaultMax, products]);
+  const defaultMax = useSelector((state: RootState) =>
+    Math.ceil(state.products.maxPrice)
+  );
 
   return (
     <div className="sidebarSection">
@@ -31,8 +22,6 @@ const PriceFilter: React.FC = () => {
         min={defaultMin}
         max={defaultMax}
         onChange={({ min, max }: { min: number; max: number }) => {
-          setMin(min);
-          setMax(max);
           dispatch(filterProducts({ filter: "price", value: [min, max] }));
         }}
       />

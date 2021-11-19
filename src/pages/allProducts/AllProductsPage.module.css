@@ -1,6 +1,7 @@
 .container {
     width: 95%;
     margin: 6vh auto;
+    position: relative;
 }
 
 .body {

@@ -4,6 +4,7 @@ import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
 import arrowRight from "../../../../assets/arrowRight.png";
 import StarsRating from "../../../../components/rating/StarsRating";
+import { useHistory } from "react-router";
 import Product from "../../../../interfaces/product";
 
 interface ProductOverviewProps {
@@ -14,8 +15,9 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
     console.log("Product opened");
   };
 
+  const history = useHistory();
   const addToWishList = () => {
-    console.log("Product added to wishlist");
+    history.push("/login");
   };
 
   return (

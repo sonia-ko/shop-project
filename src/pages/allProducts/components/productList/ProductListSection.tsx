@@ -13,10 +13,13 @@ const ProductListSection: React.FC = () => {
   const visibleProducts = useSelector(
     (state: RootState) => state.products.visibleProducts
   );
+  const productsPerPage = useSelector(
+    (state: RootState) => state.products.productsPerPage
+  );
 
   useEffect(() => {
     dispatch(setPage(1));
-  }, [visibleProducts, dispatch]);
+  }, [visibleProducts, productsPerPage, dispatch]);
 
   return (
     <ul className={classes.container}>
