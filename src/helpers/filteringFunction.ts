@@ -27,8 +27,7 @@ export const filterValues = (options: FilteringModel) => {
           product.price >= options.parameters.filters[0] &&
           product.price <= options.parameters.filters[1]
       );
-      console.log("i am called");
-      console.log(options.parameters.filters);
+
       break;
     default:
       options.parameters.filters.forEach(

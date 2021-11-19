@@ -7,25 +7,29 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import PaginationArrow from "./PaginationArrow";
 import PageNumber from "./PageNumber";
+import { useEffect } from "react";
 
 const Pagination: React.FC = () => {
   const dispatch = useDispatch();
 
-  const [firstPage, setFirstPage] = useState(1);
-
-  const numOfPages = useSelector(
-    (state: RootState) => state.products.numberOfPages
-  );
   const currentPage = useSelector(
     (state: RootState) => state.products.currentPage
   );
+  const numOfPages = useSelector(
+    (state: RootState) => state.products.numberOfPages
+  );
+
+  useEffect(() => {
+    setFirstPage(1);
+  }, [numOfPages]);
+
+  const [firstPage, setFirstPage] = useState(1);
 
   let pages = Array.from({ length: numOfPages }, (_, i) => i + 1);
 
   let lastVisiblePage = firstPage + 2;
 
   const visiblePages = pages.slice(firstPage - 1, lastVisiblePage);
-  console.log(visiblePages);
 
   const onArrowClick = (direction: "next" | "back") => {
     const newPage = direction === "next" ? firstPage + 1 : firstPage - 1;
@@ -49,6 +53,8 @@ const Pagination: React.FC = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  console.log(firstPage);
+  console.log(numOfPages);
   return (
     <div className={classes.container}>
       <span className={classes.page}> Page: </span>

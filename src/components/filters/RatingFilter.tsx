@@ -4,6 +4,8 @@ import CheckBox from "../checkBox/Checkbox";
 import { useDispatch } from "react-redux";
 import { filterProducts } from "../../store/reducers/productsSlice";
 
+import StarsRating from "../rating/StarsRating";
+
 const RatingFilter: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -19,11 +21,17 @@ const RatingFilter: React.FC = () => {
             }
             item="5-star"
           >
-            <RowOfStars
+            <StarsRating
+              numberOfFilledStars={5}
+              numberOfStars={5}
+              itemName="5-star"
+              starColor="golden"
+            />
+            {/* <RowOfStars
               starColor="golden"
               itemName="5-star"
               starsEmpty={[false, false, false, false, false]}
-            />
+            /> */}
           </CheckBox>
         </li>
         <li>

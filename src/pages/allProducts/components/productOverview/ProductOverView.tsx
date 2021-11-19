@@ -1,10 +1,9 @@
 import classes from "./ProductOverView.module.css";
 import React from "react";
-import RowOfStars from "../../../../components/rating/RowOfStars";
 import Button from "../../../../components/buttons/Button";
 import heartIcon from "../../../../assets/heartIcon.gif";
-// import { ProductOverviewProps } from "../../../../interfaces/productsOverview";
 import arrowRight from "../../../../assets/arrowRight.png";
+import StarsRating from "../../../../components/rating/StarsRating";
 import Product from "../../../../interfaces/product";
 
 interface ProductOverviewProps {
@@ -31,11 +30,11 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
         <div className={classes.descriptionBlockRight}>
           <h5>{product.title}</h5>
           <p>{product.shortDescription}</p>
-          <RowOfStars
+          <StarsRating
+            numberOfFilledStars={product.rate}
+            numberOfStars={5}
+            itemName={product.title}
             starColor="black"
-            itemName="super-pizza"
-            starsEmpty={product.rating}
-            // starsEmpty={[false, false, false, false, false]}
           />
 
           <ul className={classes.list}>

@@ -15,6 +15,7 @@ export interface ProductsState {
   productCategories: string[];
   farms: string[];
   selectedCategory: string;
+  maxRating: number;
   filters: {
     farm: string[];
     rate: number[];

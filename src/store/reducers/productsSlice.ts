@@ -12,15 +12,16 @@ const initialState: ProductsState = {
   allProducts: [],
   visibleProducts: [],
   numberOfProducts: 0,
-  numberOfPages: 4,
+  numberOfPages: 1,
   productsPerPage: 5,
   lasVisibleProduct: 5,
   firstVisibleProduct: 0,
   currentPage: 1,
-  minPrice: 0,
-  maxPrice: 0,
+  minPrice: 1,
+  maxPrice: 1000,
   selectedCategory: "",
   productCategories: [],
+  maxRating: 5,
   farms: [],
   filters: { farm: [], rate: [], categories: "", price: [], productType: "" },
 };
@@ -54,6 +55,7 @@ export const productsSlice = createSlice({
         | { filter: "productType"; value: string } // like vegetable
       >
     ) {
+      state.currentPage = 1;
       switch (action.payload.filter) {
         case "farm":
           const farmValue = action.payload.value;
@@ -104,8 +106,6 @@ export const productsSlice = createSlice({
         parameters: { type: "price", filters: state.filters.price },
       });
 
-      console.log(state.filters.price);
-
       state.visibleProducts = filteredByPrice;
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
@@ -131,6 +131,7 @@ export const productsSlice = createSlice({
       const categories = new Set<string>();
       const farms = new Set<string>();
       const prices: number[] = [];
+
       state.visibleProducts.forEach((product) => {
         product.categories.forEach((category) => categories.add(category));
         farms.add(product.farm);
@@ -140,6 +141,7 @@ export const productsSlice = createSlice({
       state.farms = Array.from(farms.values());
       state.minPrice = Math.min(...prices);
       state.maxPrice = Math.max(...prices);
+      console.log(state.minPrice, state.maxPrice);
 
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
