@@ -28,14 +28,32 @@
     font-size: 0.85em;
 }
 
-@media (max-width: 1500px) {
+@media (min-width: 1500px) {}
+
+@media (max-width: 992px) {
     .menuItem {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
+    .container {
+        flex-wrap: wrap;
+    }
     .menuItem {
-        font-size: 1.2em;
+        line-height: 2;
+        padding: 1.5vw 3vw;
+        display: flex;
+        font-size: 1.3em;
+    }
+    .productsMenu {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        display: none;
     }
 }

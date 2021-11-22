@@ -7,8 +7,12 @@ import Sidebar from "../../components/sidebar/SideBar";
 import PaginationContainer from "./components/paginationContainer/PaginationContainer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import MobileSidebar from "../../components/mobileSidebar/MobileSidebar";
 import { fetchProducts } from "../../store/actions/productsThunk";
 import { setPage } from "../../store/reducers/productsSlice";
+import TotalProducts from "../../components/totalProducts/TotalProducts";
 
 const AllProductsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -18,14 +22,25 @@ const AllProductsPage: React.FC = () => {
     dispatch(setPage(1));
   }, [dispatch]);
 
+  const numbOfProducts = useSelector(
+    (state: RootState) => state.products.numberOfProducts
+  );
+
   return (
     <div className={classes.container}>
       <Breadcrumbs />
-      <h1>All Products</h1>
-      <SortingButton />
+      <div className={classes.header}>
+        <div className={classes.pageOverview}>
+          <h1>All Products</h1>
+          <TotalProducts numberOfProducts={numbOfProducts} />
+        </div>
+        <SortingButton />
+      </div>
+
       <main>
         <div className={classes.body}>
           <Sidebar />
+          <MobileSidebar />
           <ProductListSection />
         </div>
         <PaginationContainer />

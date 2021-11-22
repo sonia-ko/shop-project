@@ -7,8 +7,8 @@ body {
     width: 95%;
     font-size: 0.8rem;
     background-color: #fdfdfd;
-    height: 100vh;
     position: relative;
+    height: 100%;
 }
 
 
@@ -186,3 +186,24 @@ hr {
 .sidebarSection {
     margin-bottom: 3vh;
 }
+
+
+/* ==================== Media queries ==================== */
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 760px) {
+    aside {
+        display: none;
+    }
+    .sidebarSection {
+        font-size: 18px;
+    }
+    h1 {
+        margin: 1vh 0 0 0;
+    }
+}
+
+@media (max-width: 576px) {}

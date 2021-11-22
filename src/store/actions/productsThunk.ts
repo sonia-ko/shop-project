@@ -1,16 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  collection,
-  getDocs,
-  query,
-  where,
-  // orderBy,
-  // startAfter,
-  // limit,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
-
-// const productsRef = collection(db, "products");
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   try {
@@ -39,18 +29,6 @@ export const getProduct = createAsyncThunk(
       return payload;
     } catch {
       window.alert("Failed to get product");
-    }
-  }
-);
-
-export const getProductsNumber = createAsyncThunk(
-  "productsnumber/get",
-  async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, "products"));
-      return querySnapshot.size;
-    } catch {
-      window.alert("Failed to get the number of products");
     }
   }
 );

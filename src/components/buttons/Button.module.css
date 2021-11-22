@@ -29,7 +29,8 @@
 
 /*  ==================== A button with green background and white text ====================  */
 
-.green {
+.green,
+.greenCentered {
     margin: 2.5vh 0;
     color: #ffffff;
     background: #6a983c;
@@ -37,8 +38,14 @@
     padding: 2vh 1.4vw;
 }
 
-.green:hover {
+.green:hover,
+.greenCentered:hover {
     background: #52752f;
+}
+
+.greenCentered {
+    margin: 2.5vh auto;
+    font-size: 18px;
 }
 
 
@@ -73,5 +80,11 @@
     }
     .gray {
         padding: 1.4vh 0.8vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .green {
+        margin: 1vh 0;
     }
 }

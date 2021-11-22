@@ -13,3 +13,8 @@
     padding: 0.5vh 0.5vw;
     font-size: 1em;
 }
+
+.container {
+    display: flex;
+    align-items: center;
+}

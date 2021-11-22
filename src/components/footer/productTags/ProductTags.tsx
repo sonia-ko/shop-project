@@ -15,9 +15,12 @@ const ProductsTag: React.FC = () => {
         {popularTags.map((item) => {
           return (
             <Tag
-              handleClick={() =>
-                dispatch(filterProducts({ filter: "productType", value: item }))
-              }
+              handleClick={() => {
+                dispatch(
+                  filterProducts({ filter: "productType", value: item })
+                );
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               key={"tag" + item}
               tagText={item}
             />

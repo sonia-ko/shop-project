@@ -9,7 +9,10 @@ import { RootState } from "../../store/store";
 const RatingFilter: React.FC = () => {
   const dispatch = useDispatch();
   const maxRating = useSelector((state: RootState) => state.products.maxRating);
-  const ratingElements = Array.from({ length: maxRating }, (_, i) => i + 1);
+  const ratingElements = Array.from(
+    { length: maxRating },
+    (_, i) => i + 1
+  ).sort((a, b) => b - a);
 
   return (
     <div className="sidebarSection">
@@ -24,6 +27,7 @@ const RatingFilter: React.FC = () => {
                   dispatch(filterProducts({ filter: "rate", value: el }))
                 }
                 item={el + "-star"}
+                category="rate"
               >
                 <StarsRating
                   numberOfFilledStars={el}

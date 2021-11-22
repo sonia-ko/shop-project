@@ -22,6 +22,7 @@ const BrandsFilter: React.FC = () => {
                   dispatch(filterProducts({ filter: "farm", value: item }));
                 }}
                 item={item}
+                category="farm"
               >
                 {item}
               </CheckBox>

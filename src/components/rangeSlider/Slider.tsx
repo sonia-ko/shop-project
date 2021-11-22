@@ -100,6 +100,15 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
           value={minVal}
           type="number"
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            if (Number(event.target.value) < 0) {
+              event.target.value = minVal.toString();
+              return;
+            }
+            if (!event.target.value || event.target.value === "0") {
+              setMinVal(0);
+              event.target.value = "0";
+              return;
+            }
             const value = Math.min(+event.target.value, maxVal - 1);
             setMinVal(value);
             event.target.value = value.toString();

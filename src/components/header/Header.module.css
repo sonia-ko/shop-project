@@ -37,3 +37,18 @@
     height: 20px;
     padding: 0 0.5vw;
 }
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 760px) {
+    .companyNameSection {
+        font-size: 1.7em;
+    }
+    .searchSection {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {}

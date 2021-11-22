@@ -1,12 +1,14 @@
 import Product from "../../interfaces/product";
+import { SortingModel } from "../../interfaces/sorting";
 
 export interface ProductsState {
   items: Product[];
   minPrice: number;
   maxPrice: number;
   allProducts: Product[];
+  sorting: SortingModel;
   visibleProducts: Product[];
-  numberOfProducts: number | undefined;
+  numberOfProducts: number;
   numberOfPages: number;
   productsPerPage: number;
   lasVisibleProduct: number;

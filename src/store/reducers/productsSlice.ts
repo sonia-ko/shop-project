@@ -24,6 +24,10 @@ const initialState: ProductsState = {
   maxRating: 5,
   farms: [],
   filters: { farm: [], rate: [], categories: "", price: [], productType: "" },
+  sorting: {
+    key: "id",
+    order: "desc",
+  },
 };
 
 export const productsSlice = createSlice({
@@ -44,6 +48,7 @@ export const productsSlice = createSlice({
       state.visibleProducts = [...state.visibleProducts].sort(
         compareValues({ key: action.payload.key, order: action.payload.order })
       );
+      state.sorting = action.payload;
     },
     filterProducts(
       state,
@@ -106,7 +111,10 @@ export const productsSlice = createSlice({
         parameters: { type: "price", filters: state.filters.price },
       });
 
-      state.visibleProducts = filteredByPrice;
+      state.visibleProducts = [...filteredByPrice].sort(
+        compareValues(state.sorting)
+      );
+
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
@@ -115,11 +123,21 @@ export const productsSlice = createSlice({
 
     resetFilters(state) {
       state.productsPerPage = 5;
-      state.visibleProducts = state.allProducts;
+      state.visibleProducts = state.allProducts.sort(
+        compareValues(state.sorting)
+      );
       state.numberOfProducts = state.allProducts.length;
       state.numberOfPages = Math.ceil(
         state.numberOfProducts / state.productsPerPage
       );
+      state.filters = {
+        farm: [],
+        rate: [],
+        categories: "",
+        price: [],
+        productType: "",
+      };
+      state.selectedCategory = "";
     },
     showMoreProductsPerPage(state) {
       state.productsPerPage = state.productsPerPage + 5;
@@ -133,7 +151,9 @@ export const productsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.allProducts = [...action.payload];
-      state.visibleProducts = state.allProducts;
+      state.visibleProducts = state.allProducts.sort(
+        compareValues(state.sorting)
+      );
 
       const categories = new Set<string>();
       const farms = new Set<string>();
@@ -148,7 +168,6 @@ export const productsSlice = createSlice({
       state.farms = Array.from(farms.values());
       state.minPrice = Math.min(...prices);
       state.maxPrice = Math.max(...prices);
-      console.log(state.minPrice, state.maxPrice);
 
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
