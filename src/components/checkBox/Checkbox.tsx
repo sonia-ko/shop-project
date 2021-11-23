@@ -29,21 +29,24 @@ const CheckBox: React.FC<CheckBoxProps> = ({
     }
   }, [filters]);
 
+  console.log(checked);
   return (
-    <label htmlFor={"input" + item} className={classes.container}>
+    <div className={classes.container}>
       <input
+        className={classes.input}
         onChange={() => {
           handleClick();
           setChecked(!checked);
         }}
-        className={classes.input}
         key={"input" + item}
         type="checkbox"
         id={"input" + item}
         checked={checked}
       />
-      <span className={classes.option}>{children}</span>
-    </label>
+      <label className={classes.label} htmlFor={"input" + item}>
+        {children}
+      </label>
+    </div>
   );
 };
 

@@ -123,7 +123,10 @@ export const productsSlice = createSlice({
     },
 
     resetFilters(state) {
-      state.productsPerPage = 5;
+      state.sorting = {
+        key: "id",
+        order: "desc",
+      };
       state.visibleProducts = state.allProducts.sort(
         compareValues(state.sorting)
       );
@@ -141,16 +144,17 @@ export const productsSlice = createSlice({
       state.selectedCategory = "";
       state.additionalPages = [];
       state.currentPage = 1;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     showMoreProductsPerPage(state, action: PayloadAction<number>) {
       const newNumberOfProducts = action.payload;
-      console.log(newNumberOfProducts);
       state.lasVisibleProduct = state.firstVisibleProduct + newNumberOfProducts;
 
-      state.items = state.allProducts.slice(
+      state.items = state.visibleProducts.slice(
         state.firstVisibleProduct,
         state.lasVisibleProduct
       );
+
       state.additionalPages =
         state.additionalPages.length === 0
           ? [state.currentPage + 1]

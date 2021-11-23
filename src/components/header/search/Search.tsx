@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Search.module.css";
 import searchIcon from "../../../assets/searching.png";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { filterProducts } from "../../../store/reducers/productsSlice";
 import { useSelector } from "react-redux";
+
 import { RootState } from "../../../store/store";
 
 const Search: React.FC = () => {
@@ -15,6 +16,9 @@ const Search: React.FC = () => {
   );
   const selectedCategory = useSelector(
     (state: RootState) => state.products.selectedCategory
+  );
+  const filterEnabled = useSelector(
+    (state: RootState) => state.products.filters.productType
   );
 
   const dispatch = useDispatch();
@@ -66,6 +70,7 @@ const Search: React.FC = () => {
         ref={searchInputRef}
         placeholder="Search Products, categories..."
         type="search"
+        value={filterEnabled}
       />
 
       <img className={classes.icon} src={searchIcon} alt="Search icon" />

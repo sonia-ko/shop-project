@@ -36,7 +36,7 @@
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
     .container {
         flex-wrap: wrap;
     }
