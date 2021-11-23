@@ -101,7 +101,7 @@
 
 @media (min-width: 1500px) {
     .img {
-        height: 38vh;
+        height: 42vh;
     }
     .descriptionContainer {
         padding-top: 4vh;
@@ -111,9 +111,17 @@
 @media (min-width: 1900px) {
     .img {
         height: 35vh;
+        width: 30%;
     }
     .descriptionContainer {
         padding-top: 3vh;
+        width: 65%;
+    }
+    .descriptionBlockLeft {
+        width: 30%;
+    }
+    .descriptionBlockRight {
+        width: 60%;
     }
 }
 
