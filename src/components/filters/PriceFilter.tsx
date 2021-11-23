@@ -15,6 +15,9 @@ const PriceFilter: React.FC = () => {
     Math.ceil(state.products.maxPrice)
   );
 
+  const filtersEnabled = useSelector(
+    (state: RootState) => state.products.filters.price.length
+  );
   return (
     <div className="sidebarSection">
       <h3>Price</h3>
@@ -24,6 +27,7 @@ const PriceFilter: React.FC = () => {
         onChange={({ min, max }: { min: number; max: number }) => {
           dispatch(filterProducts({ filter: "price", value: [min, max] }));
         }}
+        filterEnabled={filtersEnabled > 0}
       />
     </div>
   );

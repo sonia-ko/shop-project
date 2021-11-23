@@ -1,4 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  resetFilters,
+  setPage,
+  sortProducts,
+} from "../../store/reducers/productsSlice";
+
 import MainMenu from "./mainMenu/MainMenu";
 import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
@@ -10,15 +17,32 @@ import ProductsMenu from "./productsMenu/ProductsMenu";
 import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(resetFilters());
+    dispatch(
+      sortProducts({
+        key: "id",
+        order: "desc",
+      })
+    );
+    dispatch(setPage(1));
+  };
+
   return (
     <header>
       <div className={classes.topNavBar}>
         <Contacts />
         <MainMenu />
-      </div>{" "}
+      </div>
       <hr />
       <div className={classes.searchSection}>
-        <Link className={classes.companyNameSection} to="/products">
+        <Link
+          onClick={handleClick}
+          className={classes.companyNameSection}
+          to="/products"
+        >
           {companyName}
         </Link>
         <Search />

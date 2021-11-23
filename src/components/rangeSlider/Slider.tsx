@@ -13,14 +13,22 @@ interface SliderProps {
   min: number;
   max: number;
   onChange: Function;
+  filterEnabled: boolean;
 }
 
-const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
+const Slider: FC<SliderProps> = ({ min, max, onChange, filterEnabled }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef<HTMLInputElement>(null);
   const maxValRef = useRef<HTMLInputElement>(null);
   const range = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!filterEnabled) {
+      setMinVal(min);
+      setMaxVal(max);
+    }
+  }, [filterEnabled, min, max]);
 
   const getPercent = useCallback(
     (value: number) => Math.round(((value - min) / (max - min)) * 100),
@@ -50,10 +58,6 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
     }
   }, [maxVal, getPercent]);
 
-  useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
-
   return (
     <div className={classes.slider}>
       <input
@@ -66,6 +70,7 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
           const value = Math.min(+event.target.value, maxVal - 1);
           setMinVal(value);
           event.target.value = value.toString();
+          onChange({ min: minVal, max: maxVal });
         }}
         className={classnames(
           `${classes.thumb} ${classes["thumb--left"]} ${classes.zindex3}`,
@@ -84,8 +89,9 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
           const value = Math.max(+event.target.value, minVal + 1);
           setMaxVal(value);
           event.target.value = value.toString();
+          onChange({ min: minVal, max: maxVal });
         }}
-        className={classnames(`${classes.thumb} ${classes.zindex4}`)}
+        className={classnames(classes.thumb, classes.zindex4)}
       />
       <div className={classes["slider__track"]}></div>
       <div ref={range} className={classes["slider__range"]}></div>
@@ -105,13 +111,14 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
               return;
             }
             if (!event.target.value || event.target.value === "0") {
-              setMinVal(0);
               event.target.value = "0";
+              setMinVal(0);
               return;
             }
             const value = Math.min(+event.target.value, maxVal - 1);
-            setMinVal(value);
             event.target.value = value.toString();
+            setMinVal(value);
+            onChange({ min: minVal, max: maxVal });
           }}
         />
       </div>
@@ -127,8 +134,10 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
           value={maxVal}
           type="number"
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            event.target.style.backgroundColor = "transparent";
             if (Number(event.target.value) > max) {
               event.target.value = maxVal.toString();
+              event.target.style.backgroundColor = "#f2d3d3";
               return;
             }
             if (!event.target.value || event.target.value === "0") {
@@ -136,10 +145,14 @@ const Slider: FC<SliderProps> = ({ min, max, onChange }) => {
               event.target.value = "0";
               return;
             }
+            if (+event.target.value < minVal) {
+              event.target.style.backgroundColor = "#f2d3d3";
+            }
 
             const value = Math.max(+event.target.value, minVal + 1);
-            setMaxVal(value);
+            setMaxVal(+event.target.value);
             event.target.value = value.toString();
+            onChange({ min: minVal, max: maxVal });
           }}
         />
       </div>

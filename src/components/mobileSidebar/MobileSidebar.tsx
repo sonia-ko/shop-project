@@ -14,7 +14,6 @@ const MobileSidebar: React.FC = () => {
 
   const openMenu = () => {
     setMenuOpened(true);
-    console.log(menuOpened);
   };
 
   return (

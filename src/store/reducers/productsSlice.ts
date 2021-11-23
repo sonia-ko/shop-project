@@ -28,6 +28,7 @@ const initialState: ProductsState = {
     key: "id",
     order: "desc",
   },
+  additionalPages: [],
 };
 
 export const productsSlice = createSlice({
@@ -43,6 +44,7 @@ export const productsSlice = createSlice({
         state.firstVisibleProduct,
         state.lasVisibleProduct
       );
+      state.additionalPages = [];
     },
     sortProducts(state, action: PayloadAction<SortingModel>) {
       state.visibleProducts = [...state.visibleProducts].sort(
@@ -55,9 +57,9 @@ export const productsSlice = createSlice({
       action: PayloadAction<
         | { filter: "farm"; value: string }
         | { filter: "rate"; value: number }
-        | { filter: "categories"; value: string } // Most popular, Total sale,
+        | { filter: "categories"; value: string }
         | { filter: "price"; value: number[] }
-        | { filter: "productType"; value: string } // like vegetable
+        | { filter: "productType"; value: string }
       >
     ) {
       state.currentPage = 1;
@@ -114,7 +116,6 @@ export const productsSlice = createSlice({
       state.visibleProducts = [...filteredByPrice].sort(
         compareValues(state.sorting)
       );
-
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
@@ -138,13 +139,25 @@ export const productsSlice = createSlice({
         productType: "",
       };
       state.selectedCategory = "";
+      state.additionalPages = [];
+      state.currentPage = 1;
     },
-    showMoreProductsPerPage(state) {
-      state.productsPerPage = state.productsPerPage + 5;
-      state.numberOfProducts = state.visibleProducts.length;
-      state.numberOfPages = Math.ceil(
-        state.visibleProducts.length / state.productsPerPage
+    showMoreProductsPerPage(state, action: PayloadAction<number>) {
+      const newNumberOfProducts = action.payload;
+      console.log(newNumberOfProducts);
+      state.lasVisibleProduct = state.firstVisibleProduct + newNumberOfProducts;
+
+      state.items = state.allProducts.slice(
+        state.firstVisibleProduct,
+        state.lasVisibleProduct
       );
+      state.additionalPages =
+        state.additionalPages.length === 0
+          ? [state.currentPage + 1]
+          : [
+              ...state.additionalPages,
+              state.additionalPages[state.additionalPages.length - 1] + 1,
+            ];
     },
   },
 

@@ -26,4 +26,5 @@ export interface ProductsState {
     price: number[];
     productType: string;
   };
+  additionalPages: number[];
 }

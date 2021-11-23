@@ -6,11 +6,14 @@ import Button from "../../../../components/buttons/Button";
 import arrowDown from "../../../../assets/arrowDown.png";
 import { useDispatch } from "react-redux";
 import { showMoreProductsPerPage } from "../../../../store/reducers/productsSlice";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store/store";
 
 const PaginationContainer: React.FC = () => {
   const dispatch = useDispatch();
+
+  const [numberOfProducts, setNumberOfProduts] = useState(5);
 
   const numberOfPages = useSelector(
     (state: RootState) => state.products.numberOfPages
@@ -22,18 +25,28 @@ const PaginationContainer: React.FC = () => {
     (state: RootState) => state.products.visibleProducts
   );
 
+  const additionalPages = useSelector(
+    (state: RootState) => state.products.additionalPages
+  );
+
   const allProducts = useSelector(
     (state: RootState) => state.products.allProducts
   );
   const numbOfProducts = allProducts.length;
 
   const sufficientProducts =
-    currentPage !== numberOfPages && products.length !== 0;
+    currentPage !== numberOfPages &&
+    products.length !== 0 &&
+    !additionalPages.includes(numberOfPages);
+
+  const resetProductsNumber = () => {
+    setNumberOfProduts(5);
+  };
 
   return (
     <div className={classes.container}>
       {products.length !== 0 ? (
-        <Pagination />
+        <Pagination onProductsNumberReset={resetProductsNumber} />
       ) : (
         <div className={classes.text}>No pages available </div>
       )}
@@ -41,7 +54,10 @@ const PaginationContainer: React.FC = () => {
         <>
           <Button
             btnText="Show more products"
-            onClick={() => dispatch(showMoreProductsPerPage())}
+            onClick={() => {
+              setNumberOfProduts((previousState) => previousState + 5);
+              dispatch(showMoreProductsPerPage(numberOfProducts + 5));
+            }}
             btnStyle="green"
             btnIconAfter={arrowDown}
           />

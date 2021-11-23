@@ -84,7 +84,13 @@
 }
 
 @media (max-width: 800px) {
-    .green {
+    .green,
+    .gray {
         margin: 1vh 0;
+        min-width: 23vw;
+        text-align: center;
+        padding: 1.75vh 2vw;
+        display: flex;
+        justify-content: center;
     }
 }

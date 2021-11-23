@@ -16,10 +16,14 @@ const Sidebar = () => {
 
   return (
     <aside>
-      <CategoriesFilter />
-      <BrandsFilter />
-      <RatingFilter />
-      {productsFetched ? <PriceFilter /> : null}
+      {productsFetched ? (
+        <>
+          <CategoriesFilter />
+          <BrandsFilter />
+          <RatingFilter />
+          <PriceFilter />
+        </>
+      ) : null}
       <Button
         btnStyle="light"
         btnText="Reset"

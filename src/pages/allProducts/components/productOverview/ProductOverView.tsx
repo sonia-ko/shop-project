@@ -30,8 +30,10 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
 
       <div className={classes.descriptionContainer}>
         <div className={classes.descriptionBlockRight}>
-          <h5>{product.title}</h5>
-          <p>{product.shortDescription}</p>
+          <h5 className={classes.title}>{product.title}</h5>
+          <p className={classes.shortDescription}>
+            {product.exendedDescription}
+          </p>
           <StarsRating
             numberOfFilledStars={product.rate}
             numberOfStars={5}
@@ -60,7 +62,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
         </div>
 
         <div className={classes.descriptionBlockLeft}>
-          <div>
+          <div className={classes.pricing}>
             <span className={classes.newPrice}>{product.price} USD </span>
             <span className={classes.oldPrice}>{product.oldPrice}</span>
           </div>
