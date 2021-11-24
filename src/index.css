@@ -211,4 +211,8 @@ hr {
     }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    h3 {
+        font-size: 1.2em;
+    }
+}

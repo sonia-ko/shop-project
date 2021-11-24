@@ -44,6 +44,12 @@
         background-color: transparent;
         border: none;
     }
+    .closeMenuBtn {
+        font-size: 1.3em;
+        width: 100%;
+        text-align: right;
+        padding: 1.5vh 1.5vw;
+    }
     .sidenav a:hover,
     .closeMenuBtn:hover {
         color: #acaee3;

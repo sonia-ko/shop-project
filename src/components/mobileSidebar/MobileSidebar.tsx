@@ -26,8 +26,8 @@ const MobileSidebar: React.FC = () => {
           )}
         >
           <button
-            onClick={() => setMenuOpened(false)}
             className={classes.closeMenuBtn}
+            onClick={() => setMenuOpened(false)}
           >
             &times;
           </button>
@@ -40,17 +40,6 @@ const MobileSidebar: React.FC = () => {
             onClick={() => setMenuOpened(false)}
             btnStyle="greenCentered"
           />
-
-          {/* 
-        <a href="#about" className={classes.navItem}>
-          Item
-        </a>
-        <a href="#experience" className={classes.navItem}>
-          Item
-        </a>
-        <a href="#projects" className={classes.navItem}>
-          Item
-        </a> */}
         </div>
 
         <div className={classes.menuContainer}>

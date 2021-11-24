@@ -64,17 +64,16 @@
         background-color: transparent;
         border: none;
     }
+    .closeMenuBtn {
+        font-size: 1.3em;
+        width: 100%;
+        text-align: right;
+        padding: 1.5vh 1.5vw;
+    }
     .sidenav a:hover,
     .closeMenuBtn:hover {
         color: #acaee3;
         background-color: transparent;
-    }
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 2rem;
-        font-size: 4rem;
-        margin-left: 4rem;
     }
     .overlay {
         position: absolute;
