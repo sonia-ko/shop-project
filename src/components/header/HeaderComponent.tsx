@@ -5,7 +5,8 @@ import {
   setPage,
   sortProducts,
 } from "../../store/reducers/productsSlice";
-
+import classnames from "classnames";
+import menuIcon from "../../assets/menuIconWithCheckMark.png";
 import MainMenu from "./mainMenu/MainMenu";
 import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
@@ -15,6 +16,7 @@ import cartIcon from "../../assets/ic-ecommerce-basket.png";
 import userIcon from "../../assets/ic-actions-user.png";
 import ProductsMenu from "./productsMenu/ProductsMenu";
 import { Link } from "react-router-dom";
+import MobileContacts from "./mobileContacts/MobileContacts";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -57,6 +59,7 @@ const Header: React.FC = () => {
               alt="Shopping Cart Icon"
             />
           </Link>
+          <MobileContacts />
         </div>
       </div>
       <ProductsMenu />

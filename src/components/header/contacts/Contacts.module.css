@@ -2,3 +2,17 @@
     display: block;
     padding: 1.5vh 1vw;
 }
+
+.container {
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    .container {
+        display: block;
+    }
+    .contactsItem {
+        display: block;
+        font-size: 0.4em;
+    }
+}

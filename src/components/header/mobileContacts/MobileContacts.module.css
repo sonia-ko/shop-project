@@ -2,11 +2,10 @@
     display: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
     .sideMenu {
         display: block;
-        padding-right: 2vh;
-        padding-top: 2vh;
+        padding-left: 1.5vw;
         display: flex;
         align-self: flex-end;
         background-color: transparent;
@@ -15,6 +14,26 @@
     .menuContainer {
         cursor: pointer;
         display: inline-block;
+        padding-bottom: 0.5vh;
+    }
+    .menu-icon-bar {
+        width: 1.3rem;
+        height: 0.2rem;
+        background-color: rgb(75, 66, 66);
+        margin: 0.2rem 0;
+        transition: 0.4s;
+        border-radius: 12px;
+    }
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 9px);
+        transform: rotate(-45deg) translate(-9px, 9px);
+    }
+    .change .bar2 {
+        opacity: 0;
+    }
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-9px, -9px);
+        transform: rotate(45deg) translate(-9px, -9px);
     }
     /* The side navigation menu */
     .sidenav {
@@ -39,7 +58,6 @@
     .sidenav a,
     .closeMenuBtn {
         text-decoration: none;
-        font-size: 5rem;
         color: #05060f;
         display: block;
         transition: 0.3s;
@@ -67,6 +85,11 @@
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(3px);
         z-index: 1;
+        /* background-color: blueviolet; */
+    }
+    .heading {
+        font-size: 0.6em;
+        margin-top: 1.5vh;
     }
 }
 

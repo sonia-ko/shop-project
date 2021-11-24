@@ -8,7 +8,7 @@ const Contacts: React.FC = () => {
   const phoneLink: string = `tel:${companyPhoneNum}`;
 
   return (
-    <ul className="flex">
+    <ul className={classes.container}>
       <li>
         <Link className={classes.contactsItem} to="/support">
           Chat with us

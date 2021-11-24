@@ -8,7 +8,8 @@
 }
 
 .option {
-    padding: 0.2em 0.3em;
+    display: inline-block;
+    padding: 0 0.3em;
 }
 
 .input {
@@ -25,7 +26,7 @@
     background: #6a983c;
 }
 
-.input:checked+.option::before {
+.input:checked~label .option::before {
     content: "\2714";
     color: #ffffff;
     position: absolute;
@@ -38,11 +39,16 @@
 @media (max-width: 992px) {}
 
 @media (max-width: 1000px) {
-    .input:checked+.option::before {
-        left: 7px;
-    }
     .input {
         -webkit-appearance: checkbox;
+        -moz-appearance: checkbox-container;
+        appearance: checkbox;
+    }
+    .input:checked {
+        -webkit-appearance: checkbox;
+    }
+    .input:checked~label .option::before {
+        content: "";
     }
 }
 

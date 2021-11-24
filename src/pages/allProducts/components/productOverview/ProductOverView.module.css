@@ -101,10 +101,10 @@
 
 @media (min-width: 1500px) {
     .img {
-        height: 42vh;
+        height: 43vh;
     }
     .descriptionContainer {
-        padding-top: 4vh;
+        padding-top: 3.5vh;
     }
 }
 
@@ -163,6 +163,7 @@
         display: block;
         margin: 0 auto;
         width: 40%;
+        padding-top: 1vh;
     }
     .descriptionBlockLeft,
     .descriptionBlockRight {
@@ -182,11 +183,21 @@
     }
     .title,
     .newPrice {
-        font-size: 1.3em;
+        font-size: 1.6em;
     }
     .oldPrice {
         margin-left: 2vw;
         order: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .img {
+        height: 33vh;
+    }
+    .descriptionContainer {
+        margin: 0 auto;
+        width: 42%;
     }
 }
 

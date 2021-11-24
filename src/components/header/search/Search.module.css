@@ -56,4 +56,8 @@
     }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .container {
+        padding: 1.5vh 2vw;
+    }
+}

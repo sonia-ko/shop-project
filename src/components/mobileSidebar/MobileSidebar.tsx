@@ -59,7 +59,7 @@ const MobileSidebar: React.FC = () => {
               `${classes.bar1} ${classes["menu-icon-bar"]}`
             )}
           ></div>
-          <div
+          <div>
             className={classnames(
               `${classes.bar2} ${classes["menu-icon-bar"]}`
             )}
@@ -90,23 +90,3 @@ const MobileSidebar: React.FC = () => {
 };
 
 export default MobileSidebar;
-
-// menuIcon.addEventListener("click", function () {
-//   if (menuOpened === false) {
-//     document.getElementById("mySidenav").style.width = "50%";
-//     document.getElementById("main").style.marginLeft = "50%";
-//     menuOpened = true;
-//     menuIcon.classList.toggle("change");
-//   } else {
-//     closeNav();
-//   }
-// });
-
-// closeMenuBtn.addEventListener("click", closeNav);
-
-// function closeNav() {
-//   document.getElementById("mySidenav").style.width = "0";
-//   document.getElementById("main").style.marginLeft = "0";
-//   menuOpened = false;
-//   menuIcon.classList.toggle("change");
-// }
