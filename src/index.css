@@ -9,10 +9,7 @@ body {
     background-color: #fdfdfd;
     position: relative;
     height: 100%;
-}
-
-* {
-    overflow-x: scroll;
+    z-index: 0;
 }
 
 

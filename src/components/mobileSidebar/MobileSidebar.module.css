@@ -15,7 +15,6 @@
         cursor: pointer;
         display: inline-block;
     }
-    /* The side navigation menu */
     .sidenav {
         height: 100%;
         width: 0;
@@ -30,7 +29,7 @@
         transition: 0.5s;
     }
     .sidenavOpened {
-        width: 40%;
+        width: 70%;
         margin-right: 60%;
         padding: 0 4vw;
     }
