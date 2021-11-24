@@ -5,8 +5,6 @@ import {
   setPage,
   sortProducts,
 } from "../../store/reducers/productsSlice";
-import classnames from "classnames";
-import menuIcon from "../../assets/menuIconWithCheckMark.png";
 import MainMenu from "./mainMenu/MainMenu";
 import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
