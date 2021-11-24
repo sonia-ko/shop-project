@@ -30,21 +30,22 @@ const AllProductsPage: React.FC = () => {
     <div className={classes.container}>
       <Breadcrumbs />
       <div className={classes.header}>
-        <div className={classes.pageOverview}>
-          <h1>All Products</h1>
-          <TotalProducts numberOfProducts={numbOfProducts} />
-        </div>
+        <h1>All Products</h1>
+        <TotalProducts numberOfProducts={numbOfProducts} />
+      </div>
+      <div className={classes.buttonsContainer}>
+        <MobileSidebar />
         <SortingButton />
       </div>
 
       <main>
         <div className={classes.body}>
           <Sidebar />
-          <MobileSidebar />
+
           <ProductListSection />
         </div>
-        <PaginationContainer />
       </main>
+      <PaginationContainer />
     </div>
   );
 };

@@ -6,7 +6,6 @@
     .sideMenu {
         display: block;
         padding-right: 2vh;
-        padding-top: 2vh;
         display: flex;
         align-self: flex-end;
         background-color: transparent;

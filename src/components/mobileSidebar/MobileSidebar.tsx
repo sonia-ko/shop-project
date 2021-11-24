@@ -54,22 +54,6 @@ const MobileSidebar: React.FC = () => {
         </div>
 
         <div className={classes.menuContainer}>
-          {/* <div
-            className={classnames(
-              `${classes.bar1} ${classes["menu-icon-bar"]}`
-            )}
-          ></div>
-          <div>
-            className={classnames(
-              `${classes.bar2} ${classes["menu-icon-bar"]}`
-            )}
-          ></div>
-          <div
-            className={classnames(
-              `${classes.bar3} ${classes["menu-icon-bar"]}`
-            )}
-          ></div> */}
-
           <Button
             btnIconBefore={FilterIcon}
             btnText="Set filters"

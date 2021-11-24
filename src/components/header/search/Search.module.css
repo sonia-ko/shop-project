@@ -60,4 +60,8 @@
     .container {
         padding: 1.5vh 2vw;
     }
+    .input {
+        width: 50%;
+        font-size: 1em;
+    }
 }

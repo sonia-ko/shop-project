@@ -11,6 +11,10 @@ body {
     height: 100%;
 }
 
+* {
+    overflow-x: scroll;
+}
+
 
 /*  ====================   Headers  ====================  */
 
@@ -137,6 +141,7 @@ button {
     border-radius: 12px;
     cursor: pointer;
     align-items: center;
+    z-index: 0;
 }
 
 button:hover {
@@ -203,6 +208,9 @@ hr {
     }
     h1 {
         margin: 1vh 0 0 0;
+    }
+    footer {
+        margin: 0 auto;
     }
 }
 

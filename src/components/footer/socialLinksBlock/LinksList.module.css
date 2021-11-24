@@ -7,3 +7,9 @@
 .item:hover {
     color: black;
 }
+
+@media (max-width: 650px) {
+    .container {
+        width: 35%;
+    }
+}

@@ -71,18 +71,20 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
             <div className="bold"> {product.shipping}</div>
             <div>Delivery in {product.deliveryTime} day</div>
           </div>
-          <Button
-            btnStyle="green"
-            onClick={openProduct}
-            btnText="Product detail"
-            btnIconAfter={arrowRight}
-          />
-          <Button
-            btnIconBefore={heartIcon}
-            btnText=" Add to wish list"
-            onClick={addToWishList}
-            btnStyle="gray"
-          />
+          <div className={classes.buttonsSection}>
+            <Button
+              btnStyle="green"
+              onClick={openProduct}
+              btnText="Product detail"
+              btnIconAfter={arrowRight}
+            />
+            <Button
+              btnIconBefore={heartIcon}
+              btnText=" Add to wish list"
+              onClick={addToWishList}
+              btnStyle="gray"
+            />
+          </div>
         </div>
       </div>
     </li>

@@ -9,7 +9,7 @@
         display: flex;
         align-self: flex-end;
         background-color: transparent;
-        z-index: 10;
+        z-index: 20;
     }
     .menuContainer {
         cursor: pointer;

@@ -32,11 +32,14 @@
 
 @media (max-width: 1000px) {
     .container {
-        width: 20%;
-        padding: 0.5vh 0.5vw;
-        height: 4vh;
+        width: 23vw;
         align-items: center;
+        padding: 1.75vh 0;
     }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+    .container {
+        width: 33vw;
+    }
+}

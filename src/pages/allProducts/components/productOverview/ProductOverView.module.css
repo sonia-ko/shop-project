@@ -1,9 +1,10 @@
 /* ==================== containers ==================== */
 
 .container {
-    width: 97%;
+    width: 95%;
     margin: 2vh auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     border: 1px solid #d1d1d1;
     border-radius: 12px;
@@ -143,7 +144,7 @@
 
 @media (max-width: 1200px) {
     .img {
-        width: 23vw;
+        width: 40%;
         height: 38vh;
     }
     .descriptionContainer {
@@ -151,26 +152,27 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .list {
         display: none;
     }
     .container {
-        width: 100%;
+        width: 99%;
         margin-bottom: 2vh;
     }
     .descriptionContainer {
-        display: block;
         margin: 0 auto;
         width: 40%;
-        padding-top: 1vh;
+        overflow-x: hidden;
+        display: block;
+        padding-top: 3vh;
     }
     .descriptionBlockLeft,
     .descriptionBlockRight {
-        width: 95%;
+        width: 100%;
     }
     .img {
-        height: 40vh;
+        height: 50vh;
         width: 50%;
     }
     .shippingArea {
@@ -191,14 +193,48 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .img {
-        height: 33vh;
+        height: 30vh;
     }
     .descriptionContainer {
         margin: 0 auto;
-        width: 42%;
+        width: 40%;
+        overflow-x: hidden;
+        padding-top: 1vh;
     }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 770px) {
+    .img {
+        height: 33vh;
+        width: 50%;
+    }
+}
+
+@media (max-width: 602px) {
+    .img {
+        height: 34vh;
+        width: 60%;
+    }
+    .descriptionContainer {
+        margin: 0 auto;
+        width: 30%;
+        overflow-x: hidden;
+        padding-top: 1vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .img {
+        width: 100%;
+    }
+    .descriptionContainer {
+        width: 100%;
+        padding: 1vh 2vw 1vh 2vw;
+    }
+    .buttonsSection {
+        display: flex;
+        justify-content: space-between;
+    }
+}
