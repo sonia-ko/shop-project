@@ -55,7 +55,6 @@ const SortingButton: React.FC = () => {
         id="sortBy"
         value={selectedOption}
       >
-        <option value="default">Select</option>
         <option value="price-asc">Price ↑</option>
         <option value="price-desc">Price ↓</option>
         <option value="rate-asc">Rate ↑</option>

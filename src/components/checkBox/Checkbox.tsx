@@ -30,22 +30,27 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   }, [filters]);
 
   return (
-    <div className={classes.container}>
+    <form className={classes.container}>
       <input
         className={classes.input}
-        onChange={() => {
-          handleClick();
-          setChecked(!checked);
-        }}
         key={item}
         type="checkbox"
         id={item}
+        onChange={() => {
+          handleClick();
+          setChecked(!checked);
+          console.log(checked);
+        }}
         checked={checked}
       />
-      <label className={classes.label} htmlFor={item}>
+      <label
+        onClick={() => setChecked(!checked)}
+        className={classes.label}
+        htmlFor={item}
+      >
         <span className={classes.option}>{children}</span>
       </label>
-    </div>
+    </form>
   );
 };
 
