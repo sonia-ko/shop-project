@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Header from "./components/header/HeaderComponent";
+import ProductDescptionPage from "./pages/productDescriptionPage/ProductDescriptionPage";
 import AllProductsPage from "./pages/allProducts/AllProductsPage";
 import PageNotFound from "./pages/404Page/PageNotFound";
 import LiveSupport from "./pages/support/LiveSupport";
@@ -15,8 +16,11 @@ import AboutUs from "./pages/aboutUs/AboutUs";
 import Footer from "./components/footer/Footer";
 import LoginPage from "./pages/account/LoginPage";
 import ShoppingCartPage from "./pages/shoppingCart/shoppingCartPage";
+import { useRouteMatch } from "react-router";
 
 function App() {
+  const { path } = useRouteMatch();
+
   return (
     <Router>
       <div className="App">
@@ -27,6 +31,9 @@ function App() {
             <AllProductsPage />
           </Route>
 
+          <Route exact path={`/product/:id?`}>
+            <ProductDescptionPage />
+          </Route>
           <Route exact path="/support">
             <LiveSupport />
           </Route>

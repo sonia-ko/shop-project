@@ -5,6 +5,7 @@ import heartIcon from "../../../../assets/heartIcon.gif";
 import arrowRight from "../../../../assets/arrowRight.png";
 import StarsRating from "../../../../components/rating/StarsRating";
 import { useHistory } from "react-router";
+import { useRouteMatch } from "react-router";
 import Product from "../../../../interfaces/product";
 
 interface ProductOverviewProps {
@@ -16,6 +17,12 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
   };
 
   const history = useHistory();
+  const { url } = useRouteMatch();
+
+  const redirect = () => () => {
+    history.push(`/product/${product.id}`);
+  };
+
   const addToWishList = () => {
     history.push("/login");
   };
@@ -74,7 +81,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
           <div className={classes.buttonsSection}>
             <Button
               btnStyle="green"
-              onClick={openProduct}
+              onClick={redirect()}
               btnText="Product detail"
               btnIconAfter={arrowRight}
             />
