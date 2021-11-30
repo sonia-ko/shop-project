@@ -5,19 +5,13 @@ import heartIcon from "../../../../assets/heartIcon.gif";
 import arrowRight from "../../../../assets/arrowRight.png";
 import StarsRating from "../../../../components/rating/StarsRating";
 import { useHistory } from "react-router";
-import { useRouteMatch } from "react-router";
 import Product from "../../../../interfaces/product";
 
 interface ProductOverviewProps {
   product: Product;
 }
 const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
-  const openProduct = () => {
-    console.log("Product opened");
-  };
-
   const history = useHistory();
-  const { url } = useRouteMatch();
 
   const redirect = () => () => {
     history.push(`/product/${product.id}`);

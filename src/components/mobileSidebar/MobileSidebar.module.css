@@ -2,18 +2,20 @@
     display: none;
 }
 
+.hidden {
+    display: none;
+}
+
+.buttonsSection {
+    display: flex;
+    margin-bottom: 2vh;
+    justify-content: space-around;
+}
+
 @media (max-width: 1000px) {
     .sideMenu {
-        display: block;
-        padding-right: 2vh;
         display: flex;
-        align-self: flex-end;
-        background-color: transparent;
         z-index: 10;
-    }
-    .menuContainer {
-        cursor: pointer;
-        display: inline-block;
     }
     .sidenav {
         height: 100%;
@@ -22,45 +24,28 @@
         z-index: 5;
         top: 0;
         left: 0;
-        font-size: 2rem;
+        font-size: 200%;
         background-color: #eaebea;
         overflow-x: hidden;
-        padding-top: 5rem;
         transition: 0.5s;
     }
     .sidenavOpened {
-        width: 70%;
+        width: 50%;
         margin-right: 60%;
         padding: 0 4vw;
     }
-    /* The navigation menu links */
-    .sidenav a,
     .closeMenuBtn {
         text-decoration: none;
-        font-size: 5rem;
         color: #05060f;
         display: block;
         transition: 0.3s;
-        background-color: transparent;
-        border: none;
-    }
-    .closeMenuBtn {
-        font-size: 1.3em;
+        font-size: 130%;
         width: 100%;
         text-align: right;
         padding: 1.5vh 1.5vw;
     }
-    .sidenav a:hover,
     .closeMenuBtn:hover {
-        color: #acaee3;
-        background-color: transparent;
-    }
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 2rem;
-        font-size: 4rem;
-        margin-left: 4rem;
+        color: #1d5f1d;
     }
     .overlay {
         position: absolute;
@@ -69,11 +54,13 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(0.5vw);
         z-index: 1;
     }
 }
 
-.hidden {
-    display: none;
+@media (max-width: 320px) {
+    .sidenavOpened {
+        width: 70%;
+    }
 }

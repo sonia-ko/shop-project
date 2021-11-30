@@ -14,6 +14,10 @@ const RatingFilter: React.FC = () => {
     (_, i) => i + 1
   ).sort((a, b) => b - a);
 
+  const onSelect = (el: number) => {
+    dispatch(filterProducts({ filter: "rate", value: el }));
+  };
+
   return (
     <div className="sidebarSection">
       <h3>Rating</h3>
@@ -21,11 +25,9 @@ const RatingFilter: React.FC = () => {
       <ul>
         {ratingElements.map((el) => {
           return (
-            <li key={"ratingilterRow" + el}>
+            <li key={"ratingFilterRow" + el}>
               <CheckBox
-                handleClick={() =>
-                  dispatch(filterProducts({ filter: "rate", value: el }))
-                }
+                handleClick={onSelect.bind(null, el)}
                 item={el + "-star"}
                 category="rate"
               >

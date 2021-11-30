@@ -10,6 +10,10 @@ const BrandsFilter: React.FC = () => {
 
   const farmsList = useSelector((state: RootState) => state.products.farms);
 
+  const onSelect = (item: string) => {
+    dispatch(filterProducts({ filter: "farm", value: item }));
+  };
+
   return (
     <div className="sidebarSection">
       <h3>Brands</h3>
@@ -18,9 +22,7 @@ const BrandsFilter: React.FC = () => {
           return (
             <li key={"input" + item}>
               <CheckBox
-                handleClick={() => {
-                  dispatch(filterProducts({ filter: "farm", value: item }));
-                }}
+                handleClick={onSelect.bind(null, item)}
                 item={item}
                 category="farm"
               >

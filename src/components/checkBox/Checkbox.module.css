@@ -1,9 +1,10 @@
 .container {
+    /* inline flex - for mobile version */
     display: inline-flex;
     cursor: pointer;
     position: relative;
     width: 95%;
-    font-size: 1.1em;
+    font-size: 115%;
     margin-bottom: 0.25vh;
     align-items: center;
 }
@@ -14,43 +15,62 @@
 }
 
 .input {
-    height: 18px;
-    width: 18px;
+    height: 2.5vh;
+    width: 2.5vh;
     appearance: none;
-    border: 1.5px solid #d1d1d1;
-    border-radius: 4px;
+    border: 0.25vh solid #d1d1d1;
+    border-radius: 0.35vh;
     transition-duration: 0.3s;
 }
 
 .input:checked {
-    border: 1.5px solid #46760a;
+    border: 0.25vh solid #46760a;
     background: #6a983c;
 }
 
-.input:checked~label .option::before {
+.input:checked~.label .option::before {
     content: "\2714";
     color: #ffffff;
     position: absolute;
-    left: 7px;
-    top: 2px;
+    left: 4%;
+    top: 8%;
 }
 
-@media (min-width: 1500px) {}
+@media (min-width: 1700px) {
+    .input:checked~.label .option::before {
+        top: 13%;
+    }
+}
 
-@media (max-width: 992px) {}
+@media (max-width: 1200px) {
+    .input:checked~.label .option::before {
+        left: 6%;
+        top: 12%;
+    }
+}
 
-@media (max-width: 1000px) {
+@media (max-width: 1006px) {
+    .input:checked~.label .option::before {
+        left: 3%;
+    }
+}
+
+@media (max-width: 576px) {
+    .input:checked~.label .option::before {
+        left: 5%;
+    }
+}
+
+@media (max-width: 320px) {
     .input {
-        -webkit-appearance: checkbox;
-        -moz-appearance: checkbox-container;
-        appearance: checkbox;
+        height: 2vh;
+        width: 2vh;
     }
-    .input:checked {
-        -webkit-appearance: checkbox;
+    .input:checked~.label .option::before {
+        left: 4%;
+        top: 15%;
     }
-    .input:checked~label .option::before {
-        content: "";
+    .option {
+        font-size: 90%;
     }
 }
-
-@media (max-width: 576px) {}

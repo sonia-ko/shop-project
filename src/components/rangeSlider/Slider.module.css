@@ -2,7 +2,7 @@
     margin-top: 4vh;
     position: relative;
     width: 90%;
-    height: 100px;
+    height: 10vh;
 }
 
 .slider__track,
@@ -14,8 +14,8 @@
 
 .slider__track,
 .slider__range {
-    border-radius: 3px;
-    height: 5px;
+    border-radius: 0.1vw;
+    height: 0.35vw;
 }
 
 .slider__track {
@@ -31,8 +31,8 @@
 
 .slider__left-value,
 .slider__right-value {
-    font-size: 12px;
-    margin-top: 20px;
+    font-size: 100%;
+    margin-top: 2vh;
     width: 50%;
     display: block;
 }
@@ -42,7 +42,7 @@
 }
 
 .thumb--left {
-    left: -2px;
+    left: -0.2vw;
 }
 
 .slider__right-value {
@@ -75,11 +75,11 @@
     background-color: #f1f5f7;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 1px 1px #ced4da;
+    box-shadow: 0 0 0.1vw 0.1vw #ced4da;
     cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
+    height: 1vw;
+    width: 1vw;
+    margin-top: 0.2vw;
     pointer-events: all;
     position: relative;
 }
@@ -91,11 +91,11 @@
     background-color: #f1f5f7;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 1px 1px #ced4da;
+    box-shadow: 0 0 0.1vw 0.1vw #ced4da;
     cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
+    height: 1vw;
+    width: 1vw;
+    margin-top: 0.2vw;
     pointer-events: all;
     position: relative;
 }
@@ -109,8 +109,8 @@
     color: #a9a9a9;
     font-family: Open Sans;
     background: #f9f9f9;
-    border: 1px solid #d1d1d1;
-    border-radius: 12px;
+    border: 0.1vw solid #d1d1d1;
+    border-radius: 1.5vh;
 }
 
 .label {
@@ -133,4 +133,61 @@
 
 .zindex4 {
     z-index: 4;
+}
+
+@media (max-width: 1400px) {
+    .slider__track,
+    .slider__range {
+        height: 0.5vw;
+    }
+    .thumb::-webkit-slider-thumb {
+        height: 1.3vw;
+        width: 1.3vw;
+    }
+    .thumb::-moz-range-thumb {
+        height: 1vw;
+        width: 1vw;
+    }
+    .thumb--left {
+        left: -0.5vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .slider__track,
+    .slider__range {
+        height: 0.85vw;
+    }
+    .thumb::-webkit-slider-thumb {
+        height: 2vw;
+        width: 2vw;
+    }
+    .thumb::-moz-range-thumb {
+        height: 2vw;
+        width: 2vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider__track,
+    .slider__range {
+        height: 1.5vw;
+    }
+    .thumb::-webkit-slider-thumb {
+        height: 3vw;
+        width: 3vw;
+        margin-top: 0.6vw;
+    }
+    .thumb::-moz-range-thumb {
+        height: 4vw;
+        width: 4vw;
+        margin-top: 0.6vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .slider__track,
+    .slider__range {
+        height: 2vw;
+    }
 }

@@ -51,7 +51,7 @@ const PaginationContainer: React.FC = () => {
         <div className={classes.text}>No pages available </div>
       )}
       {sufficientProducts ? (
-        <>
+        <div className={classes.btnContainer}>
           <Button
             btnText="Show more products"
             onClick={() => {
@@ -61,7 +61,7 @@ const PaginationContainer: React.FC = () => {
             btnStyle="green"
             btnIconAfter={arrowDown}
           />
-        </>
+        </div>
       ) : null}
       <TotalProducts numberOfProducts={numbOfProducts} />
     </div>

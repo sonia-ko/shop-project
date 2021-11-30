@@ -1,26 +1,20 @@
 .products {
     color: #a9a9a9;
-    font-size: 1em;
+    font-size: 100%;
 }
 
 .quantity {
     color: #6a983c;
     font-family: "Poppins", sans-serif;
     background: #f4f8ec;
-    border-radius: 12px;
+    border-radius: 1.5vh;
     font-weight: bold;
     margin: 0 0.5vw;
     padding: 0.5vh 0.5vw;
-    font-size: 1em;
+    font-size: 100%;
 }
 
 .container {
     display: flex;
     align-items: center;
-}
-
-@media (max-width: 576px) {
-    .container {
-        justify-self: flex-end;
-    }
 }

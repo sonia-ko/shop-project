@@ -39,8 +39,6 @@
     font-family: "Open Sans", sans-serif;
 }
 
-@media (min-width: 1500px) {}
-
 @media (max-width: 1000px) {
     .container {
         width: 100%;
@@ -48,11 +46,11 @@
         margin-top: 1.5vh;
     }
     .selectBox {
-        font-size: 1.1em;
+        font-size: 110%;
     }
     .input {
         width: 70%;
-        font-size: 1em;
+        font-size: 100%;
     }
 }
 
@@ -62,6 +60,5 @@
     }
     .input {
         width: 50%;
-        font-size: 1em;
     }
 }

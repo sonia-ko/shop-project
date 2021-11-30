@@ -1,5 +1,5 @@
 .listItem {
-    font-size: 1.1em;
+    font-size: 110%;
     padding: 0.75vh 0.25vw;
     cursor: pointer;
     display: flex;
@@ -10,17 +10,24 @@
     display: flex;
     color: #6a983c;
     background-color: #f4f8ec;
-    border-radius: 12px;
+    border-radius: 1.5vh;
     width: 15%;
     font-weight: bold;
     justify-content: center;
 }
 
 .filterEnabled {
-    background-color: rgb(152, 179, 153);
-    border-radius: 6px;
+    background-color: #6a983c;
+    border-radius: 0.75vh;
+    color: white;
 }
 
-@media (max-width: 1000px) {}
+.filterEnabled:hover {
+    color: black;
+}
 
-@media (max-width: 576px) {}
+@media (max-width: 900px) {
+    .listItem {
+        padding: 0.5vh 0.25vw;
+    }
+}

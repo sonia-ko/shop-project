@@ -16,11 +16,8 @@ import AboutUs from "./pages/aboutUs/AboutUs";
 import Footer from "./components/footer/Footer";
 import LoginPage from "./pages/account/LoginPage";
 import ShoppingCartPage from "./pages/shoppingCart/shoppingCartPage";
-import { useRouteMatch } from "react-router";
 
 function App() {
-  const { path } = useRouteMatch();
-
   return (
     <Router>
       <div className="App">

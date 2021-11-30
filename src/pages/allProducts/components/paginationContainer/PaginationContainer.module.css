@@ -19,5 +19,11 @@
 }
 
 @media (max-width: 576px) {
-    
+    .btnContainer {
+        width: 100%;
+        order: -1;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 2vh 0;
+    }
 }

@@ -11,14 +11,14 @@
     height: 40vh;
     margin: 0 auto;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 1.5vh;
     margin-bottom: 2.5vh;
 }
 
 .image1,
 .image2 {
     width: 48%;
-    border-radius: 12px;
+    border-radius: 1.5vh;
     height: 20vh;
     object-fit: cover;
 }

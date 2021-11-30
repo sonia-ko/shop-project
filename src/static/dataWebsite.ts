@@ -54,6 +54,6 @@ export const popularTags = [
   "Corn",
   "Pizza",
   "Greek pizza",
-  "Fruit",
-  "Vegetable",
+  "Green Tea",
+  "100 pcs",
 ];

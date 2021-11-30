@@ -36,20 +36,22 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         key={item}
         type="checkbox"
         id={item}
-        onChange={() => {
+        onChange={() => {}}
+        checked={checked}
+        onClick={() => {
           handleClick();
           setChecked(!checked);
-          console.log(checked);
         }}
-        checked={checked}
       />
-      <label
-        onClick={() => setChecked(!checked)}
+      <div
+        onClick={(e) => {
+          handleClick();
+          setChecked(!checked);
+        }}
         className={classes.label}
-        htmlFor={item}
       >
         <span className={classes.option}>{children}</span>
-      </label>
+      </div>
     </form>
   );
 };

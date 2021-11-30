@@ -7,5 +7,5 @@ export const rrfProps = {
   firebase,
   config: rrfConfig,
   dispatch: store.dispatch,
-  createFirestoreInstance, //since we are using Firestore
+  createFirestoreInstance,
 };

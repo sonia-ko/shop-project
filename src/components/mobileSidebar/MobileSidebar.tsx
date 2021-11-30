@@ -8,8 +8,11 @@ import CategoriesFilter from "../filters/CategoriesFilter";
 import PriceFilter from "../filters/PriceFilter";
 import FilterIcon from "../../assets/filterIconWhite.png";
 import Button from "../buttons/Button";
+import { useDispatch } from "react-redux";
+import { resetFilters } from "../../store/reducers/productsSlice";
 
 const MobileSidebar: React.FC = () => {
+  const dispatch = useDispatch();
   const [menuOpened, setMenuOpened] = useState(false);
 
   const openMenu = () => {
@@ -35,21 +38,27 @@ const MobileSidebar: React.FC = () => {
           <BrandsFilter />
           <RatingFilter />
           <PriceFilter />
-          <Button
-            btnText="Set filters"
-            onClick={() => setMenuOpened(false)}
-            btnStyle="greenCentered"
-          />
+          <div className={classes.buttonsSection}>
+            <Button
+              btnText="Set filters"
+              onClick={() => setMenuOpened(false)}
+              btnStyle="greenCentered"
+            />
+
+            <Button
+              btnStyle="light"
+              btnText="Reset"
+              onClick={() => dispatch(resetFilters())}
+            />
+          </div>
         </div>
 
-        <div className={classes.menuContainer}>
-          <Button
-            btnIconBefore={FilterIcon}
-            btnText="Set filters"
-            onClick={openMenu}
-            btnStyle="green"
-          />
-        </div>
+        <Button
+          btnIconBefore={FilterIcon}
+          btnText="Set filters"
+          onClick={openMenu}
+          btnStyle="green"
+        />
       </nav>
 
       <div

@@ -2,10 +2,10 @@
     color: #6a983c;
     display: inline-flex;
     background: #f4f8ec;
-    border-radius: 12px;
+    border-radius: 1.45vh;
     margin: 0 0.25vw;
     padding: 0.25vh 0.75vw 0.75vh 0.75vw;
-    font-size: 1.15em;
+    font-size: 115%;
     cursor: pointer;
 }
 

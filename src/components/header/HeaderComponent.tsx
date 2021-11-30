@@ -48,7 +48,11 @@ const Header: React.FC = () => {
         <Search />
         <div className={classes.iconsSection}>
           <Link to="/login">
-            <img className={classes.loginIcon} src={userIcon} alt="" />
+            <img
+              className={classes.loginIcon}
+              src={userIcon}
+              alt="login icon"
+            />
           </Link>
           <Link to="/cart">
             <img

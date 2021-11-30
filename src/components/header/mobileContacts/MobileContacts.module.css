@@ -54,15 +54,11 @@
         margin-right: 60%;
         padding: 0 4vw;
     }
-    /* The navigation menu links */
     .sidenav a,
     .closeMenuBtn {
-        text-decoration: none;
         color: #05060f;
         display: block;
         transition: 0.3s;
-        background-color: transparent;
-        border: none;
     }
     .closeMenuBtn {
         font-size: 1.3em;
@@ -84,7 +80,6 @@
         background-color: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(3px);
         z-index: 1;
-        /* background-color: blueviolet; */
     }
     .heading {
         font-size: 0.6em;
