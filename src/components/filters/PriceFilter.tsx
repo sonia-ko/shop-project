@@ -18,6 +18,7 @@ const PriceFilter: React.FC = () => {
   const filtersEnabled = useSelector(
     (state: RootState) => state.products.filters.price.length
   );
+
   return (
     <div className="sidebarSection">
       <h3>Price</h3>

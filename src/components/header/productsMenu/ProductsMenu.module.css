@@ -42,7 +42,7 @@
         line-height: 2;
         padding: 1.5vw 3vw;
         display: flex;
-        font-size: 1.3em;
+        font-size: 130%;
     }
     .productsMenu {
         flex-wrap: wrap;

@@ -44,7 +44,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         }}
       />
       <div
-        onClick={(e) => {
+        onClick={() => {
           handleClick();
           setChecked(!checked);
         }}
