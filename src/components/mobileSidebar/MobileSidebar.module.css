@@ -1,0 +1,66 @@
+.sideMenu {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttonsSection {
+    display: flex;
+    margin-bottom: 2vh;
+    justify-content: space-around;
+}
+
+@media (max-width: 1000px) {
+    .sideMenu {
+        display: flex;
+        z-index: 10;
+    }
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        font-size: 200%;
+        background-color: #eaebea;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    .sidenavOpened {
+        width: 50%;
+        margin-right: 60%;
+        padding: 0 4vw;
+    }
+    .closeMenuBtn {
+        text-decoration: none;
+        color: #05060f;
+        display: block;
+        transition: 0.3s;
+        font-size: 130%;
+        width: 100%;
+        text-align: right;
+        padding: 1.5vh 1.5vw;
+    }
+    .closeMenuBtn:hover {
+        color: #1d5f1d;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(0.5vw);
+        z-index: 1;
+    }
+}
+
+@media (max-width: 320px) {
+    .sidenavOpened {
+        width: 70%;
+    }
+}

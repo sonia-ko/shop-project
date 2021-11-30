@@ -1,13 +1,26 @@
 import React from "react";
 import classes from "./SortingButton.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { sortProducts } from "../../../../store/reducers/productsSlice";
 import { SortingModel } from "../../../../interfaces/sorting";
+import { RootState } from "../../../../store/store";
 
 const SortingButton: React.FC = () => {
   const dispatch = useDispatch();
 
+  const [selectedOption, setSelectedOption] = useState("id-desc");
+
+  const currentSorting = useSelector(
+    (state: RootState) => state.products.sorting
+  );
+
+  useEffect(() => {
+    setSelectedOption(`${currentSorting.key}-${currentSorting.order}`);
+  }, [currentSorting]);
+
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(event.target.value);
     let obj: SortingModel = {
       key: "price",
       order: event.target.value.split("-")[1] === "asc" ? "asc" : "desc",
@@ -20,8 +33,11 @@ const SortingButton: React.FC = () => {
       case "id":
         obj.key = "id";
         break;
-      default:
+      case "price":
         obj.key = "price";
+        break;
+      default:
+        obj.key = "id";
     }
 
     dispatch(sortProducts(obj));
@@ -37,8 +53,8 @@ const SortingButton: React.FC = () => {
         className={classes.selectBox}
         name="sort By"
         id="sortBy"
+        value={selectedOption}
       >
-        <option value="id-asc">Select</option>
         <option value="price-asc">Price ↑</option>
         <option value="price-desc">Price ↓</option>
         <option value="rate-asc">Rate ↑</option>

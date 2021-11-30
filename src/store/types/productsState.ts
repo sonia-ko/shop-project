@@ -1,14 +1,16 @@
 import Product from "../../interfaces/product";
+import { SortingModel } from "../../interfaces/sorting";
 
 export interface ProductsState {
   items: Product[];
   minPrice: number;
   maxPrice: number;
   allProducts: Product[];
+  sorting: SortingModel;
   visibleProducts: Product[];
-  numberOfProducts: number | undefined;
+  numberOfProducts: number;
   numberOfPages: number;
-  productsPerPage: 5;
+  productsPerPage: number;
   lasVisibleProduct: number;
   firstVisibleProduct: number;
   currentPage: number;
@@ -16,6 +18,7 @@ export interface ProductsState {
   farms: string[];
   selectedCategory: string;
   maxRating: number;
+  productsFetched: boolean;
   filters: {
     farm: string[];
     rate: number[];
@@ -23,4 +26,5 @@ export interface ProductsState {
     price: number[];
     productType: string;
   };
+  additionalPages: number[];
 }

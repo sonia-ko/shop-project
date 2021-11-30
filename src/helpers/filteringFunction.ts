@@ -9,10 +9,8 @@ export const filterValues = (options: FilteringModel) => {
   switch (options.parameters.type) {
     case "productType":
       const filterString = options.parameters.filters.toLowerCase();
-      filteredItems = options.products.filter(
-        (product) =>
-          product.productType.toLowerCase().includes(filterString) ||
-          product.title.toLowerCase().includes(filterString)
+      filteredItems = options.products.filter((product) =>
+        product.title.toLowerCase().includes(filterString)
       );
       break;
     case "categories":

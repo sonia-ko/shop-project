@@ -2,4 +2,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1vh;
+    width: 100%;
+    flex-wrap: wrap;
 }

@@ -1,4 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  resetFilters,
+  setPage,
+  sortProducts,
+} from "../../store/reducers/productsSlice";
 import MainMenu from "./mainMenu/MainMenu";
 import Contacts from "./contacts/ContactsComponent";
 import classes from "./Header.module.css";
@@ -8,23 +14,45 @@ import cartIcon from "../../assets/ic-ecommerce-basket.png";
 import userIcon from "../../assets/ic-actions-user.png";
 import ProductsMenu from "./productsMenu/ProductsMenu";
 import { Link } from "react-router-dom";
+import MobileContacts from "./mobileContacts/MobileContacts";
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(resetFilters());
+    dispatch(
+      sortProducts({
+        key: "id",
+        order: "desc",
+      })
+    );
+    dispatch(setPage(1));
+  };
+
   return (
     <header>
       <div className={classes.topNavBar}>
         <Contacts />
         <MainMenu />
-      </div>{" "}
+      </div>
       <hr />
       <div className={classes.searchSection}>
-        <Link className={classes.companyNameSection} to="/products">
+        <Link
+          onClick={handleClick}
+          className={classes.companyNameSection}
+          to="/products"
+        >
           {companyName}
         </Link>
         <Search />
         <div className={classes.iconsSection}>
           <Link to="/login">
-            <img className={classes.loginIcon} src={userIcon} alt="" />
+            <img
+              className={classes.loginIcon}
+              src={userIcon}
+              alt="login icon"
+            />
           </Link>
           <Link to="/cart">
             <img
@@ -33,6 +61,7 @@ const Header: React.FC = () => {
               alt="Shopping Cart Icon"
             />
           </Link>
+          <MobileContacts />
         </div>
       </div>
       <ProductsMenu />

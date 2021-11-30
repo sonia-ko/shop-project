@@ -6,9 +6,9 @@ import { SortingModel } from "../../interfaces/sorting";
 import { compareValues } from "../../helpers/sortingFunction";
 import { filterValues } from "../../helpers/filteringFunction";
 
-// Define the initial state using that type
 const initialState: ProductsState = {
   items: [],
+  productsFetched: false,
   allProducts: [],
   visibleProducts: [],
   numberOfProducts: 0,
@@ -24,6 +24,11 @@ const initialState: ProductsState = {
   maxRating: 5,
   farms: [],
   filters: { farm: [], rate: [], categories: "", price: [], productType: "" },
+  sorting: {
+    key: "id",
+    order: "desc",
+  },
+  additionalPages: [],
 };
 
 export const productsSlice = createSlice({
@@ -39,20 +44,22 @@ export const productsSlice = createSlice({
         state.firstVisibleProduct,
         state.lasVisibleProduct
       );
+      state.additionalPages = [];
     },
     sortProducts(state, action: PayloadAction<SortingModel>) {
       state.visibleProducts = [...state.visibleProducts].sort(
         compareValues({ key: action.payload.key, order: action.payload.order })
       );
+      state.sorting = action.payload;
     },
     filterProducts(
       state,
       action: PayloadAction<
         | { filter: "farm"; value: string }
         | { filter: "rate"; value: number }
-        | { filter: "categories"; value: string } // Most popular, Total sale,
+        | { filter: "categories"; value: string }
         | { filter: "price"; value: number[] }
-        | { filter: "productType"; value: string } // like vegetable
+        | { filter: "productType"; value: string }
       >
     ) {
       state.currentPage = 1;
@@ -106,7 +113,9 @@ export const productsSlice = createSlice({
         parameters: { type: "price", filters: state.filters.price },
       });
 
-      state.visibleProducts = filteredByPrice;
+      state.visibleProducts = [...filteredByPrice].sort(
+        compareValues(state.sorting)
+      );
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
         state.visibleProducts.length / state.productsPerPage
@@ -114,20 +123,55 @@ export const productsSlice = createSlice({
     },
 
     resetFilters(state) {
-      state.visibleProducts = state.allProducts;
+      state.sorting = {
+        key: "id",
+        order: "desc",
+      };
+      state.visibleProducts = state.allProducts.sort(
+        compareValues(state.sorting)
+      );
       state.numberOfProducts = state.allProducts.length;
       state.numberOfPages = Math.ceil(
         state.numberOfProducts / state.productsPerPage
       );
+      state.filters = {
+        farm: [],
+        rate: [],
+        categories: "",
+        price: [],
+        productType: "",
+      };
+      state.selectedCategory = "";
+      state.additionalPages = [];
+      state.currentPage = 1;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    showMoreProductsPerPage(state, action: PayloadAction<number>) {
+      const newNumberOfProducts = action.payload;
+      state.lasVisibleProduct = state.firstVisibleProduct + newNumberOfProducts;
+
+      state.items = state.visibleProducts.slice(
+        state.firstVisibleProduct,
+        state.lasVisibleProduct
+      );
+
+      state.additionalPages =
+        state.additionalPages.length === 0
+          ? [state.currentPage + 1]
+          : [
+              ...state.additionalPages,
+              state.additionalPages[state.additionalPages.length - 1] + 1,
+            ];
     },
   },
 
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.allProducts = [...action.payload];
-      state.visibleProducts = state.allProducts;
+      state.visibleProducts = state.allProducts.sort(
+        compareValues(state.sorting)
+      );
 
-      // define the list of available categories and farms
       const categories = new Set<string>();
       const farms = new Set<string>();
       const prices: number[] = [];
@@ -141,7 +185,6 @@ export const productsSlice = createSlice({
       state.farms = Array.from(farms.values());
       state.minPrice = Math.min(...prices);
       state.maxPrice = Math.max(...prices);
-      console.log(state.minPrice, state.maxPrice);
 
       state.numberOfProducts = state.visibleProducts.length;
       state.numberOfPages = Math.ceil(
@@ -149,12 +192,18 @@ export const productsSlice = createSlice({
       );
 
       state.items = state.allProducts.slice(0, state.productsPerPage);
+      state.productsFetched = true;
     });
   },
 });
 
-export const { setPage, resetFilters, sortProducts, filterProducts } =
-  productsSlice.actions;
+export const {
+  setPage,
+  showMoreProductsPerPage,
+  resetFilters,
+  sortProducts,
+  filterProducts,
+} = productsSlice.actions;
 export const selectCount = (state: RootState) => state.products.currentPage;
 
 export default productsSlice.reducer;

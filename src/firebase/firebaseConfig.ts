@@ -1,12 +1,7 @@
-// import * as firebase from "firebase";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import "firebase/database";
 
 import { getFirestore } from "firebase/firestore";
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyBL9iPcG1bxDJe-JFOB4bl9YWXHWswswgA",

@@ -1,0 +1,38 @@
+.closeModal {
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    font-size: 500%;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background-color: white;
+    padding: 5vh;
+    border-radius: 0.15vh;
+    box-shadow: 0 3vh 5vw rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.modalText {
+    font-size: 200%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0.15vh);
+    z-index: 5;
+}

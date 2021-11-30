@@ -7,3 +7,16 @@
 .menuItem:hover {
     color: black;
 }
+
+.container {
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    .container {
+        display: block;
+    }
+    .menuItem {
+        font-size: 40%;
+    }
+}

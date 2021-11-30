@@ -12,3 +12,8 @@
 .tag:hover {
     background: #d1cdcd;
 }
+
+.selected {
+    background-color: #46760a;
+    color: white;
+}

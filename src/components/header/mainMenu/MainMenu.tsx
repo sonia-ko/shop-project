@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const MainMenu: React.FC = () => {
   return (
-    <ul className="flex">
+    <ul className={classes.container}>
       <li>
         <Link className={classes.menuItem} to="/blog">
           Blog

@@ -4,18 +4,22 @@ interface PageNumberProps {
   item: number;
   currentPage: number;
   handleClick?: () => void;
+  additionalPages: number[];
 }
 
 const PageNumber: React.FC<PageNumberProps> = ({
   item,
   currentPage,
   handleClick,
+  additionalPages,
 }) => {
   return (
     <span
       onClick={handleClick}
       className={
-        currentPage === item ? classes.currentPage : classes.pageNumber
+        currentPage === item || additionalPages.includes(item)
+          ? classes.currentPage
+          : classes.pageNumber
       }
     >
       {item}

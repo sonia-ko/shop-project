@@ -4,7 +4,7 @@ import classes from "./Button.module.css";
 interface ButtonProps {
   btnText: string;
   onClick: () => void;
-  btnStyle: "light" | "green" | "gray";
+  btnStyle: "light" | "green" | "gray" | "greenCentered";
   btnIconBefore?: string;
   btnIconAfter?: string;
 }

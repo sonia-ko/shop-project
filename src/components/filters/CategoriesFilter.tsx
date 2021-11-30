@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./CategoriesFilter.module.css";
 import { useDispatch } from "react-redux";
-// import { useState } from "react";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
@@ -9,7 +8,6 @@ import { filterProducts } from "../../store/reducers/productsSlice";
 
 const CategoriesFilter: React.FC = () => {
   const dispatch = useDispatch();
-  // const [filterEnabled, setFilterEnabled] = useState("");
 
   const products = useSelector(
     (state: RootState) => state.products.allProducts

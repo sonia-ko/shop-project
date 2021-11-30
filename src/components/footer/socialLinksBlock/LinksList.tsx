@@ -9,8 +9,7 @@ interface LinksListProps {
 
 const LinksList: React.FC<LinksListProps> = ({ links, sectionName }) => {
   return (
-    // this should be DIV for the flex items to be styled properly
-    <div>
+    <div className={classes.container}>
       <h4>{sectionName}</h4>
       <ul>
         {links.map((item) => {

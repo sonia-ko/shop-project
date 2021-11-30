@@ -2,7 +2,11 @@ import React from "react";
 import classes from "./Breadcrumbs.module.css";
 import { Link } from "react-router-dom";
 
-const Breadcrumbs: React.FC = () => {
+interface BreadcrumbsProps {
+  product?: string;
+}
+
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ product }) => {
   return (
     <div className={classes.breadcrumbs}>
       <Link className={classes.oldLocation} to="/products">
@@ -12,6 +16,7 @@ const Breadcrumbs: React.FC = () => {
       <Link className={classes.currentLocation} to="/products">
         All Products
       </Link>
+      {product ? <div> / {product} </div> : null}
     </div>
   );
 };

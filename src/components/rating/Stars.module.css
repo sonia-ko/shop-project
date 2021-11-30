@@ -1,10 +1,56 @@
 .starIcon {
-    width: 15px;
-    padding-right: 0.5em;
-    padding-top: 2px;
+    width: 1vw;
+    height: 1vw;
+    padding-right: 0.4vw;
+    padding-top: 0.2vw;
 }
 
 .starsContainer {
     display: flex;
     align-content: center;
+}
+
+@media (min-width: 1700px) {
+    .starIcon {
+        width: 0.9vw;
+        height: 0.9vw;
+    }
+}
+
+@media (max-width: 1400px) {
+    .starIcon {
+        width: 1.1vw;
+        height: 1.1vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .starIcon {
+        width: 1.3vw;
+        height: 1.3vw;
+    }
+    .starsContainer {
+        margin: 1vh 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .starIcon {
+        width: 1.75vw;
+        height: 1.75vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .starIcon {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .starIcon {
+        width: 4vw;
+        height: 4vw;
+    }
 }

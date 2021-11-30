@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { filterProducts } from "../../../store/reducers/productsSlice";
 import { useSelector } from "react-redux";
+
 import { RootState } from "../../../store/store";
 
 const Search: React.FC = () => {
@@ -15,6 +16,9 @@ const Search: React.FC = () => {
   );
   const selectedCategory = useSelector(
     (state: RootState) => state.products.selectedCategory
+  );
+  const filterEnabled = useSelector(
+    (state: RootState) => state.products.filters.productType
   );
 
   const dispatch = useDispatch();
@@ -34,7 +38,6 @@ const Search: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      {/* i need this container for the border-right to be displayed properly */}
       <div className={classes.selectboxContainer}>
         <select
           value={selectedCategory}
@@ -53,7 +56,6 @@ const Search: React.FC = () => {
                 key={"selectOptionCategory" + item}
                 className={classes.option}
                 value={item}
-                // selected={selectedCategory === item}
               >
                 {item}
               </option>
@@ -68,6 +70,7 @@ const Search: React.FC = () => {
         ref={searchInputRef}
         placeholder="Search Products, categories..."
         type="search"
+        value={filterEnabled}
       />
 
       <img className={classes.icon} src={searchIcon} alt="Search icon" />

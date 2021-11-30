@@ -1,22 +1,23 @@
 .container {
     display: flex;
-    border: 1px solid #d1d1d1;
+    border: 0.1vh solid #d1d1d1;
     background-color: #f9f9f9;
-    border-radius: 12px;
+    border-radius: 1.45vh;
     width: 10%;
     padding: 1.5vh 0.5vw;
     justify-content: space-around;
 }
 
 .label {
-    border-right: 1px solid #d1d1d1;
+    border-right: 0.1vw solid #d1d1d1;
     width: 40%;
+    display: flex;
 }
 
 .selectBox {
     width: 40%;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 100%;
     font-family: Poppins;
 }
 
@@ -24,5 +25,33 @@
     .container {
         width: 12%;
         padding: 1.5vh 0.5vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    .container {
+        width: 14vw;
+        align-items: center;
+        padding: 1.75vh 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        width: 23vw;
+        align-items: center;
+        padding: 1.75vh 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 33vw;
+    }
+}
+
+@media (max-width: 330px) {
+    .container {
+        width: 40vw;
     }
 }
